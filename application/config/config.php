@@ -14,8 +14,9 @@
 | path to your installation.
 |
 */
-$config['base_url']	= '';
-
+$config['base_url']	= 'http://localhost/webapnote/';
+//$config['base_url'] = http://192.168.1.70/webapnote/;
+//$config['base_url'] = http://192.168.1.65/webapnote/;
 /*
 |--------------------------------------------------------------------------
 | Index File
