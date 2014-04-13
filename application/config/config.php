@@ -14,8 +14,9 @@
 | path to your installation.
 |
 */
-$config['base_url']	= "http://".$_SERVER['HTTP_HOST']."/Apnote/v2.x/";
-//$config['base_url'] = "http://".$_SERVER['HTTP_HOST']."/webapnote/";
+
+$config['base_url'] = "http://".$_SERVER['HTTP_HOST']."/webapnote/";
+
 /*
 |--------------------------------------------------------------------------
 | Index File
