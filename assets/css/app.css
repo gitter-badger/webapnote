@@ -1,0 +1,44 @@
+/*
+ * Project: Apnote | Web Application;
+ * Developer: Javier Díaz;
+ * Frameworks: CodeIgniter y Foundation;
+ */
+
+/*************************************
+	Add Custom Styles for Foundation
+**************************************/
+.row {
+	position: relative !important;
+}
+
+
+/**************************************
+	Add Custom Styles for main app
+***************************************/
+
+.app-sidebar-main { 
+	position: absolute;
+	height: 100%;
+	background: #2E2E2E;
+	padding-top: 10px;
+}
+
+.app-content-main {
+	float: right;
+}
+
+.app-icon-input {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	color: rgb(206, 206, 206);
+}
+
+.app-logotype {
+	display: block;
+	width: 218px;
+	height: 68px;
+	background: url('../img/logotype.png') no-repeat;
+	text-indent: -9999px;
+	margin-bottom: 10px;
+}
