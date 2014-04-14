@@ -105,3 +105,12 @@ a.app-info-button:hover {
 	top: 15px;
 	height: 10px;
 }
+
+div.row.app-info-main {
+	max-height: 405px;
+	width: 302px;
+	border-top: 1px solid rgb(19, 19, 19);
+	border-bottom: 1px solid rgb(19, 19, 19);
+	overflow: hidden;
+	margin-left: -30px;
+}

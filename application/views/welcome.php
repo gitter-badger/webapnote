@@ -2,15 +2,17 @@
 
 		<!-- Main body -->
 		<div class="app-main-body clearfix">
-			<div class="small-2 large-2 columns app-sidebar-main">
+			<div class="small-4 medium-4 large-2 columns app-sidebar-main">
 				<div class="row">
 					<div class="large-10 column">
 						<a href="#" class="app-logotype">Apnote</a>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row app-info-main">
 					<div class="large-10 column">
-						<p class="text-center">Danycor</p>
+						<video autoplay loop id="bgVideo" style="width: 720px;position: relative; left: -170px;">
+							<source src="<?=base_url('assets/img/variousways.mp4');?>" type="video/mp4">
+						</video>
 					</div>
 				</div>
 				<div class="row app-form-main">
@@ -42,7 +44,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="small-8 large-8 columns app-content-main">sadasd</div>
+			<div class="small-6 medium-6 large-8 columns app-content-main">sadasd</div>
 		</div>
 		<!-- End Main body -->
 
