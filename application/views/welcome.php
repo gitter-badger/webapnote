@@ -11,7 +11,7 @@
 				</div>
 				<div class="row app-info-main">
 					<div class="large-10 column">
-						<video autoplay loop id="bgVideo" style="width: 815px;position: relative; left: -170px;">
+						<video autoplay loop id="bgVideo">
 							<source src="<?=base_url('assets/img/variousways.mp4');?>" type="video/mp4">
 						</video>
 					</div>
@@ -20,8 +20,8 @@
 					<div class="large-10 column">
 						<form>
 							<div class="row">
-								<i class="fi-torso app-icon-input"></i>
-								<input class="radius" type="text" placeholder="Usuario o Correo Electrónico" />
+								<i class="fi-mail app-icon-input"></i>
+								<input class="radius" type="text" placeholder="Correo Electrónico" />
 							</div>
 							<div class="row">
 								<i class="fi-lock app-icon-input"></i>
@@ -45,7 +45,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="small-6 medium-6 large-8 columns app-content-main">sadasd</div>
+			<div class="small-6 medium-6 large-8 columns app-content-main">
+				<div class="row">
+					<div class="large-4 columns">asddsa</div>
+					<div class="large-6 columns">asdasd</div>
+				</div>
+			</div>
 		</div>
 		<!-- End Main body -->
 

@@ -108,10 +108,16 @@ a.app-info-button:hover {
 }
 
 div.row.app-info-main {
-	max-height: 448px;
+	max-height: 59%;
 	width: 120%;
 	border-top: 1px solid rgb(19, 19, 19);
 	border-bottom: 1px solid rgb(19, 19, 19);
 	overflow: hidden;
 	margin-left: -15px;
+}
+
+#bgVideo {
+	width: 815px;
+	position: relative; 
+	left: -170px;
 }
