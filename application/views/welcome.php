@@ -10,7 +10,7 @@
 				</div>
 				<div class="row app-info-main">
 					<div class="large-10 column">
-						<video autoplay loop id="bgVideo" style="width: 720px;position: relative; left: -170px;">
+						<video autoplay loop id="bgVideo" style="width: 815px;position: relative; left: -170px;">
 							<source src="<?=base_url('assets/img/variousways.mp4');?>" type="video/mp4">
 						</video>
 					</div>
