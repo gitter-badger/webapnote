@@ -8,7 +8,7 @@
 						<a href="#" class="app-logotype">Apnote</a>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row app-form-main">
 					<div class="large-10 column">
 						<form>
 							<div class="row">
@@ -22,11 +22,22 @@
 							<div class="row">
 								<input type="submit" class="button radius small expand" value="Iniciar Sesión" />
 							</div>
+							<div class="row">
+								<p class="app-message">¿No estas registrado? <a href="#">Crear una cuenta ahora</a></p>
+							</div>
 						</form>
 					</div>
 				</div>
+				<div class="row app-footer-main">
+					<div class="large-2 columns">
+						<a href="#" class="app-info-button"><i class="fi-info"></i></a>
+					</div>
+					<div class="large-8 columns">
+						<p class="app-message app-copyright">Copyright &copy; <?=date('Y');?> by Apnote, Devs.</p>
+					</div>
+				</div>
 			</div>
-			<div class="smlal-8 large-8 columns app-content-main">sadasd</div>
+			<div class="small-8 large-8 columns app-content-main">sadasd</div>
 		</div>
 		<!-- End Main body -->
 

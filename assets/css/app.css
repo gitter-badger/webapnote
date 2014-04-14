@@ -15,12 +15,23 @@
 /**************************************
 	Add Custom Styles for main app
 ***************************************/
+a {
+	opacity: .9;
+}
+
+a:hover {
+	-webkit-transition: .1s all ease-in;
+	-moz-transition: .1s all ease-in;
+	transition: .1s all ease-in;
+	opacity: 1;
+}
 
 .app-sidebar-main { 
 	position: absolute;
 	height: 100%;
 	background: #2E2E2E;
 	padding-top: 10px;
+	color: #CECECE;
 }
 
 .app-content-main {
@@ -41,4 +52,47 @@
 	background: url('../img/logotype.png') no-repeat;
 	text-indent: -9999px;
 	margin-bottom: 10px;
+}
+
+.app-form-main {
+	position: absolute !important;
+	padding-right: 30px;
+	bottom: 34px;
+}
+
+.app-footer-main {
+	border-top: 1px solid rgb(17, 17, 17);
+	background: rgb(32, 31, 31);
+	box-shadow: 0 0 1px 0 rgb(92, 92, 92);
+	margin-left: -15px;
+	height: 50px;
+	bottom: 0px;
+	position: absolute !important;
+}
+
+a.app-info-button {
+	height: 49px;
+	width: 49px;
+	padding: 12px 0 0 14px;
+	border-right: 1px solid rgb(15, 15, 15);
+	box-shadow: 1px 0 0px 0 rgb(44, 44, 44);
+	left: 0;
+	display: block;
+	position: absolute;
+	font-size: 25px;
+}
+
+a.app-info-button:hover {
+	background: rgb(26, 26, 26);
+}
+
+.app-message {
+	font-size: 12px;
+}
+
+.app-copyright {
+	color: rgb(150, 150, 150) !important;
+	position: relative;
+	top: 15px;
+	height: 10px;
 }
