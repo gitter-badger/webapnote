@@ -114,3 +114,20 @@ div.row.app-info-main {
 	overflow: hidden;
 	margin-left: -30px;
 }
+
+/*************************************
+	Add Custom Media Queries
+*************************************/
+
+/* min-width: 1025px and max-width: 1440px */
+@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+	.app-message {
+		font-size:11px;
+		text-align: center;
+	}
+
+	div.row.app-info-main {
+		max-height: 352px;
+		width: 287px;
+	}
+}
