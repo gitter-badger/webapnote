@@ -121,3 +121,22 @@ div.row.app-info-main {
 	position: relative; 
 	left: -170px;
 }
+
+/****************************************
+	Add Custom Media Queries
+****************************************/
+
+@media only screen and (min-width: 64.063em) and (max-width: 89.938em) {
+	div.row.app-info-main {
+		max-height: 45%;
+	}
+
+	.app-message {
+		font-size: 10px;
+	}
+
+	.app-logotype {
+		right: 10px;
+		position: relative;
+	}
+}
