@@ -34,7 +34,7 @@ a:hover {
 }
 
 .app-sidebar-main { 
-	position: absolute;
+	position: fixed;
 	height: 100%;
 	overflow: hidden;
 	background: #2E2E2E;
@@ -110,6 +110,7 @@ a.app-info-button:hover {
 div.row.app-info-main {
 	max-height: 59%;
 	width: 120%;
+	background: url('../img/grid.png');
 	border-top: 1px solid rgb(19, 19, 19);
 	border-bottom: 1px solid rgb(19, 19, 19);
 	overflow: hidden;
@@ -120,6 +121,31 @@ div.row.app-info-main {
 	width: 815px;
 	position: relative; 
 	left: -170px;
+	opacity: .7;
+}
+
+.app-services-main {
+	padding-top: 30px;
+}
+
+.app-services-main i {
+color: rgb(87, 87, 87);
+	font-size:50px;
+}
+
+.icon-services {
+	padding-bottom: 30px;
+}
+
+.app-info-service {
+	margin-top: 15px;
+	font-size: 15px;
+}
+
+.app-span-main {
+	font-size:16px;
+	font-family: 'Open Sans';
+	font-weight: 700;
 }
 
 /****************************************
@@ -129,11 +155,11 @@ div.row.app-info-main {
 /* min-width: 1025px, max-width: 1439px */
 @media only screen and (min-width: 64.063em) and (max-width: 89.938em) {
 	div.row.app-info-main {
-		max-height: 50%;
+		max-height: 48.5%;
 	}
 
 	.app-message {
-		font-size: 11px;
+		font-size: 10px;
 		text-align: center;
 	}
 
