@@ -3,6 +3,7 @@
 		<!-- Main body -->
 		<div class="app-main-body clearfix">
 			<div class="small-4 medium-4 large-2 columns app-sidebar-main">
+
 				<div class="row">
 					<div class="large-10 column">
 						<a href="#" class="app-logotype">Apnote</a>

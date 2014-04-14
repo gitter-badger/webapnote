@@ -36,6 +36,7 @@ a:hover {
 .app-sidebar-main { 
 	position: absolute;
 	height: 100%;
+	overflow: hidden;
 	background: #2E2E2E;
 	padding-top: 10px;
 	color: #CECECE;
@@ -108,9 +109,9 @@ a.app-info-button:hover {
 
 div.row.app-info-main {
 	max-height: 448px;
-	width: 302px;
+	width: 120%;
 	border-top: 1px solid rgb(19, 19, 19);
 	border-bottom: 1px solid rgb(19, 19, 19);
 	overflow: hidden;
-	margin-left: -30px;
+	margin-left: -15px;
 }
