@@ -46,9 +46,24 @@
 				</div>
 			</div>
 			<div class="small-6 medium-6 large-8 columns app-content-main">
-				<div class="row">
-					<div class="large-4 columns">asddsa</div>
-					<div class="large-6 columns">asdasd</div>
+				<div class="row app-info-movilapp">
+					<div class="large-4 columns">
+						<div class="phone">
+							<div class="app-slider-main">
+								<!-- Slider Here -->
+							</div>
+						</div>
+					</div>
+					<div class="large-6 columns">
+						<h2 style="font-weight: 800;">La aplicación para gestionar tus proyectos, organizar tus reportes y aumentar tu productividad</h2>
+						<br />
+						<h4 class="subheader text-justify">Unete y mira por qué aumenta tu productividad, tu eficiencia en el trabajo, una interfaz muy amigable
+						que te encantara.</h4>
+						<br />
+						<span><a href="#" class="large-10 button radius">Inscribete Gratis</a></span>
+						<br />
+						<p>Disponible en <a href="#">Android</a> e Internet. Por ahora!</p>
+					</div>
 				</div>
 				<div class="row app-services-main" data-equalizer>
 					<div class="large-3 columns">
@@ -80,7 +95,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="large-9 large-centered column">
+					<div class="large-10 large-centered column">
 						<p class="text-center app-span-main">La primer aplicación que mejorará tu productividad en la realización de tus reportes, 
 						sin demoras, ni contratiempos, usando la tecnología móvil como principal intermediario. </p>
 					</div>
