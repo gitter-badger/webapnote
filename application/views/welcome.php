@@ -10,7 +10,7 @@
 				</div>
 				<div class="row">
 					<div class="large-10 column">
-						<p class="text-center">Solucionando tus problemas Mejorando tus procesos</p>
+						<p class="text-center">Danycor</p>
 					</div>
 				</div>
 				<div class="row app-form-main">
