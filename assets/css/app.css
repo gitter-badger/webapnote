@@ -126,13 +126,15 @@ div.row.app-info-main {
 	Add Custom Media Queries
 ****************************************/
 
+/* min-width: 1025px, max-width: 1439px */
 @media only screen and (min-width: 64.063em) and (max-width: 89.938em) {
 	div.row.app-info-main {
-		max-height: 45%;
+		max-height: 50%;
 	}
 
 	.app-message {
-		font-size: 10px;
+		font-size: 11px;
+		text-align: center;
 	}
 
 	.app-logotype {
