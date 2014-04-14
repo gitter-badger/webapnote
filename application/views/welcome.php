@@ -8,6 +8,11 @@
 						<a href="#" class="app-logotype">Apnote</a>
 					</div>
 				</div>
+				<div class="row">
+					<div class="large-10 column">
+						<p class="text-center">Solucionando tus problemas Mejorando tus procesos</p>
+					</div>
+				</div>
 				<div class="row app-form-main">
 					<div class="large-10 column">
 						<form>
