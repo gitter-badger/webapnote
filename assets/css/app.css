@@ -23,6 +23,10 @@ h1, h2, h3, h4, h5, h6 {
 	position: relative !important;
 }
 
+.clearfix {
+	background: url('../img/bg-appmovil.jpg') no-repeat;
+}
+
 
 /**************************************
 	Add Custom Styles for main app
@@ -51,6 +55,7 @@ a:hover {
 
 .app-content-main {
 	float: right;
+	background: url('../img/bg-appmovil.png') no-repeat;
 }
 
 .app-icon-input {
@@ -103,6 +108,7 @@ a.app-info-button:hover {
 
 .app-message {
 	font-size: 12px;
+	text-align: center;
 }
 
 .app-copyright {
@@ -133,6 +139,11 @@ div.row.app-info-main {
 	padding-top: 30px;
 	padding-bottom: 15px;
 	border-bottom: 1px dashed rgb(228, 228, 228);
+}
+
+.app-services-sub {
+	border-top: 1px dashed rgb(228, 228, 228);
+	padding-top: 20px;
 }
 
 .app-services-main i {

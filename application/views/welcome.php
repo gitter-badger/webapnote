@@ -31,7 +31,7 @@
 								<input type="submit" class="button radius small expand" value="Iniciar Sesión" />
 							</div>
 							<div class="row">
-								<p class="app-message">¿No estas registrado? <a href="#">Crear una cuenta ahora</a></p>
+								<p class="app-message">¿No estas registrado? <a href="#">Crea una cuenta ahora</a></p>
 							</div>
 						</form>
 					</div>
@@ -57,12 +57,19 @@
 					<div class="large-6 columns">
 						<h2 style="font-weight: 800;">La aplicación para gestionar tus proyectos, organizar tus reportes y aumentar tu productividad</h2>
 						<br />
-						<h4 class="subheader text-justify">Unete y mira por qué aumenta tu productividad, tu eficiencia en el trabajo, una interfaz muy amigable
+						<h4 class="subheader text-justify">Únete y mira por qué aumenta tu productividad y tu eficiencia en el trabajo, una interfaz amigable
 						que te encantara.</h4>
 						<br />
 						<span><a href="#" class="large-10 button radius">Inscribete Gratis</a></span>
 						<br />
 						<p>Disponible en <a href="#">Android</a> e Internet. Por ahora!</p>
+					</div>
+				</div>
+				<div class="row app-services-sub">
+					<div class="large-10 columns">
+						<h2 class="text-center">Gestiona, Colabora y Planifica</h2>
+						<h5 class="subheader text-center">Apnote proporciona las herramientas necesarias para cumplir tus objetivos.
+						Utiliza la interfaz sencilla para controlarlo todo, desde la generación de los reportes a la autorización.</h5>
 					</div>
 				</div>
 				<div class="row app-services-main" data-equalizer>
