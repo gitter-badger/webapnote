@@ -38,7 +38,7 @@
 				</div>
 				<div class="row app-footer-main">
 					<div class="large-2 columns">
-						<a href="#" class="app-info-button"><i class="fi-info"></i></a>
+						<a href="#" class="app-info-button" data-reveal-id="modal-information" data-reveal><i class="fi-info"></i></a>
 					</div>
 					<div class="large-8 columns">
 						<p class="app-message app-copyright">Copyright &copy; <?=date('Y');?> by Apnote, Devs.</p>
@@ -154,6 +154,55 @@
 				</div>
 				<a href="#" class="close-reveal-modal">&#215;</a>
 			</div>
+		<!-- End Modal -->
+		<!-- Modal for Information -->
+		<div id="modal-information" class="reveal-modal medium" data-reveal>
+			<div class="app-modal-header" style="margin: -31px;background: #2E2E2E;">
+				<a href="#" class="app-logotype-info">Apnote - Información</a>
+			</div>
+			<h3 class="text-center subheader" style="padding-top: 40px; border-bottom:1px solid #e3e3e3">Colaboradores</h3>
+			<div class="row" style="margin-top: 30px;">
+				<div class="large-10 column">
+					<div class="row">
+						<div class="large-5 columns">
+							<div class="row">
+								<div class="large-4 columns">
+									<img class="th radius" src="<?=base_url('assets/img/1901273.png');?>" />
+								</div>
+								<div class="large-6 columns">
+									<h5>Javier Diaz</h5>
+									<h6 class="subheader">Co-Fundador y Developer</h6>
+									<span class="app-social-net"><i class="fi-social-facebook"></i> <i class="fi-social-twitter"></i> <i class="fi-social-github"></i> </span>
+								</div>
+							</div>
+						</div>
+						<div class="large-5 columns">
+							<div class="row">
+								<div class="large-4 columns">
+									<img class="th radius" src="<?=base_url('assets/img/1609566.jpg');?>" />
+								</div>
+								<div class="large-6 columns">
+									<h5>Daniel Corona</h5>
+									<h6 class="subheader">Co-Fundador y Bug Tester</h6>
+									<span class="app-social-net"><i class="fi-social-facebook"></i> <i class="fi-social-github"></i> </span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h3 class="text-center subheader" style="padding-top: 40px; border-bottom:1px solid #e3e3e3">Objetivo del Proyecto</h3>
+			<div class="row" style="margin-top: 30px;">
+				<div class="large-10 column">
+					<p class="text-justify app-obj">Diseñar, desarrollar e implementar una aplicación móvil funcional con la tecnología 
+					<span>ANDROID</span> en un dispositivo móvil  inalámbrico, aplicando una <span>Metodología MOBILE-D</span> que nos permita el enviar 
+					los informes de avances y desarrollo de una obra de <span>Ingeniería Civil</span> de forma inmediata a una plataforma 
+					web mediante conexión WI-FI, teniendo disponibilidad de la información en todo momento y pertinencia de 
+					la misma.</p>
+				</div>
+			</div>
+			<a href="#" class="close-reveal-modal">&#215;</a>
+		</div>
 		<!-- End Modal -->
 
 <?php $this->load->view('footer'); ?>

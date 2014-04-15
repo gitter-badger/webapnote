@@ -74,15 +74,6 @@ a:hover {
 	margin-bottom: 10px;
 }
 
-.app-logotype-reg {
-	display: block;
-	width: 218px;
-	height: 68px;
-	background: url('../img/logo-reg.png') no-repeat;
-	text-indent: -9999px;
-	margin-bottom: 10px;
-}
-
 .app-form-main {
 	position: absolute !important;
 	padding: 30px;
@@ -213,9 +204,9 @@ color: rgb(87, 87, 87);
 
 /* Modal Registro */
 
-#register-modal {
-	top: 10% !important;
-}
+/*#register-modal, #modal-information {
+	top: 5% !important;
+}*/
 
 .app-modal-header {
 	height: 70px;
@@ -223,7 +214,37 @@ color: rgb(87, 87, 87);
 }
 
 .app-logotype-reg {
+	display: block;
+	width: 218px;
+	height: 68px;
 	margin: 0 auto;
+	background: url('../img/logo-reg.png') no-repeat;
+	text-indent: -9999px;
+	margin-bottom: 10px;
+}
+
+.app-logotype-info {
+	display: block;
+	width: 550px;
+	height: 68px;
+	margin: 0 auto;
+	background: url('../img/logo-info.png') no-repeat;
+	text-indent: -9999px;
+	margin-bottom: 10px;
+}
+
+.app-social-net{
+	color: #3E3E3E;
+	font-size: 20px;
+}
+
+.app-social-net i {
+	margin-right: 10px;
+}
+
+.app-obj span {
+	font-weight: 700;
+	color: #727272;
 }
 
 .app-icon-input-reg {
