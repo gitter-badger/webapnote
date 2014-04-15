@@ -31,7 +31,7 @@
 								<input type="submit" class="button radius small expand" value="Iniciar Sesión" />
 							</div>
 							<div class="row">
-								<p class="app-message">¿No estas registrado? <a href="#">Crea una cuenta ahora</a></p>
+								<p class="app-message">¿No estas registrado? <a href="#">Crea una cuenta</a></p>
 							</div>
 						</form>
 					</div>
