@@ -46,6 +46,7 @@ a:hover {
 	position: fixed;
 	height: 100%;
 	overflow: hidden;
+	z-index: 9999;
 	background: #2E2E2E;
 	padding-top: 10px;
 	color: #CECECE;
@@ -56,6 +57,7 @@ a:hover {
 .app-content-main {
 	float: right;
 	background: url('../img/bg-appmovil.png') no-repeat;
+	background-position-x: -220px;
 }
 
 .app-icon-input {
