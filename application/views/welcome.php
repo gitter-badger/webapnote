@@ -131,7 +131,7 @@
 					<div class="row">
 						<div class="large-10 column">
 							<i class="fi-shopping-bag app-icon-input app-icon-input-reg"></i>
-							<input type="email" name="email" placeholder="Organización" />
+							<input type="text" name="organizacion" placeholder="Organización" />
 						</div>
 					</div>
 					<div class="row">
