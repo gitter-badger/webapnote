@@ -31,7 +31,7 @@
 								<input type="submit" class="button radius small expand" value="Iniciar Sesión" />
 							</div>
 							<div class="row">
-								<p class="app-message">¿No estas registrado? <a href="#">Crea una cuenta</a></p>
+								<p class="app-message">¿No estas registrado? <a href="#" data-reveal-id="register-modal" data-reveal>Crea una cuenta</a></p>
 							</div>
 						</form>
 					</div>
@@ -60,7 +60,7 @@
 						<h4 class="subheader text-justify">Únete y mira por qué aumenta tu productividad y tu eficiencia en el trabajo, una interfaz amigable
 						que te encantara.</h4>
 						<br />
-						<span><a href="#" class="large-10 button radius">Inscribete Gratis</a></span>
+						<span><a href="#" class="large-10 button radius" data-reveal-id="register-modal" data-reveal>Inscribete Gratis</a></span>
 						<br />
 						<p>Disponible en <a href="#">Android</a> e Internet. Por ahora!</p>
 					</div>
@@ -110,5 +110,50 @@
 			</div>
 		</div>
 		<!-- End Main body -->
+		<!-- Modal of Sign Up -->
+			<div id="register-modal" class="reveal-modal tiny" data-reveal>
+				<div class="app-modal-header">
+					<a href="#" class="app-logotype-reg">Apnote</a>
+				</div>
+				<form>
+					<div class="row">
+						<div class="large-10 column">
+							<i class="fi-torso app-icon-input app-icon-input-reg"></i>
+							<input type="text" name="nombre" placeholder="Nombre" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="large-10 column">
+							<i class="fi-mail app-icon-input app-icon-input-reg"></i>
+							<input type="email" name="email" placeholder="Correo Electrónico" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="large-10 column">
+							<i class="fi-shopping-bag app-icon-input app-icon-input-reg"></i>
+							<input type="email" name="email" placeholder="Organización" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="large-10 column">
+							<i class="fi-lock app-icon-input app-icon-input-reg"></i>
+							<input type="password" name="passwd" placeholder="Contraseña" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="large-10 column">
+							<input type="submit" class="button small radius large-10" value="Registrar" />
+						</div>
+					</div>
+				</form>
+				<div class="row">
+					<div class="large-10 column">
+						<p class="text-center">Al suscribirte aceptas nuestras <a href="#">Condiciones de Uso</a> y 
+						<a href="#">Política de Privacidad</a> </p>
+					</div>
+				</div>
+				<a href="#" class="close-reveal-modal">&#215;</a>
+			</div>
+		<!-- End Modal -->
 
 <?php $this->load->view('footer'); ?>

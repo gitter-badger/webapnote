@@ -74,6 +74,15 @@ a:hover {
 	margin-bottom: 10px;
 }
 
+.app-logotype-reg {
+	display: block;
+	width: 218px;
+	height: 68px;
+	background: url('../img/logo-reg.png') no-repeat;
+	text-indent: -9999px;
+	margin-bottom: 10px;
+}
+
 .app-form-main {
 	position: absolute !important;
 	padding: 30px;
@@ -145,7 +154,7 @@ div.row.app-info-main {
 }
 
 .app-services-sub {
-	border-top: 1px dashed rgb(228, 228, 228);
+	border-top: 1px dashed #B3B3B3;
 	padding-top: 20px;
 }
 
@@ -200,6 +209,20 @@ color: rgb(87, 87, 87);
 	height: 523px;
 	background: url('../img/phone-overlay.png') no-repeat top left;
 	z-index: 1;
+}
+
+/* Modal Registro */
+.app-modal-header {
+	height: 70px;
+	margin-bottom: 30px;
+}
+
+.app-logotype-reg {
+	margin: 0 auto;
+}
+
+.app-icon-input-reg {
+	margin-right: 15px;
 }
 
 /****************************************
