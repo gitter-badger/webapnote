@@ -212,6 +212,11 @@ color: rgb(87, 87, 87);
 }
 
 /* Modal Registro */
+
+#register-modal {
+	top: 10% !important;
+}
+
 .app-modal-header {
 	height: 70px;
 	margin-bottom: 30px;
