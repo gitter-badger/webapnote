@@ -41,8 +41,30 @@ class Welcome extends CI_Controller {
 				echo 0;
 			}
 		}
-
 	}
+
+	public function addLogin(){
+		$this->form_validation->set_rules('emailsign', 'Correo Electrónico', 'trim|required|xss_clean|valid_email');
+		$this->form_validation->set_rules('passign', 'Contraseña', 'trim|required|xss_clean');
+
+		$this->form_validation->set_message('required', '%s requerido/a.');
+		$this->form_validation->set_message('valid_email', 'El %s es inválido.');
+
+		$this->form_validation->set_error_delimiters('<p><i class="fi-x-circle icon-error"></i>', '</p>');
+		if($this->form_validation->run() == FALSE){
+			echo validation_errors();
+		}else{
+			$email = $this->input->post('emailsign');
+			$pass = sha1($this->input->post('passign'));
+
+			$getsign = $this->m_welcome->signIn($email, $pass);
+			if($getsign) {
+				echo 1;
+			}else {
+				echo 0;
+			}
+		}
+	} 
 	
 }
 

@@ -36,4 +36,19 @@ $(document).ready(function(){
 		$('#app-policy').animate({'opacity': '1', 'display': 'inherit'}, 500)
 	});
 
+	$('#app-signin').submit(function(e){
+		e.preventDefault();
+		$.post(
+			'welcome/addLogin', 
+			$(this).serialize(),
+			function(data){
+				if(data == 1){
+					alert('OK');
+				}else {
+					alert('BAD');
+				}
+			}
+		);
+	});
+
 });
