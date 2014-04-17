@@ -209,8 +209,20 @@ color: rgb(87, 87, 87);
 	z-index: 1;
 }
 
-#app-error-msg {
-	display: none;
+#app-wrap-modal {
+	position: relative;
+	overflow: hidden;
+}
+
+#app-error-msg, #app-success-msg {
+	opacity: 0;
+	position: absolute !important;
+}
+
+.icon-error {
+	padding-right: 10px;
+	color: #C0002E;
+	font-size: 17px;
 }
 
 /* Modals App */

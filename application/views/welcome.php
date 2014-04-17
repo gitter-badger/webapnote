@@ -112,47 +112,62 @@
 		<!-- End Main body -->
 		<!-- Modal of Sign Up -->
 			<div id="register-modal" class="reveal-modal tiny" data-reveal>
-				<div class="app-modal-header">
-					<a href="#" class="app-logotype-reg">Apnote</a>
-				</div>
-				<div class="row" id="app-error-msg">
-					<p>Error</p>
-				</div>
-				<form id="addUsuario" method="POST">
-					<div class="row">
-						<div class="large-10 column">
-							<i class="fi-torso app-icon-input app-icon-input-reg"></i>
-							<input type="text" id="nom" name="nombre" placeholder="Nombre" />
+				<div id="app-wrap-modal">
+					<div class="app-modal-header">
+						<a href="#" class="app-logotype-reg">Apnote</a>
+					</div>
+					<div class="row" id="app-error-msg">
+						<div class="app-error-data panel radius"></div>
+						<div class="row">
+							<div class="large-10 column">
+								<a href="#" class="close-error-msg button radius large-10">Regresar al Formulario</a>
+							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="large-10 column">
-							<i class="fi-torsos app-icon-input app-icon-input-reg"></i>
-							<input type="text" id="use" name="username" placeholder="Nombre de Usuario" />
+					<div class="row" id="app-success-msg">
+						<div class="app-success panel radius callout">
+							<p class="text-center" style="font-weight: 700; color: #707070;">¡Enhorabuena!</p>
+							<p class="text-center" style="margin-bottom: -17px; margin-top: -40px;margin-left: 10px;"><i class="fi-checkbox" style="font-size: 70px;color: #88C788;"></i></p>
+							<p class="text-center" style="color: #707070;">Tu información ha sido guardada con éxito, te hemos enviado un correo con la información de tu cuenta.</p>
 						</div>
+						<p class="text-center" style="margin-top: 83px; color: #707070;">Para cualquier información o ayuda, comunícate por email <a href="">support@getapnote.mx</a></p>
 					</div>
-					<div class="row">
-						<div class="large-10 column">
-							<i class="fi-mail app-icon-input app-icon-input-reg"></i>
-							<input type="email" id="ema" name="email" placeholder="Correo Electrónico" />
+					<form id="addUsuario" class="app-form">
+						<div class="row">
+							<div class="large-10 column">
+								<i class="fi-torso app-icon-input app-icon-input-reg"></i>
+								<input type="text" name="nombre" placeholder="Nombre" />
+							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="large-10 column">
-							<i class="fi-lock app-icon-input app-icon-input-reg"></i>
-							<input type="password" id="pas" name="passwr" placeholder="Contraseña" />
+						<div class="row">
+							<div class="large-10 column">
+								<i class="fi-torsos app-icon-input app-icon-input-reg"></i>
+								<input type="text" name="username" placeholder="Nombre de Usuario" />
+							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="large-10 column">
-							<input type="submit" class="button small radius large-10" value="Registrar" />
+						<div class="row">
+							<div class="large-10 column">
+								<i class="fi-mail app-icon-input app-icon-input-reg"></i>
+								<input type="email" name="email" placeholder="Correo Electrónico" />
+							</div>
 						</div>
-					</div>
-				</form>
-				<div class="row" id="app-policy">
-					<div class="large-10 column">
-						<p class="text-center">Al suscribirte aceptas nuestras <a href="#">Condiciones de Uso</a> y 
-						<a href="#">Política de Privacidad</a> </p>
+						<div class="row">
+							<div class="large-10 column">
+								<i class="fi-lock app-icon-input app-icon-input-reg"></i>
+								<input type="password" name="passwr" placeholder="Contraseña" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="large-10 column">
+								<input type="submit" class="button small radius large-10" value="Registrar" />
+							</div>
+						</div>
+					</form>
+					<div class="row" id="app-policy">
+						<div class="large-10 column">
+							<p class="text-center">Al suscribirte aceptas nuestras <a href="#">Condiciones de Uso</a> y 
+							<a href="#">Política de Privacidad</a> </p>
+						</div>
 					</div>
 				</div>
 				<a href="#" class="close-reveal-modal">&#215;</a>

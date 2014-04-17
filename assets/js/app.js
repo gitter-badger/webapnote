@@ -1,27 +1,39 @@
 $(document).ready(function(){
+
+	$.fn.reset = function() {
+		$(this).each(function(){ this.reset(); });
+	}
 	
 	$('#addUsuario').submit(function(e){
-		var nom = $('#nom').val();
-		var use = $('#use').val();
-		var ema = $('#ema').val();
-		var pas = $('#pas').val();
-		$.ajax({
-			url : 'http://localhost/webapnote/welcome/registrarUsuario',
-			dataType: 'json',
-			type: 'POST',
-			crossDomain: true,
-			data: {nombre: nom, username: use, email: ema, passwr: pas}, 
-			complete: function(xhr, statusText){ 
-        console.log(xhr.responseText);
-      },
-      success:  function(result){
-      	alert(result);
-      }, 
-      error: function(req, status, err){
-      	alert(req+" "+status+" "+err);
-      }
-		});
-		return false;
- 	});
+		e.preventDefault();
+		$.post(
+			"welcome/registrarUsuario", 
+			$(this).serialize(),
+			function(data){
+				if(data == 1){
+					alert(data);
+					$('#addUsuario').animate({'opacity': '0','display': 'none'}, 500);
+					$('#app-policy').animate({'opacity': '0', 'display' : 'none'}, 500);
+					$('#app-success-msg').delay(300).animate({'opacity': '1', 'display': 'inherit', 'z-index': '9999'}, 500).delay(2000);
+					$('#register-modal').delay(5000).foundation('reveal', 'close');
+					$('#addUsuario').reset();
+					$('#app-success-msg').delay(5000).animate({'opacity': '0', 'display': 'none', 'z-index': '0'}, 500);
+					$('#addUsuario').delay(5000).animate({'opacity': '1', 'display': 'inherit'}, 500);
+					$('#app-policy').delay(5000).animate({'opacity': '1', 'display': 'inherit'}, 500);
+				}else{
+					$('.app-error-data').html(data);
+					$('#addUsuario').animate({'opacity': '0','display': 'none'}, 500);
+					$('#app-policy').animate({'opacity': '0', 'display' : 'none'}, 500);
+					$('#app-error-msg').delay(300).animate({'opacity': '1', 'display': 'inherit', 'z-index': '9999'}, 500);
+				}
+			}
+		);
+	});
+
+	$('.close-error-msg').click(function(){
+		$('#app-error-msg').animate({'opacity': '0', 'display': 'none'}, 500).css('z-index', '0');
+		$('#addUsuario').delay(500).animate({'opacity': '1', 'display': 'inherit'}, 500)
+		$('#app-policy').animate({'opacity': '1', 'display': 'inherit'}, 500)
+	});
 
 });
