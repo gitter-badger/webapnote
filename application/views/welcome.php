@@ -115,11 +115,17 @@
 				<div class="app-modal-header">
 					<a href="#" class="app-logotype-reg">Apnote</a>
 				</div>
-				<form>
+				<form id="addUsuario">
 					<div class="row">
 						<div class="large-10 column">
 							<i class="fi-torso app-icon-input app-icon-input-reg"></i>
 							<input type="text" name="nombre" placeholder="Nombre" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="large-10 column">
+							<i class="fi-torsos app-icon-input app-icon-input-reg"></i>
+							<input type="text" name="username" placeholder="Nombre de Usuario" />
 						</div>
 					</div>
 					<div class="row">
@@ -130,14 +136,8 @@
 					</div>
 					<div class="row">
 						<div class="large-10 column">
-							<i class="fi-shopping-bag app-icon-input app-icon-input-reg"></i>
-							<input type="text" name="organizacion" placeholder="Organización" />
-						</div>
-					</div>
-					<div class="row">
-						<div class="large-10 column">
 							<i class="fi-lock app-icon-input app-icon-input-reg"></i>
-							<input type="password" name="passwd" placeholder="Contraseña" />
+							<input type="password" name="passwr" placeholder="Contraseña" />
 						</div>
 					</div>
 					<div class="row">

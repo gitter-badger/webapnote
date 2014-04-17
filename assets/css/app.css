@@ -58,7 +58,7 @@ a:hover {
 .app-content-main {
 	float: right;
 	background: url('../img/bg-appmovil.png') no-repeat;
-	background-position-x: -265px;
+	background-position-x: right;
 }
 
 .app-icon-input {
