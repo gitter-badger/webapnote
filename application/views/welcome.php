@@ -115,29 +115,32 @@
 				<div class="app-modal-header">
 					<a href="#" class="app-logotype-reg">Apnote</a>
 				</div>
-				<form id="addUsuario">
+				<div class="row" id="app-error-msg">
+					<p>Error</p>
+				</div>
+				<form id="addUsuario" method="POST">
 					<div class="row">
 						<div class="large-10 column">
 							<i class="fi-torso app-icon-input app-icon-input-reg"></i>
-							<input type="text" name="nombre" placeholder="Nombre" />
+							<input type="text" id="nom" name="nombre" placeholder="Nombre" />
 						</div>
 					</div>
 					<div class="row">
 						<div class="large-10 column">
 							<i class="fi-torsos app-icon-input app-icon-input-reg"></i>
-							<input type="text" name="username" placeholder="Nombre de Usuario" />
+							<input type="text" id="use" name="username" placeholder="Nombre de Usuario" />
 						</div>
 					</div>
 					<div class="row">
 						<div class="large-10 column">
 							<i class="fi-mail app-icon-input app-icon-input-reg"></i>
-							<input type="email" name="email" placeholder="Correo Electrónico" />
+							<input type="email" id="ema" name="email" placeholder="Correo Electrónico" />
 						</div>
 					</div>
 					<div class="row">
 						<div class="large-10 column">
 							<i class="fi-lock app-icon-input app-icon-input-reg"></i>
-							<input type="password" name="passwr" placeholder="Contraseña" />
+							<input type="password" id="pas" name="passwr" placeholder="Contraseña" />
 						</div>
 					</div>
 					<div class="row">
@@ -146,7 +149,7 @@
 						</div>
 					</div>
 				</form>
-				<div class="row">
+				<div class="row" id="app-policy">
 					<div class="large-10 column">
 						<p class="text-center">Al suscribirte aceptas nuestras <a href="#">Condiciones de Uso</a> y 
 						<a href="#">Política de Privacidad</a> </p>

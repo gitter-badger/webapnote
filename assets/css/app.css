@@ -209,6 +209,10 @@ color: rgb(87, 87, 87);
 	z-index: 1;
 }
 
+#app-error-msg {
+	display: none;
+}
+
 /* Modals App */
 
 /*#register-modal, #modal-information {
