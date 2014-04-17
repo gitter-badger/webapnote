@@ -11,7 +11,7 @@ $(document).ready(function(){
 			$(this).serialize(),
 			function(data){
 				if(data == 1){
-					alert(data);
+					//alert(data);
 					$('#addUsuario').animate({'opacity': '0','display': 'none'}, 500);
 					$('#app-policy').animate({'opacity': '0', 'display' : 'none'}, 500);
 					$('#app-success-msg').delay(300).animate({'opacity': '1', 'display': 'inherit', 'z-index': '9999'}, 500).delay(2000);
