@@ -280,27 +280,14 @@ color: rgb(87, 87, 87);
 	display: block;
 	width: 90px;
 	height:110px;
-	margin: 0 auto;
+	margin: -0px;
 	background: url('../img/logo-dash-menu.png') no-repeat;
 	text-indent: -9999px;
 }
 
-.dash-fix-sidebar {
-	width: 8% !important;
-}
-
-.dash-menu {
-	margin: -19px;
-	text-align: center;
-}
-
-.dash-menu li {
-	list-style: none;
-	margin-bottom: 55px;
-}
-
-.dash-menu li a {
-	padding: 20px;
+.left-off-canvas-menu.dash-fix-canvas {
+	width: 18.625rem !important;
+	left: 298px !important;
 }
 
 
