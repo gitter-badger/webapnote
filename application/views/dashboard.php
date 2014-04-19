@@ -11,9 +11,14 @@
 			<div class="large-10">
 				<aside class="left-off-canvas-menu dash-fix-canvas">
 					<ul class="off-canvas-list">
-						<li><label>Foundation</label></li>
-						<li><a href="#">One</a></li>
-						<li><a href="#">Two</a></li>
+						<li><label><i class="fi-layout dash-icon-label"></i> Dashboard</label></li>
+						<li><label><i class="fi-torso-business dash-icon-label"></i> Organización</label></li>
+						<li><a href="#">Equipo de Trabajo/Usuarios</a></li>
+						<li><a href="#">Mis Organizaciones</a></li>
+						<li><label><i class="fi-projection-screen dash-icon-label"></i> Proyectos</label></li>
+						<li><a href="#">Gestión de Proyectos</a></li>
+						<li><a href="#">Avances en Proyectos</a></li>
+						<li><label><i class="fi-clipboard-notes dash-icon-label"></i> Reportes</label></li>
 					</ul>
 				</aside>
 			</div>

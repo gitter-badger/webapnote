@@ -290,6 +290,10 @@ color: rgb(87, 87, 87);
 	left: 298px !important;
 }
 
+.dash-icon-label {
+	padding-right: 10px;
+}
+
 
 /****************************************
 	Add Custom Media Queries
