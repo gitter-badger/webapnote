@@ -1,4 +1,5 @@
-## Apnote - Aplicación Web | Proyecto de Titulación ![Licencia CC BY-NC-ND](http://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png)
+## Apnote - Aplicación Web | Proyecto de Titulación 
+![Licencia CC BY-NC-ND](http://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png)
 
 ####Colaboradores
 
