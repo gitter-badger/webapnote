@@ -276,23 +276,6 @@ color: rgb(87, 87, 87);
 
 /******************* DashBoard ******************/
 
-.app-logo-dash-menu {
-	display: block;
-	width: 90px;
-	height:110px;
-	margin: -0px;
-	background: url('../img/logo-dash-menu.png') no-repeat;
-	text-indent: -9999px;
-}
-
-.left-off-canvas-menu.dash-fix-canvas {
-	width: 18.625rem !important;
-	left: 298px !important;
-}
-
-.dash-icon-label {
-	padding-right: 10px;
-}
 
 
 /****************************************
