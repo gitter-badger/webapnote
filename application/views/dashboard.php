@@ -15,11 +15,11 @@
 			<div class="row">
 				<div class="large-10 column">
 					<ul class="side-nav">
-						<li class="active"><a href="#"><i class="fi-home"></i> Dashboard</a></li>
-						<li><a href="#"><i class="fi-database"></i> Proyectos</a></li>
-						<li><a href="#"><i class="fi-web"></i> Organizaciones</a></li>
-						<li><a href="#"><i class="fi-page-multiple"></i> Reportes</a></li>
-						<li><a href="#"><i class="fi-mail"></i> Mensajes</a></li>
+						<li class="active"><a href="#"><i class="fi-home icon-menu-nav"></i> Dashboard</a></li>
+						<li><a href="#"><i class="fi-database icon-menu-nav"></i> Proyectos</a></li>
+						<li><a href="#"><i class="fi-web icon-menu-nav"></i> Organizaciones</a></li>
+						<li><a href="#"><i class="fi-page-multiple icon-menu-nav"></i> Reportes</a></li>
+						<li><a href="#"><i class="fi-mail icon-menu-nav"></i> Mensajes</a></li>
 					</ul>
 				</div>
 			</div>
