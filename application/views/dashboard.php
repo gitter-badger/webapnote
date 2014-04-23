@@ -8,8 +8,9 @@
 					<img class="th" src="<?=base_url('assets/img/thumbs');?>/<?=$this->session->userdata('u_photo');?>" height="70" width="70" />
 				</div>
 				<div class="large-6 columns dash-app-profile">
-					<h6 style="color: #EEE; font-weight: 600; font-size: 14px;"><?=$this->session->userdata('u_nombre');?> <?=$this->session->userdata('u_apep');?></h6>
-					<h6 class="subheader" style="font-size: 12px;"><?=$this->session->userdata('u_username');?> <span><i style="color: #59A336;" class="fi-link"></i> En linea</span></h6>
+					<h6 style="color: #EEE; font-weight: 600; font-size: 14px;"><?=$this->session->userdata('u_nombre');?> <?=$this->session->userdata('u_apep');?> <a href="#" class="right" data-dropdown="app-menu-options"><i class="fi-widget right"></i></a></h6>
+					<h6 class="subheader" style="font-size: 12px;"><?=$this->session->userdata('u_username');?></h6>
+					<h6 class="subheader" style="font-size: 12px;"><span><i style="color: #59A336;" class="fi-burst"></i> Conectado</span></h6>
 				</div>
 			</div>
 			<div class="row">
@@ -26,6 +27,15 @@
 		</div>
 		<div class="large-8 columns app-content-main"></div>
 	</div>
+
+	<!-- Menu Tooltips Dropdowns -->
+	<ul id="app-menu-options" style="border-radius: 5px !important; -webkit-border-radius: 5px !important; -moz-border-radius: 5px !important;" class="small f-dropdown" data-dropdown-content>
+		<li><a href="#"><img style="margin-top: -3px;" src="<?=base_url('assets/img/thumbs');?>/<?=$this->session->userdata('u_photo');?>" height="15" width="15" /> Mi Cuenta</a></li>
+		<li><a href="#"><i class="fi-torso" style="padding-right: 5px;"></i> Editar Perfil</a></li>
+		<li><a href="#"><i class="fi-widget" style="padding-right: 5px;"></i> Configuración de la Cuenta</a></li>
+		<li class="divider-li"></li>
+		<li class="default-li"><a href="<?=base_url('dashboard/logout');?>"><i class="fi-power" style="padding-right: 5px;"></i> Cerrar Sesión</a></li>
+	</ul>
 	<!-- End Main body -->
 
 <?php $this->load->view('footer'); ?>
