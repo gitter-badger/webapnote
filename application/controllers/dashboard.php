@@ -4,10 +4,15 @@ class Dashboard extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
+		$this->load->model('m_dashboard');
 	}
 
 	public function index() {
-		$this->load->view('dashboard');
+		if($this->session->userdata('logger') == TRUE){
+			$this->load->view('dashboard');
+		}else{
+			redirect(base_url());
+		}
 	}
 
 }

@@ -10,7 +10,11 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('welcome');
+		if($this->session->userdata('logger') == TRUE){
+			$this->load->view('dashboard');
+		}else {
+			$this->load->view('welcome');
+		}
 	}
 
 	public function registrarUsuario() {
@@ -59,6 +63,20 @@ class Welcome extends CI_Controller {
 
 			$getsign = $this->m_welcome->signIn($email, $pass);
 			if($getsign) {
+				$auth = $this->m_welcome->signAuth($email, $pass);
+				$data = array(
+					'logger' => TRUE, 
+					'u_email'=> $auth->u_email, 
+					'u_username' => $auth->u_username, 
+					'u_photo' => $auth->u_photo, 
+					'u_nombre' => $auth->u_nombre, 
+					'u_apep' => $auth->u_apep, 
+					'u_apem' => $auth->u_apem,
+					'u_password' => $auth->u_password, 
+					'u_date' => $auth->u_date, 
+					'r_id' => $auth->r_id
+				);
+				$this->session->set_userdata($data);
 				echo 1;
 			}else {
 				echo 0;

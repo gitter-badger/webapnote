@@ -30,4 +30,15 @@ class M_Welcome extends CI_Model {
 		}
 	}
 
+	public function signAuth($email, $pass){
+		$this->db->where('u_email', $email);
+		$this->db->where('u_password', $pass);
+		$auth = $this->db->get('CI_USUARIOS');
+		if($auth->num_rows() == 1){
+			return $auth->row();
+		}else {
+			return FALSE;
+		}
+	}
+
 }

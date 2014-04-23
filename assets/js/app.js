@@ -43,7 +43,7 @@ $(document).ready(function(){
 			$(this).serialize(),
 			function(data){
 				if(data == 1){
-					alert('OK');
+					location.href='dashboard';
 				}else {
 					alert('BAD');
 				}
