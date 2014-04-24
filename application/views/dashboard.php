@@ -33,8 +33,15 @@
 						<i class="fi-magnifying-glass app-icon-search"></i>
 					</div>
 					<div class="large-3 columns"></div>
-					<div class="large-1 columns">
-						<a href="#" data-options="align: left" data-dropdown="app-menu-options" class="app-icon-widget"><i class="fi-widget"></i></a>
+					<div class="large-3 columns">
+						<a href="#" data-options="align: left" data-dropdown="app-menu-options" class="app-icon-widget right"><i class="fi-widget"></i></a>
+					</div>
+				</div>
+				<div class="row" style="margin-top: 20px;">
+					<div class="large-10 column">
+						<ul class="breadcrumbs">
+							<li class="current"><a href="#">Dashboard</a></li>
+						</ul>
 					</div>
 				</div>
 			</div>
