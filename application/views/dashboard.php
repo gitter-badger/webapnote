@@ -28,11 +28,11 @@
 		<div class="large-8 columns app-content-main app-content">
 			<div id="options-menu-dash-app">
 				<div class="row">
-					<div class="large-3 columns">
+					<div class="large-4 columns">
 						<input type="text" placeholder="¿Buscabas algo?" style="padding-left: 35px;" />
 						<i class="fi-magnifying-glass app-icon-search"></i>
 					</div>
-					<div class="large-6 columns"></div>
+					<div class="large-3 columns"></div>
 					<div class="large-1 columns">
 						<a href="#" data-options="align: left" data-dropdown="app-menu-options" class="app-icon-widget"><i class="fi-widget"></i></a>
 					</div>

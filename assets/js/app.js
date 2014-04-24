@@ -51,4 +51,8 @@ $(document).ready(function(){
 		);
 	});
 
+	$('html').click(function(){
+		$('.app-icon-widget').removeClass('app-icon-widget-base');
+	});	
+
 });

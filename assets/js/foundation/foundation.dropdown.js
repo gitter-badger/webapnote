@@ -10,7 +10,9 @@
       active_class: 'open',
       align: 'bottom',
       is_hover: false,
-      opened: function(){},
+      opened: function(){
+        $('.app-icon-widget').addClass('app-icon-widget-base');
+      },
       closed: function(){}
     },
 
@@ -243,7 +245,7 @@
 
         this.addClass('drop-left');
 
-        return {left: p.left - this.outerWidth(), top: p.top};
+        return {left: p.left - this.outerWidth()+38, top: p.top+65};
       },
       right: function (t, s) {
         var p = Foundation.libs.dropdown.dirs._base.call(this, t);
