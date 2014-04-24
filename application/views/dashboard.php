@@ -8,7 +8,7 @@
 					<img class="th" src="<?=base_url('assets/img/thumbs');?>/<?=$this->session->userdata('u_photo');?>" height="70" width="70" />
 				</div>
 				<div class="large-6 columns dash-app-profile">
-					<h6 style="color: #EEE; font-weight: 600; font-size: 14px;"><?=$this->session->userdata('u_nombre');?> <?=$this->session->userdata('u_apep');?> <a href="#" class="right" data-dropdown="app-menu-options"><i class="fi-widget right"></i></a></h6>
+					<h6 style="color: #EEE; font-weight: 600; font-size: 14px;"><?=$this->session->userdata('u_nombre');?> <?=$this->session->userdata('u_apep');?></h6>
 					<h6 class="subheader" style="font-size: 12px;"><?=$this->session->userdata('u_username');?></h6>
 					<h6 class="subheader" style="font-size: 12px;"><span><i style="color: #59A336;" class="fi-burst"></i> Conectado</span></h6>
 				</div>
@@ -25,7 +25,20 @@
 				</div>
 			</div>
 		</div>
-		<div class="large-8 columns app-content-main"></div>
+		<div class="large-8 columns app-content-main app-content">
+			<div id="options-menu-dash-app">
+				<div class="row">
+					<div class="large-3 columns">
+						<input type="text" placeholder="¿Buscabas algo?" style="padding-left: 35px;" />
+						<i class="fi-magnifying-glass app-icon-search"></i>
+					</div>
+					<div class="large-6 columns"></div>
+					<div class="large-1 columns">
+						<a href="#" data-options="align: left" data-dropdown="app-menu-options" class="app-icon-widget"><i class="fi-widget"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<!-- Menu Tooltips Dropdowns -->
