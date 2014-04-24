@@ -17,10 +17,11 @@
 				<div class="large-10 column">
 					<ul class="side-nav">
 						<li class="active"><a href="#"><i class="fi-home icon-menu-nav"></i> Dashboard</a></li>
+						<li><a href="#"><i class="fi-comment icon-menu-nav"></i> Notificaciones <span class="badge-icon rounded right">5</span></a></li>
 						<li><a href="#"><i class="fi-database icon-menu-nav"></i> Proyectos</a></li>
 						<li><a href="#"><i class="fi-web icon-menu-nav"></i> Organizaciones</a></li>
 						<li><a href="#"><i class="fi-page-multiple icon-menu-nav"></i> Reportes</a></li>
-						<li><a href="#"><i class="fi-mail icon-menu-nav"></i> Mensajes</a></li>
+						<li><a href="#"><i class="fi-mail icon-menu-nav"></i> Mensajes Privados <span class="badge-icon rounded right">30</span></a></li>
 					</ul>
 				</div>
 			</div>
