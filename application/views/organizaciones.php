@@ -29,7 +29,7 @@
 				</div>
 				<div class="row">
 					<div class="large-10 column">
-						<h5 class="subheader">Organizaciones <a href="#" class="button radius tiny right" style="position: absolute; right: 15px; top: -8px;"><i></i> Añadir Organización</a></h5>
+						<h5 class="subheader">Organizaciones <a href="#" data-reveal-id="app-add-org" class="button radius tiny right" style="position: absolute; right: 15px; top: -8px;"><i></i> Añadir Organización</a></h5>
 					</div>
 				</div>
 				<div class="row">
@@ -78,5 +78,54 @@
 		<li class="default-li"><a href="<?=base_url('dashboard/logout');?>"><i class="fi-power" style="padding-right: 5px;"></i> Cerrar Sesión</a></li>
 	</ul>
 	<!-- End Main body -->
+	<!-- Modal Main body -->
+	<div id="app-add-org" class="reveal-modal small" data-reveal>
+		<div class="row" id="app-error-msg-org" style="padding-top: 20px;">
+			<div class="app-error-data-org panel radius" style="margin-right: 60px;"></div>
+			<div class="row" style="margin-right: 45px;">
+				<div class="large-10 column">
+					<a href="#" class="close-error-msg-org button small radius large-10">Regresar al Formulario</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-10 column">
+				<h5 class="subheader error-title" style="padding-top: 20px;padding-bottom: 10px;">Agrega una Organización a tu cuenta.</h5>
+			</div>
+		</div>
+		<form id="add-form-org">
+			<div class="row">
+				<div class="large-4 columns">
+					<label>
+						<input type="text" name="rfc" placeholder="RFC Compañía" class="radius" />
+					</label>
+				</div>
+				<div class="large-6 columns">
+					<label>
+						<input type="text" name="name" placeholder="Nombre de la Compañía" class="radius" />
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-3 columns">
+					<label>
+						<input type="text" name="phone" placeholder="Telefono" class="radius" />
+					</label>
+				</div>
+				<div class="large-7 columns">
+					<label>
+						<input type="text" name="descripcion" placeholder="Descripción" class="radius" />
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-10 column">
+					<input type="submit" class="button radius small large-10" value="Añadir Compañía" />
+				</div>
+			</div>
+		</form>
+		<a href="#" class="close-reveal-modal">&#215;</a>
+	</div>
+	<!-- End Modal Main body -->
 
 <?php $this->load->view('footer'); ?>

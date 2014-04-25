@@ -18,4 +18,17 @@ class M_Organizaciones extends CI_Model {
 		}
 	}
 
+	public function insertOrg($rfc, $name, $phone, $des){
+		$email = $this->session->userdata('u_email');
+		$data = array(
+			'c_rfc' => $rfc,
+			'c_name' => $name, 
+			'c_descri' => $des, 
+			'c_phone' => $phone, 
+			'u_email' => $email
+		);
+
+		return $this->db->insert('CI_COMPANY', $data);
+	}
+
 }
