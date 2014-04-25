@@ -2,6 +2,7 @@
 	
 	<!-- Main body -->
 	<div class="app-main-body clearfix">
+<<<<<<< HEAD
 		<div class="large-2 columns app-sidebar-main">
 			<div class="row dash-app">
 				<div class="large-4 columns">
@@ -26,6 +27,11 @@
 				</div>
 			</div>
 		</div>
+=======
+
+		<?php $this->load->view('dash-sidebar');?>
+		
+>>>>>>> d5dfbe4b31b8194236d03765d2feca803dd4678b
 		<div class="large-8 columns app-content-main app-content">
 			<div id="options-menu-dash-app">
 				<div class="row">
