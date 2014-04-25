@@ -17,12 +17,12 @@
 			<div class="row">
 				<div class="large-10 column">
 					<ul class="side-nav">
-						<li <?php evalActive('dashboard'); ?>><a href="#"><i class="fi-home icon-menu-nav"></i> Dashboard</a></li>
-						<li><a href="#"><i class="fi-comment icon-menu-nav"></i> Notificaciones <span class="badge-icon rounded right">5</span></a></li>
-						<li><a href="#"><i class="fi-database icon-menu-nav"></i> Proyectos</a></li>
-						<li><a href="#"><i class="fi-web icon-menu-nav"></i> Organizaciones</a></li>
-						<li><a href="#"><i class="fi-page-multiple icon-menu-nav"></i> Reportes</a></li>
-						<li><a href="#"><i class="fi-mail icon-menu-nav"></i> Mensajes Privados <span class="badge-icon rounded right">30</span></a></li>
+						<li <?php evalActive('dashboard'); ?>><a href="<?=base_url('dashboard');?>"><i class="fi-home icon-menu-nav"></i> Dashboard</a></li>
+						<li <?php evalActive('notificaciones');?>><a href="<?=base_url('notificaciones');?>"><i class="fi-comment icon-menu-nav"></i> Notificaciones <span class="badge-icon rounded right">5</span></a></li>
+						<li <?php evalActive('proyectos');?>><a href="<?=base_url('proyectos');?>"><i class="fi-database icon-menu-nav"></i> Proyectos</a></li>
+						<li <?php evalActive('organizaciones');?>><a href="<?=base_url('organizaciones');?>"><i class="fi-web icon-menu-nav"></i> Organizaciones</a></li>
+						<li <?php evalActive('reportes');?>><a href="<?=base_url('reportes');?>"><i class="fi-page-multiple icon-menu-nav"></i> Reportes</a></li>
+						<li <?php evalActive('inbox');?>><a href="<?=base_url('inbox');?>"><i class="fi-mail icon-menu-nav"></i> Mensajes Privados <span class="badge-icon rounded right">30</span></a></li>
 					</ul>
 				</div>
 			</div>
