@@ -29,11 +29,12 @@
 				</div>
 				<div class="row">
 					<div class="large-10 column">
-						<h5 class="subheader">Organizaciones</h5>
+						<h5 class="subheader">Organizaciones <a href="#" class="button radius tiny right" style="position: absolute; right: 15px; top: -8px;"><i></i> Añadir Organización</a></h5>
 					</div>
 				</div>
 				<div class="row">
 					<div class="large-10 column">
+						<?php if(!empty($datos)){ ?>
 						<table class="large-10">
 							<thead>
 								<tr>
@@ -56,6 +57,12 @@
 								<?php }?>
 							</tbody>
 						</table>
+						<?php }else {?>
+						<div class="panel callout">
+							<p class="text-center" style="line-height: inherit !important;"><i class="fi-annotate" style="font-size: 50px;color: #AAAAAA;"></i></p>
+							<h6 style="color: #AAAAAA;" class="text-center">Aún no tienes organizaciones asignadas a tu cuenta.</h6>
+						</div>
+						<?php	} ?>
 					</div>
 				</div>
 			</div>
