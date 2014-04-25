@@ -67,7 +67,7 @@
 					</div>
 					<div class="large-4 columns">
 						<div class="panel">
-							<h6 class="subheader">Mensajes (Inbox)</h6>
+							<h6 class="subheader">Mensajes <small>Inbox</small></h6>
 						</div>
 					</div>
 				</div>
