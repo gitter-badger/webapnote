@@ -27,6 +27,32 @@
 						</ul>
 					</div>
 				</div>
+				<div class="row">
+					<div class="large-10 column">
+						<table class="large-10">
+							<thead>
+								<tr>
+									<th>RFC Compañia</th>
+									<th>Nombre</th>
+									<th>Descripción</th>
+									<th>Telefono</th>
+									<th>TEAM</th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php foreach($datos as $row){?>
+									<tr>
+										<td><?=$row['c_rfc'];?></td>
+										<td><?=$row['c_name'];?></td>
+										<td><?=$row['c_descri'];?></td>
+										<td><?=$row['c_phone'];?></td>
+										<td><a href="#"><i class="fi-eye"></i></a></td>
+									</tr>
+								<?php }?>
+							</tbody>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
