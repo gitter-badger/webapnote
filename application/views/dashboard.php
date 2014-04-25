@@ -40,6 +40,37 @@
 						</div>
 					</div>
 				</div>
+				<div class="row">
+					<div class="large-10 column">
+						<div class="panel">
+							<h5 style="padding-bottom: 10px">Proyectos Disponibles</h5>
+							<div class="row">
+								<div class="large-2 columns"><div class="panel callout"></div></div>
+								<div class="large-2 columns"><div class="panel callout"></div></div>
+								<div class="large-2 columns"><div class="panel callout"></div></div>
+								<div class="large-2 columns"><div class="panel callout"></div></div>
+								<div class="large-2 columns"><div class="panel callout"></div></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="large-3 columns">
+						<div class="panel callout">
+							<h6 class="subheader">Usuarios más activos</h6>
+						</div>
+					</div>
+					<div class="large-3 columns">
+						<div class="panel">
+							<h6 class="subheader">Productividad</h6>
+						</div>
+					</div>
+					<div class="large-4 columns">
+						<div class="panel">
+							<h6 class="subheader">Mensajes (Inbox)</h6>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
