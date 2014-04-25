@@ -459,6 +459,13 @@ color: rgb(87, 87, 87);
 	color: #DFE9EB;
 }
 
+.app-icon-input-edit {
+	position: absolute;
+	top: 27px;
+	left: 28px;
+	color: #BBBBBB;
+}
+
 /****************************************
 	Add Custom Media Queries
 ****************************************/

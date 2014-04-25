@@ -20,12 +20,49 @@
 					</div>
 				</div>
 				<div class="row" style="margin-top: 20px;">
+					<?php foreach($p_org as $row): ?>
 					<div class="large-10 column">
 						<ul class="breadcrumbs">
 							<li><a href="<?=base_url('dashboard');?>">Dashboard</a></li>
-							<li class="current"><a href="<?=base_url('organizaciones');?>">Organizaciones</a></li>
+							<li><a href="<?=base_url('organizaciones');?>">Organizaciones</a></li>
+							<li class="current"><a href="#">Editando <?=$row['c_rfc'];?></a></li>
 						</ul>
 					</div>
+				</div>
+				<div class="row">
+					<div class="large-10 column">
+						<h5 class="subheader">Panel de Edición</h5>
+						<div class="panel">
+							<form>
+								<div class="row">
+									<div class="large-4 columns">
+										<input type="text" value="<?=$row['c_rfc'];?>" name="erfc" disabled/>
+										<i class="fi-credit-card app-icon-input-edit"></i>
+									</div>
+									<div class="large-6 columns">
+										<input type="text" value="<?=$row['c_name'];?>" name="ename" />
+										<i class="fi-background-color app-icon-input-edit"></i>
+									</div>
+								</div>
+								<div class="row">
+									<div class="large-2 columns">
+										<input type="text" value="<?=$row['c_phone'];?>" name="ephone" />
+										<i class="fi-telephone app-icon-input-edit"></i>
+									</div>
+									<div class="large-8 columns">
+										<input type="text" value="<?=$row['c_descri'];?>" name="edes" />
+										<i class="fi-indent-less app-icon-input-edit"></i>
+									</div>
+								</div>
+								<div class="row">
+									<div class="large-10 column">
+										<input type="submit" class="button radius large-10 small" value="Guardar Cambios" />
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<?php endforeach; ?>
 				</div>
 				<div class="row">
 					<div class="large-10 column">
