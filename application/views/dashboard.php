@@ -10,7 +10,7 @@
 				<div class="large-6 columns dash-app-profile">
 					<h6 style="color: #EEE; font-weight: 600; font-size: 14px;"><?=$this->session->userdata('u_nombre');?> <?=$this->session->userdata('u_apep');?></h6>
 					<h6 class="subheader" style="font-size: 12px;"><?=$this->session->userdata('u_username');?></h6>
-					<h6 class="subheader" style="font-size: 12px;"><span><i style="color: #59A336;" class="fi-burst"></i> Conectado</span></h6>
+					<h6 class="subheader" style="font-size: 12px;"><span style="color: #ADADAD;"><i style="color: #F48584;padding-right: 5px;text-shadow: 0 0 4px #FFBFBE;" class="fi-record"></i> Conectado</span></h6>
 				</div>
 			</div>
 			<div class="row">
@@ -30,8 +30,10 @@
 			<div id="options-menu-dash-app">
 				<div class="row">
 					<div class="large-4 columns">
-						<input type="text" placeholder="¿Buscabas algo?" style="padding-left: 35px;" />
-						<i class="fi-magnifying-glass app-icon-search"></i>
+						<form>
+							<input type="text" name="search" placeholder="¿Buscabas algo?" class="radius" style="padding-left: 35px;" />
+							<i class="fi-magnifying-glass app-icon-search"></i>
+						</form>
 					</div>
 					<div class="large-3 columns"></div>
 					<div class="large-3 columns">
@@ -43,6 +45,20 @@
 						<ul class="breadcrumbs">
 							<li class="current"><a href="#">Dashboard</a></li>
 						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="large-10 column">
+						<div class="panel">
+							<h5 style="padding-bottom: 10px">Proyectos en Curso</h5>
+							<div class="row">
+								<div class="large-2 columns"><div class="panel callout"></div></div>
+								<div class="large-2 columns"><div class="panel callout"></div></div>
+								<div class="large-2 columns"><div class="panel callout"></div></div>
+								<div class="large-2 columns"><div class="panel callout"></div></div>
+								<div class="large-2 columns"><div class="panel callout"></div></div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
