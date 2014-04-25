@@ -29,6 +29,11 @@
 				</div>
 				<div class="row">
 					<div class="large-10 column">
+						<h5 class="subheader">Organizaciones</h5>
+					</div>
+				</div>
+				<div class="row">
+					<div class="large-10 column">
 						<table class="large-10">
 							<thead>
 								<tr>
@@ -36,7 +41,7 @@
 									<th>Nombre</th>
 									<th>Descripción</th>
 									<th>Telefono</th>
-									<th>TEAM</th>
+									<th style="text-align:center;">TEAM</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -46,7 +51,7 @@
 										<td><?=$row['c_name'];?></td>
 										<td><?=$row['c_descri'];?></td>
 										<td><?=$row['c_phone'];?></td>
-										<td><a href="#"><i class="fi-eye"></i></a></td>
+										<td style="text-align: center;font-size: 22px;"><a href="#"><i class="fi-eye"></i></a></td>
 									</tr>
 								<?php }?>
 							</tbody>
