@@ -31,4 +31,9 @@ class M_Organizaciones extends CI_Model {
 		return $this->db->insert('CI_COMPANY', $data);
 	}
 
+	public function deleteOrg($rfc){
+		$this->db->where('c_rfc', $rfc);
+		return $this->db->delete('CI_COMPANY');
+	}
+
 }

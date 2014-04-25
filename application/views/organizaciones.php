@@ -43,6 +43,7 @@
 									<th>Descripción</th>
 									<th>Telefono</th>
 									<th style="text-align:center;">TEAM</th>
+									<th width="50"></th>
 								</tr>
 							</thead>
 							<tbody>
@@ -53,6 +54,7 @@
 										<td><?=$row['c_descri'];?></td>
 										<td><?=$row['c_phone'];?></td>
 										<td style="text-align: center;font-size: 22px;"><a href="#"><i class="fi-eye"></i></a></td>
+										<td style="text-align: center; font-size: 22px;"><a href="<?=base_url('organizaciones/deleteOrga');?>/<?=$row['c_rfc'];?>" class="btn-delete"><i class="fi-trash"></i></a></td>
 									</tr>
 								<?php }?>
 							</tbody>

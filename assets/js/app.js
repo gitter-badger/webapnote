@@ -64,6 +64,7 @@ $(document).ready(function(){
 				if(data == 1){
 					$('#app-add-org').foundation('reveal', 'close');
 					$('#add-form-org').reset();
+					setTimeout('document.location.reload()', 2000);
 				}else{
 					$('.app-error-data-org').html(data);
 					$('#add-form-org').animate({'opacity': '0','display': 'none'}, 500);

@@ -41,4 +41,11 @@ class Organizaciones extends CI_Controller {
 		}
 	}
 
+	public function deleteOrga($rfc) {
+		$query = $this->m_organizaciones->deleteOrg($rfc);
+		if($query){
+			redirect(base_url('organizaciones'));
+		}
+	}
+
 }
