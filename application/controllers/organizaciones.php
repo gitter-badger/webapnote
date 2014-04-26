@@ -20,7 +20,7 @@ class Organizaciones extends CI_Controller {
 	public function addO(){
 		$this->form_validation->set_rules('rfc', 'RFC de Compañía', 'trim|required|xss_clean|min_length[5]|max_length[6]|is_unique[CI_COMPANY.c_rfc]');
 		$this->form_validation->set_rules('name', 'Nombre', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('phone', 'Telefono', 'trim|required|integer|xss_clean');
+		$this->form_validation->set_rules('phone', 'Telefono', 'trim|required|numeric|max_length[7]|xss_clean');
 		$this->form_validation->set_rules('descripcion', 'Descripcion', 'trim|xss_clean');
 
 		$this->form_validation->set_error_delimiters('<p><i class="fi-x-circle icon-error"></i>', '</p>');
@@ -57,5 +57,5 @@ class Organizaciones extends CI_Controller {
 			redirect(base_url());
 		}	
 	}
-
+	
 }

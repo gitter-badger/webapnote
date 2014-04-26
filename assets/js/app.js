@@ -80,5 +80,5 @@ $(document).ready(function(){
 		$('#add-form-org').delay(500).animate({'opacity': '1', 'display': 'inherit'}, 500);
 		$('.error-title').animate({'opacity': '1', 'display': 'inherit'}, 500);
 	});
-	
+
 });

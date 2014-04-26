@@ -31,9 +31,14 @@
 				</div>
 				<div class="row">
 					<div class="large-10 column">
+						<!-- Reservado para alerta de Actualizacion -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="large-10 column">
 						<h5 class="subheader">Panel de Edición</h5>
 						<div class="panel">
-							<form>
+							<?php echo form_open(base_url('organizaciones').'/update/'.$porg['c_rfc']); ?>
 								<div class="row">
 									<div class="large-4 columns">
 										<input type="text" value="<?=$porg['c_rfc'];?>" name="erfc" disabled/>
@@ -65,7 +70,7 @@
 				</div>
 				<div class="row">
 					<div class="large-10 column">
-						<h5 class="subheader">Mis Organizaciones <a href="#" data-reveal-id="app-add-org" class="button radius tiny right" style="position: absolute; right: 15px; top: -8px;"><i></i> Añadir Organización</a></h5>
+						<h5 class="subheader">Mis Organizaciones <!--<a href="#" data-reveal-id="app-add-org" class="button radius tiny right" style="position: absolute; right: 15px; top: -8px;"><i></i> Añadir Organización</a>--></h5>
 					</div>
 				</div>
 				<div class="row">
