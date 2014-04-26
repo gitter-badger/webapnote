@@ -6,6 +6,7 @@
 		<?php $this->load->view('dash-sidebar');?>
 
 		<div class="large-8 columns app-content-main app-content">
+			<!-- -->
 			<div id="options-menu-dash-app">
 				<div class="row">
 					<div class="large-4 columns">
