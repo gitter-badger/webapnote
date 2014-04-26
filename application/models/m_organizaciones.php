@@ -52,8 +52,7 @@ class M_Organizaciones extends CI_Model {
 			'c_phone' => $phone, 
 			'c_descri' => $des
 		);
-		$this->db->where('c_rfc', $rfc);
-		
+		$this->db->where('c_rfc', $rfc);	
 		if($this->db->update('CI_COMPANY', $data)){
 			return true;
 		}else{
