@@ -80,5 +80,24 @@ $(document).ready(function(){
 		$('#add-form-org').delay(500).animate({'opacity': '1', 'display': 'inherit'}, 500);
 		$('.error-title').animate({'opacity': '1', 'display': 'inherit'}, 500);
 	});
+
+	$('#app-update-info').submit(function(e){
+		e.preventDefault();
+		$.post(
+			'organizaciones/update', 
+			$(this).serialize(),
+			function(data){
+				if(data == 1){
+					$('#alert-data-update').html('Datos guardados exitosamente.')
+					$('#alert-data-update').addClass('success');
+					$('#alert-data-update').fadeIn('2000');
+				}else{
+					$('#alert-data-update').html('Hubo problemas al guardar los cambios. Vuelve a intentarlo.'+data);
+					$('#alert-data-update').addClass('warning');
+					$('#alert-data-update').fadeIn('2000');
+				}
+			}
+		);
+	});
 	
 });

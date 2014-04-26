@@ -22,7 +22,7 @@ class M_Organizaciones extends CI_Model {
 		$this->db->where('c_rfc', $rfc);
 		$query = $this->db->get('CI_COMPANY');
 		if($query->num_rows() > 0){
-			return $query->result_array();
+			return $query->first_row('array');
 		}else{
 			return NULL;
 		}
@@ -44,6 +44,21 @@ class M_Organizaciones extends CI_Model {
 	public function deleteOrg($rfc){
 		$this->db->where('c_rfc', $rfc);
 		return $this->db->delete('CI_COMPANY');
+	}
+
+	public function updateInfo($rfc, $name, $phone, $des){
+		$data = array(
+			'c_name' => $name, 
+			'c_phone' => $phone, 
+			'c_descri' => $des
+		);
+		$this->db->where('c_rfc', $rfc);
+		
+		if($this->db->update('CI_COMPANY', $data)){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 }
