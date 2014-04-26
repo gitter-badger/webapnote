@@ -32,6 +32,17 @@
 				<div class="row">
 					<div class="large-10 column">
 						<!-- Reservado para alerta de Actualizacion -->
+						<?php if(isset($validation['validacion'])): ?>
+							<div class="alert-box warning radius" data-alert>
+								<?php echo $validation['validacion']; ?>
+								<a href="#" class="close">&times;</a>
+							</div>
+						<?php elseif(isset($query['result'])): ?>
+							<div class="alert-box success radius" data-alert>
+								Datos actualizados correctamente.
+								<a href="#" class="close">&times;</a>
+							</div>
+						<?php endif; ?> 
 					</div>
 				</div>
 				<div class="row">

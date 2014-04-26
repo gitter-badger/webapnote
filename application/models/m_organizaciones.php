@@ -46,4 +46,14 @@ class M_Organizaciones extends CI_Model {
 		return $this->db->delete('CI_COMPANY');
 	}
 
+	public function updateInfo($rfc, $name, $phone, $des){
+		$data = array (
+			'c_name' => $name, 
+			'c_phone' => $phone, 
+			'c_descri' => $des
+		);
+		$this->db->where('c_rfc', $rfc);
+		return $this->db->update('CI_COMPANY',$data);
+	}
+
 }
