@@ -47,7 +47,7 @@ a:hover {
 	height: 100%;
 	/*Other Change*/
 	overflow: hidden;
-	z-index: 1;
+	z-index: 2;
 	background: #2E2E2E;
 	padding-top: 10px;
 	color: #CECECE;
