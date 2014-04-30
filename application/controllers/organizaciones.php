@@ -20,7 +20,7 @@ class Organizaciones extends CI_Controller {
 	public function addO(){
 		$this->form_validation->set_rules('rfc', 'RFC de Compañía', 'trim|required|xss_clean|min_length[5]|max_length[6]|is_unique[CI_COMPANY.c_rfc]');
 		$this->form_validation->set_rules('name', 'Nombre', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('phone', 'Telefono', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('phone', 'Telefono', 'trim|required|numeric|max_length[7]|xss_clean');
 		$this->form_validation->set_rules('descripcion', 'Descripcion', 'trim|xss_clean');
 
 		$this->form_validation->set_error_delimiters('<p><i class="fi-x-circle icon-error"></i>', '</p>');
@@ -51,11 +51,39 @@ class Organizaciones extends CI_Controller {
 	public function edit($rfc) {
 		if($this->session->userdata('logger') == TRUE){
 			$data['datos'] = $this->m_organizaciones->addOrg();
-			$data['p_org'] = $this->m_organizaciones->getOrg($rfc);
+			$data['porg'] = $this->m_organizaciones->getOrg($rfc);
 			$this->load->view('organizacion_edit', $data);
 		}else{
 			redirect(base_url());
 		}	
 	}
 
+	public function update($rfc){
+		if($this->session->userdata('logger') == TRUE){
+			$this->form_validation->set_rules('ephone','Telefono', 'trim|xss_clean|numeric|max_length[7]');
+			$this->form_validation->set_message('numeric', 'El Campo %s solo puede contener datos numericos.');
+			$this->form_validation->set_message('max_length','El Campo %s debe contener máximo %d caracteres.');
+			$this->form_validation->set_error_delimiters('','');
+			if($this->form_validation->run() == 	FALSE){
+				$data['datos'] = $this->m_organizaciones->addOrg();
+				$data['porg'] = $this->m_organizaciones->getOrg($rfc);
+				$data['validation'] = array( 'validacion' => validation_errors());
+				$this->load->view('organizacion_edit', $data);
+			}else{
+				$name = $this->input->post('ename');
+				$phone = $this->input->post('ephone');
+				$des = $this->input->post('edes');
+				$query = $this->m_organizaciones->updateInfo($rfc, $name, $phone, $des);
+				if($query){
+					$data['datos'] = $this->m_organizaciones->addOrg();
+					$data['porg'] = $this->m_organizaciones->getOrg($rfc);
+					$data['query'] = array( 'result' => 1);
+					$this->load->view('organizacion_edit', $data);
+				}
+			}
+		}else{
+			redirect(base_url());
+		}
+	}
+	
 }
