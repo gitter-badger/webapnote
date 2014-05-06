@@ -9,7 +9,7 @@
 			<div id="options-menu-dash-app">
 				<div class="row">
 					<div class="large-4 columns">
-						<form>
+						<form>																																																		|	
 							<input type="text" name="search" placeholder="¿Buscabas algo?" class="radius" style="padding-left: 35px;" />
 							<i class="fi-magnifying-glass app-icon-search"></i>
 						</form>
