@@ -89,6 +89,7 @@ class Organizaciones extends CI_Controller {
 	public function team($rfc) {
 		if($this->session->userdata('logger') == TRUE){
 			$data['datos'] = $this->m_organizaciones->addOrg();
+			$data['team'] = $this->m_organizaciones->addTeam($rfc);
 			$data['porg'] = $this->m_organizaciones->getOrg($rfc);
 			$this->load->view('organizacion_team', $data);
 		}else{

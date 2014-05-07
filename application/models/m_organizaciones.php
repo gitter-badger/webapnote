@@ -18,8 +18,17 @@ class M_Organizaciones extends CI_Model {
 		}
 	}
 
-	public function addTeam(){
-		
+	public function addTeam($rfc){
+		$this->db->select('CI_USUARIOS.u_username AS user, CI_USUARIOS.u_nombre AS nombre, CI_USUARIOS.u_apep AS apep, CI_USUARIOS.u_apem AS apem');
+		$this->db->from('CI_USUARIOS, CI_DETALLE_COMPANY');
+		$this->db->where('CI_USUARIOS.u_email = CI_DETALLE_COMPANY.u_email');
+		$this->db->where('CI_DETALLE_COMPANY.c_rfc', $rfc);
+		$query = $this->db->get();
+		if($query->num_rows() > 0) {
+			return $query->result_array();
+		}else{
+			return NULL;
+		}
 	}
 
 	public function getOrg($rfc) {

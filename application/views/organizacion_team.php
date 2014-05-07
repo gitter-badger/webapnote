@@ -44,95 +44,41 @@
 						<?php endif; ?> 
 					</div>
 				</div>
-				<div class="row" id="panel-reg-team">
+				<div class="row">
 					<div class="large-10 column">
-						<h5 class="subheader">Registro de Equipo de Trabajo</h5>
-						<div class="panel">
-							<br />
-							<form>
-								<div class="row">
-									<div class="large-4 columns">
-										<input type="text" name="t_email" placeholder="Correo Electrónico">
-										<i class="fi-mail app-icon-input-edit"></i>
-									</div>
-									<div class="large-6 columns">
-										<input type="text" name="t_username" placeholder="Nombre de Usuario">
-										<i class="fi-torso app-icon-input-edit"></i>
-									</div>
-								</div>
-								<div class="row">
-									<div class="large-4 columns">
-										<input type="text" name="t_name" placeholder="Nombre">
-										<i class="fi-align-left app-icon-input-edit"></i>
-									</div>
-									<div class="large-3 columns">
-										<input type="text" name="t_apep" placeholder="Apellido Materno">
-										<i class="fi-align-left app-icon-input-edit"></i>
-									</div>
-									<div class="large-3 columns">
-										<input type="text" name="t_apem" placeholder="Apellido Paterno">
-										<i class="fi-align-left app-icon-input-edit"></i>
-									</div>
-								</div>
-								<div class="row">
-									<div class="large-5 columns">
-										<input type="password" name="t_pass" placeholder="Contraseña">
-										<i class="fi-lock app-icon-input-edit"></i>
-									</div>
-									<div class="large-5 columns">
-										<input type="password" name="t_passmatch" placeholder="Repetir Contraseña">
-										<i class="fi-lock app-icon-input-edit"></i>
-									</div>
-								</div>
-								<div class="row">
-									<div class="large-7 columns">
-										<input type="submit" class="button radius small large-10" value="Registrar Usuario al Equipo de Trabajo">
-									</div>
-									<div class="large-3 columns">
-										<input id="close-app-team" class="button small radius large-10" value="Cancelar">
-									</div>
-								</div>
-							</form>
+						<h5 class="subheader">Equipo de Trabajo <a href="#" data-reveal-id="modal-reg-user-team" class="button radius tiny right" style="position: absolute; right: 15px; top: -8px;"><i></i> Añadir Usuario de Equipo de Trabajo</a></h5>
+						<?php if(!empty($team)): ?>
+							<table class="large-10">
+								<thead>
+									<tr>
+										<th>Nombre de Usuario</th>
+										<th>Nombre</th>
+										<th>Apellido Paterno</th>
+										<th>Apellido Materno</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php foreach($team as $row): ?>
+									<tr>
+										<td><?=$row['user'];?></td>
+										<td><?=$row['nombre'];?></td>
+										<td><?=$row['apep'];?></td>
+										<td><?=$row['apem'];?></td>
+									</tr>
+									<?php endforeach; ?>
+								</tbody>
+							</table>
+						<?php else: ?>
+						<div class="panel callout">
+							<p class="text-center" style="line-height: inherit !important;"><i class="fi-torsos-all" style="font-size: 50px;color: #AAAAAA;"></i></p>
+							<h6 style="color: #AAAAAA;" class="text-center">Aún no tiene usuarios asignados a esta organización.</h6>
 						</div>
+						<?php endif; ?>
 					</div>
 				</div>
 				<div class="row">
 					<div class="large-10 column">
-						<h5 class="subheader">Equipo de Trabajo <a href="#" id="reg-team" class="button radius tiny right" style="position: absolute; right: 15px; top: -8px;"><i></i> Añadir Usuario de Equipo de Trabajo</a></h5>
-						<div class="panel">
-							<?php echo form_open(base_url('organizaciones').'/update/'.$porg['c_rfc']); ?>
-								<div class="row">
-									<div class="large-4 columns">
-										<input type="text" value="<?=$porg['c_rfc'];?>" name="erfc" disabled/>
-										<i class="fi-credit-card app-icon-input-edit"></i>
-									</div>
-									<div class="large-6 columns">
-										<input type="text" value="<?=$porg['c_name'];?>" name="ename" />
-										<i class="fi-background-color app-icon-input-edit"></i>
-									</div>
-								</div>
-								<div class="row">
-									<div class="large-2 columns">
-										<input type="text" value="<?=$porg['c_phone'];?>" name="ephone" />
-										<i class="fi-telephone app-icon-input-edit"></i>
-									</div>
-									<div class="large-8 columns">
-										<input type="text" value="<?=$porg['c_descri'];?>" name="edes" />
-										<i class="fi-indent-less app-icon-input-edit"></i>
-									</div>
-								</div>
-								<div class="row">
-									<div class="large-10 column">
-										<input type="submit" class="button radius large-10 small" value="Guardar Cambios" />
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="large-10 column">
-						<h5 class="subheader">Mis Organizaciones <!--<a href="#" data-reveal-id="app-add-org" class="button radius tiny right" style="position: absolute; right: 15px; top: -8px;"><i></i> Añadir Organización</a>--></h5>
+						<h5 class="subheader">Mis Organizaciones </h5>
 					</div>
 				</div>
 				<div class="row">
@@ -226,6 +172,56 @@
 			<div class="row">
 				<div class="large-10 column">
 					<input type="submit" class="button radius small large-10" value="Añadir Compañía" />
+				</div>
+			</div>
+		</form>
+		<a href="#" class="close-reveal-modal">&#215;</a>
+	</div>
+	<div class="reveal-modal medium" id="modal-reg-user-team" data-reveal>
+		<form>
+			<div class="row">
+				<div class="large-10 column">
+					<br />
+					<h5 class="subheader">Agregar usuario al equipo</h5>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-4 columns">
+					<input type="text" name="t_email" placeholder="Correo Electrónico">
+					<i class="fi-mail app-icon-input-edit"></i>
+				</div>
+				<div class="large-6 columns">
+					<input type="text" name="t_username" placeholder="Nombre de Usuario">
+					<i class="fi-torso app-icon-input-edit"></i>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-4 columns">
+					<input type="text" name="t_name" placeholder="Nombre">
+					<i class="fi-align-left app-icon-input-edit"></i>
+				</div>
+				<div class="large-3 columns">
+					<input type="text" name="t_apep" placeholder="Apellido Materno">
+					<i class="fi-align-left app-icon-input-edit"></i>
+				</div>
+				<div class="large-3 columns">
+					<input type="text" name="t_apem" placeholder="Apellido Paterno">
+					<i class="fi-align-left app-icon-input-edit"></i>
+				</div>
+			</div>					
+			<div class="row">
+				<div class="large-5 columns">
+					<input type="password" name="t_pass" placeholder="Contraseña">
+					<i class="fi-lock app-icon-input-edit"></i>
+				</div>
+				<div class="large-5 columns">
+					<input type="password" name="t_passmatch" placeholder="Repetir Contraseña">
+					<i class="fi-lock app-icon-input-edit"></i>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-10 columns">
+					<input type="submit" class="button radius small large-10" value="Registrar Usuario al Equipo de Trabajo">
 				</div>
 			</div>
 		</form>
