@@ -9,7 +9,7 @@
 			<div id="options-menu-dash-app">
 				<div class="row">
 					<div class="large-4 columns">
-						<form>																																																		|	
+						<form>																																																			
 							<input type="text" name="search" placeholder="¿Buscabas algo?" class="radius" style="padding-left: 35px;" />
 							<i class="fi-magnifying-glass app-icon-search"></i>
 						</form>
@@ -104,8 +104,8 @@
 										<td><?=$row['c_name'];?></td>
 										<td><?=$row['c_descri'];?></td>
 										<td><?=$row['c_phone'];?></td>
-										<td style="text-align: center;font-size: 20px;"><a href="#"><i class="fi-eye"></i></a></td>
-										<td style="text-align: center; font-size: 20px;"><a href="<?=base_url('organizaciones/deleteOrga');?>/<?=$row['c_rfc'];?>" class="btn-delete"><i class="fi-trash"></i></a> <a href="<?=base_url('organizaciones/edit');?>/<?=$row['c_rfc'];?>"><i class="fi-pencil"></i></a></td>
+										<td style="text-align: center;font-size: 20px;"><a href="<?=base_url('organizaciones/team');?>/<?=$row['c_rfc'];?>"><i class="fi-eye"></i></a></td>
+										<td style="text-align: center; font-size: 20px;"><a href="<?=base_url('organizaciones/delete');?>/<?=$row['c_rfc'];?>" class="btn-delete"><i class="fi-trash"></i></a> <a href="<?=base_url('organizaciones/edit');?>/<?=$row['c_rfc'];?>"><i class="fi-pencil"></i></a></td>
 									</tr>
 								<?php }?>
 							</tbody>

@@ -41,7 +41,7 @@ class Organizaciones extends CI_Controller {
 		}
 	}
 
-	public function deleteOrga($rfc) {
+	public function delete($rfc) {
 		$query = $this->m_organizaciones->deleteOrg($rfc);
 		if($query){
 			redirect(base_url('organizaciones'));
@@ -81,6 +81,16 @@ class Organizaciones extends CI_Controller {
 					$this->load->view('organizacion_edit', $data);
 				}
 			}
+		}else{
+			redirect(base_url());
+		}
+	}
+
+	public function team($rfc) {
+		if($this->session->userdata('logger') == TRUE){
+			$data['datos'] = $this->m_organizaciones->addOrg();
+			$data['porg'] = $this->m_organizaciones->getOrg($rfc);
+			$this->load->view('organizacion_team', $data);
 		}else{
 			redirect(base_url());
 		}

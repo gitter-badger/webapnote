@@ -18,6 +18,10 @@ class M_Organizaciones extends CI_Model {
 		}
 	}
 
+	public function addTeam(){
+		
+	}
+
 	public function getOrg($rfc) {
 		$this->db->where('c_rfc', $rfc);
 		$query = $this->db->get('CI_COMPANY');

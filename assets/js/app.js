@@ -81,4 +81,12 @@ $(document).ready(function(){
 		$('.error-title').animate({'opacity': '1', 'display': 'inherit'}, 500);
 	});
 
+	$('#reg-team').on('click', function(){
+		$('#panel-reg-team').fadeIn('500');
+	});
+
+	$('#close-app-team').click(function(){
+		$('#panel-reg-team').fadeOut('500');
+	});
+
 });
