@@ -97,6 +97,27 @@ class Organizaciones extends CI_Controller {
 		}
 	}
 
+	public function profileTeam($user){
+		if($this->session->userdata('logger') == TRUE){
+			$data['prteam'] = $this->m_organizaciones->viewTeamU($user);
+			$this->load->view('organizaciones_profile_team', $data);
+		}else{
+			redirect(base_url());
+		}
+	}
+
+	public function deleteTUser($user){
+		if($this->session->userdata('logger') == TRUE){
+			$query = $this->m_organizaciones->deleteTU($user);
+			if($query){
+				$segment = $this->uri->segment(3);
+				redirect(base_url('organizaciones/team/'.$segment));
+			}
+		}else{
+			redirect(base_url());
+		}
+	}
+
 	public function updateUsers($rfc){
 		if($this->session->userdata('logger') == TRUE){
 			$this->form_validation->set_rules('t_email', 'Email', 'trim|required|valid_email|xss_clean|is_unique[CI_USUARIOS.u_email]');

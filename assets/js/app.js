@@ -81,4 +81,15 @@ $(document).ready(function(){
 		$('.error-title').animate({'opacity': '1', 'display': 'inherit'}, 500);
 	});
 
+	$('#reg-user-t').click(function(){
+		//$('#add-user-te').fadeIn(500);
+		$('#add-user-te').slideToggle();
+	});
+
+	$('#cancel-team').click(function(){
+		//$('#add-user-te').fadeOut(500);
+		$('#add-user-te').slideToggle();
+
+	});
+
 });

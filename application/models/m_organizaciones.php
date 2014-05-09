@@ -19,7 +19,7 @@ class M_Organizaciones extends CI_Model {
 	}
 
 	public function addTeam($rfc){
-		$this->db->select('CI_USUARIOS.u_username AS user, CI_USUARIOS.u_nombre AS nombre, CI_USUARIOS.u_apep AS apep, CI_USUARIOS.u_apem AS apem');
+		$this->db->select('CI_USUARIOS.u_username AS user, CI_USUARIOS.u_nombre AS nombre, CI_USUARIOS.u_apep AS apep, CI_USUARIOS.u_apem AS apem, CI_USUARIOS.u_email AS email');
 		$this->db->from('CI_USUARIOS, CI_DETALLE_COMPANY');
 		$this->db->where('CI_USUARIOS.u_email = CI_DETALLE_COMPANY.u_email');
 		$this->db->where('CI_DETALLE_COMPANY.c_rfc', $rfc);
@@ -29,6 +29,25 @@ class M_Organizaciones extends CI_Model {
 		}else{
 			return NULL;
 		}
+	}
+
+	public function viewTeamU($user) {
+		$this->db->where('u_username', $user);
+		$query = $this->db->get('CI_USUARIOS');
+		if($query->num_rows() > 0) {
+			return $query->first_row('array');
+		}else{
+			return NULL;
+		}
+	}
+
+	public function deleteTU($user){
+		$this->db->where('u_user', $user);
+		$this->db->delete('CI_DETALLE_COMPANY');
+
+		$this->db->where('u_username', $user);
+		return $this->db->delete('CI_USUARIOS');
+
 	}
 
 	public function iAddTeam($email, $user, $nombre, $apep, $apem, $pass, $rol, $org){
@@ -45,6 +64,7 @@ class M_Organizaciones extends CI_Model {
 		$this->db->insert('CI_USUARIOS', $data);
 		$data = array(
 			'u_email' => $email, 
+			'u_user' => $user,
 			'c_rfc' => $org
 		);
 
