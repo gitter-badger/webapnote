@@ -119,7 +119,7 @@ class Organizaciones extends CI_Controller {
 				$nombre = $this->input->post('t_name');
 				$apep = $this->input->post('t_apep');
 				$apem = $this->input->post('t_apem');
-				$pass = $this->input->post('t_pass');
+				$pass = sha1($this->input->post('t_pass'));
 				$rol = 2;
 
 				$query = $this->m_organizaciones->iAddTeam($email, $username, $nombre, $apep, $apem, $pass, $rol, $rfc);

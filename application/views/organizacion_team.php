@@ -35,13 +35,13 @@
 								<?php echo $validation['validacion']; ?>
 						<?php elseif(isset($query['result'])): ?>
 							<div class="alert-box success radius" data-alert>
-								Datos actualizados correctamente.
+								Usuario Agregado Correctamente al equipo de trabajo.
 								<a href="#" class="close">&times;</a>
 							</div>
 						<?php endif; ?> 
 					</div>
 				</div>
-				<div class="row">
+				<div class="row" id="add-user-te">
 					<div class="large-10 columns">
 						<div class="row">
 							<div class="large-10 column">
@@ -165,6 +165,7 @@
 						<?php	} ?>
 					</div>
 				</div>
+				<br />
 			</div>
 		</div>
 	</div>

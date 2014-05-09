@@ -478,6 +478,17 @@ color: rgb(87, 87, 87);
 	padding-left: 35px;
 }
 
+#add-user-te {
+	opacity: .3;
+	-webkit-transition: all .1s ease;
+	-moz-transition: all .1s ease;
+	transition: all .1s ease;
+}
+
+#add-user-te:hover {
+	opacity: 1;
+}
+
 /****************************************
 	Add Custom Media Queries
 ****************************************/
