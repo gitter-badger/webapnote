@@ -83,12 +83,12 @@ $(document).ready(function(){
 
 	$('#reg-user-t').click(function(){
 		//$('#add-user-te').fadeIn(500);
-		$('#add-user-te').slideToggle();
+		$('#add-user-te').slideToggle('slow');
 	});
 
 	$('#cancel-team').click(function(){
 		//$('#add-user-te').fadeOut(500);
-		$('#add-user-te').slideToggle();
+		$('#add-user-te').slideToggle('slow');
 
 	});
 

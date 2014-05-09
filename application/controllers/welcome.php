@@ -64,6 +64,7 @@ class Welcome extends CI_Controller {
 			$getsign = $this->m_welcome->signIn($email, $pass);
 			if($getsign) {
 				$auth = $this->m_welcome->signAuth($email, $pass);
+				if($auth->r_id == 2){echo 0;}else{
 				$data = array(
 					'logger' => TRUE, 
 					'u_email'=> $auth->u_email, 
@@ -77,7 +78,7 @@ class Welcome extends CI_Controller {
 					'r_id' => $auth->r_id
 				);
 				$this->session->set_userdata($data);
-				echo 1;
+				echo 1;}
 			}else {
 				echo 0;
 			}
