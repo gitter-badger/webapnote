@@ -31,6 +31,26 @@ class M_Organizaciones extends CI_Model {
 		}
 	}
 
+	public function iAddTeam($email, $user, $nombre, $apep, $apem, $pass, $rol, $org){
+		$data = array(
+			'u_email' => $email,
+			'u_username' => $user, 
+			'u_nombre' => $nombre, 
+			'u_apep' => $apep, 
+			'u_apem' => $apem,
+			'u_password' => $pass,
+			'r_id' => $rol
+		);
+
+		$this->db->insert('CI_USUARIOS', $data);
+		$data = array(
+			'u_email' => $email, 
+			'c_rfc' => $org
+		);
+
+		return $this->db->insert('CI_DETALLE_COMPANY', $data);
+	}
+
 	public function getOrg($rfc) {
 		$this->db->where('c_rfc', $rfc);
 		$query = $this->db->get('CI_COMPANY');

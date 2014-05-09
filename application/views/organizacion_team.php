@@ -32,10 +32,7 @@
 					<div class="large-10 column">
 						<!-- Reservado para alerta de Actualizacion -->
 						<?php if(isset($validation['validacion'])): ?>
-							<div class="alert-box warning radius" data-alert>
 								<?php echo $validation['validacion']; ?>
-								<a href="#" class="close">&times;</a>
-							</div>
 						<?php elseif(isset($query['result'])): ?>
 							<div class="alert-box success radius" data-alert>
 								Datos actualizados correctamente.
@@ -45,8 +42,60 @@
 					</div>
 				</div>
 				<div class="row">
+					<div class="large-10 columns">
+						<div class="row">
+							<div class="large-10 column">
+								<h5 class="subheader">Agregar usuario al equipo</h5>
+							</div>
+						</div>
+						<div class="panel">
+							<?php echo form_open(base_url('organizaciones').'/updateUsers/'.$porg['c_rfc']); ?>
+								<div class="row">
+									<div class="large-4 columns">
+										<input type="text" name="t_email" placeholder="Correo Electrónico">
+										<i class="fi-mail app-icon-input-edit"></i>
+									</div>
+									<div class="large-6 columns">
+										<input type="text" name="t_username" placeholder="Nombre de Usuario">
+										<i class="fi-torso app-icon-input-edit"></i>
+									</div>
+								</div>
+								<div class="row">
+									<div class="large-4 columns">
+										<input type="text" name="t_name" placeholder="Nombre">
+										<i class="fi-align-left app-icon-input-edit"></i>
+									</div>
+									<div class="large-3 columns">
+										<input type="text" name="t_apep" placeholder="Apellido Materno">
+										<i class="fi-align-left app-icon-input-edit"></i>
+									</div>
+									<div class="large-3 columns">
+										<input type="text" name="t_apem" placeholder="Apellido Paterno">
+										<i class="fi-align-left app-icon-input-edit"></i>
+									</div>
+								</div>					
+								<div class="row">
+									<div class="large-5 columns">
+										<input type="password" name="t_pass" placeholder="Contraseña">
+										<i class="fi-lock app-icon-input-edit"></i>
+									</div>
+									<div class="large-5 columns">
+										<input type="password" name="t_passmatch" placeholder="Repetir Contraseña">
+										<i class="fi-lock app-icon-input-edit"></i>
+									</div>
+								</div>
+								<div class="row">
+									<div class="large-10 columns">
+										<input type="submit" class="button radius small large-10" value="Registrar Usuario al Equipo de Trabajo">
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="row">
 					<div class="large-10 column">
-						<h5 class="subheader">Equipo de Trabajo <a href="#" data-reveal-id="modal-reg-user-team" class="button radius tiny right" style="position: absolute; right: 15px; top: -8px;"><i></i> Añadir Usuario de Equipo de Trabajo</a></h5>
+						<h5 class="subheader">Equipo de Trabajo <!--<a href="#" data-reveal-id="modal-reg-user-team" class="button radius tiny right" style="position: absolute; right: 15px; top: -8px;"><i></i> Añadir Usuario de Equipo de Trabajo</a>--></h5>
 						<?php if(!empty($team)): ?>
 							<table class="large-10">
 								<thead>
@@ -172,56 +221,6 @@
 			<div class="row">
 				<div class="large-10 column">
 					<input type="submit" class="button radius small large-10" value="Añadir Compañía" />
-				</div>
-			</div>
-		</form>
-		<a href="#" class="close-reveal-modal">&#215;</a>
-	</div>
-	<div class="reveal-modal medium" id="modal-reg-user-team" data-reveal>
-		<form>
-			<div class="row">
-				<div class="large-10 column">
-					<br />
-					<h5 class="subheader">Agregar usuario al equipo</h5>
-				</div>
-			</div>
-			<div class="row">
-				<div class="large-4 columns">
-					<input type="text" name="t_email" placeholder="Correo Electrónico">
-					<i class="fi-mail app-icon-input-edit"></i>
-				</div>
-				<div class="large-6 columns">
-					<input type="text" name="t_username" placeholder="Nombre de Usuario">
-					<i class="fi-torso app-icon-input-edit"></i>
-				</div>
-			</div>
-			<div class="row">
-				<div class="large-4 columns">
-					<input type="text" name="t_name" placeholder="Nombre">
-					<i class="fi-align-left app-icon-input-edit"></i>
-				</div>
-				<div class="large-3 columns">
-					<input type="text" name="t_apep" placeholder="Apellido Materno">
-					<i class="fi-align-left app-icon-input-edit"></i>
-				</div>
-				<div class="large-3 columns">
-					<input type="text" name="t_apem" placeholder="Apellido Paterno">
-					<i class="fi-align-left app-icon-input-edit"></i>
-				</div>
-			</div>					
-			<div class="row">
-				<div class="large-5 columns">
-					<input type="password" name="t_pass" placeholder="Contraseña">
-					<i class="fi-lock app-icon-input-edit"></i>
-				</div>
-				<div class="large-5 columns">
-					<input type="password" name="t_passmatch" placeholder="Repetir Contraseña">
-					<i class="fi-lock app-icon-input-edit"></i>
-				</div>
-			</div>
-			<div class="row">
-				<div class="large-10 columns">
-					<input type="submit" class="button radius small large-10" value="Registrar Usuario al Equipo de Trabajo">
 				</div>
 			</div>
 		</form>

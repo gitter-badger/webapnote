@@ -470,6 +470,14 @@ color: rgb(87, 87, 87);
 	display: none;
 }
 
+.app-icon-team {
+	top: 10px !important; 
+}
+
+#modal-reg-user-team input {
+	padding-left: 35px;
+}
+
 /****************************************
 	Add Custom Media Queries
 ****************************************/
