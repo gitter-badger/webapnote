@@ -18,7 +18,7 @@ class Organizaciones extends CI_Controller {
 	}
 
 	public function addO(){
-		$this->form_validation->set_rules('rfc', 'RFC de Compañía', 'trim|required|xss_clean|min_length[5]|max_length[6]|is_unique[CI_COMPANY.c_rfc]');
+		$this->form_validation->set_rules('rfc', 'RFC de Compañía', 'trim|required|xss_clean|min_length[12]|max_length[13]|is_unique[CI_COMPANY.c_rfc]');
 		$this->form_validation->set_rules('name', 'Nombre', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('phone', 'Telefono', 'trim|required|numeric|max_length[7]|xss_clean');
 		$this->form_validation->set_rules('descripcion', 'Descripcion', 'trim|xss_clean');
@@ -41,7 +41,7 @@ class Organizaciones extends CI_Controller {
 		}
 	}
 
-	public function deleteOrga($rfc) {
+	public function delete($rfc) {
 		$query = $this->m_organizaciones->deleteOrg($rfc);
 		if($query){
 			redirect(base_url('organizaciones'));
@@ -79,6 +79,58 @@ class Organizaciones extends CI_Controller {
 					$data['porg'] = $this->m_organizaciones->getOrg($rfc);
 					$data['query'] = array( 'result' => 1);
 					$this->load->view('organizacion_edit', $data);
+				}
+			}
+		}else{
+			redirect(base_url());
+		}
+	}
+
+	public function team($rfc) {
+		if($this->session->userdata('logger') == TRUE){
+			$data['datos'] = $this->m_organizaciones->addOrg();
+			$data['team'] = $this->m_organizaciones->addTeam($rfc);
+			$data['porg'] = $this->m_organizaciones->getOrg($rfc);
+			$this->load->view('organizacion_team', $data);
+		}else{
+			redirect(base_url());
+		}
+	}
+
+	public function updateUsers($rfc){
+		if($this->session->userdata('logger') == TRUE){
+			$this->form_validation->set_rules('t_email', 'Email', 'trim|required|valid_email|xss_clean|is_unique[CI_USUARIOS.u_email]');
+			$this->form_validation->set_rules('t_username', 'Nombre de Usuario', 'trim|required|xss_clean|is_unique[CI_USUARIOS.u_username]');
+			$this->form_validation->set_rules('t_name', 'Nombre', 'trim|required|xss_clean');
+			$this->form_validation->set_rules('t_apep', 'Apellido Paterno', 'trim|required|xss_clean');
+			$this->form_validation->set_rules('t_apem', 'Apellido Materno', 'trim|xss_clean');
+			$this->form_validation->set_rules('t_pass', 'Contraseña', 'trim|xss_clean|required|matches[t_passmatch]');
+
+			$this->form_validation->set_error_delimiters('<div class="alert-box warning radius" data-alert>', '<a href="" class="close">&times;</a></div>');
+			if($this->form_validation->run() == FALSE){
+				$data['datos'] = $this->m_organizaciones->addOrg();
+				$data['team'] = $this->m_organizaciones->addTeam($rfc);
+				$data['porg'] = $this->m_organizaciones->getOrg($rfc);
+				$data['validation'] = array( 'validacion' => validation_errors());
+				$this->load->view('organizacion_team', $data);
+			}else{
+				$email = $this->input->post('t_email');
+				$username = $this->input->post('t_username');
+				$nombre = $this->input->post('t_name');
+				$apep = $this->input->post('t_apep');
+				$apem = $this->input->post('t_apem');
+				$pass = sha1($this->input->post('t_pass'));
+				$rol = 2;
+
+				$query = $this->m_organizaciones->iAddTeam($email, $username, $nombre, $apep, $apem, $pass, $rol, $rfc);
+				if($query){
+					$data['datos'] = $this->m_organizaciones->addOrg();
+					$data['team'] = $this->m_organizaciones->addTeam($rfc);
+					$data['porg'] = $this->m_organizaciones->getOrg($rfc);
+					$data['query'] = array( 'result' => 1 );
+					$this->load->view('organizacion_team', $data);
+				}else {
+					echo 0;
 				}
 			}
 		}else{

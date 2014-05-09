@@ -4,7 +4,7 @@
  * Frameworks: CodeIgniter y Foundation;
  */
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic, 400italic, 600italic, 700italic, 400, 700, 600, 300);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300, 300italic, 400italic, 600italic, 700italic, 400, 700, 600, 300);
 
 /*************************************
 	Add Custom Styles for Foundation
@@ -464,6 +464,29 @@ color: rgb(87, 87, 87);
 	top: 27px;
 	left: 28px;
 	color: #BBBBBB;
+}
+
+#panel-reg-team {
+	display: none;
+}
+
+.app-icon-team {
+	top: 10px !important; 
+}
+
+#modal-reg-user-team input {
+	padding-left: 35px;
+}
+
+#add-user-te {
+	opacity: .3;
+	-webkit-transition: all .1s ease;
+	-moz-transition: all .1s ease;
+	transition: all .1s ease;
+}
+
+#add-user-te:hover {
+	opacity: 1;
 }
 
 /****************************************
