@@ -18,7 +18,7 @@ class Proyectos extends CI_Controller {
 
 	public function selected($rfc) {
 		if($this->session->userdata('logger') == TRUE){
-			$this->load->view('proyecto_select');
+			$this->load->view('proyecto_selected');
 		}else{
 			redirect(base_url());
 		}

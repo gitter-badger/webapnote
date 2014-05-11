@@ -92,4 +92,23 @@ $(document).ready(function(){
 
 	});
 
+	$('#org-options').change(function(){
+		var blue = "";
+		var url = "";
+		$('#org-options option:selected').each(function(){
+			blue += $(this).val()+"";
+			if(blue == 0){
+				console.log(blue);
+			}else{
+				url = 'proyectos/selected/'+blue;
+				$('#content-proyecto').removeClass('callout').removeClass('panel');
+				$('#content-proyecto').load(url);
+			}
+		});
+	});
+
+	$('#ad-proyecto').click(function(){
+		$('#panel-form-proyecto').slideToggle('low');
+	});
+
 });

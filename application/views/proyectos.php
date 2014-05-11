@@ -31,9 +31,9 @@
 					<div class="large-10 column">
 						<h5 class="subheader">Proyectos </h5>
 						<div class="form-select large-5 options-sel">
-							<select name="org">
+							<select id="org-options" name="org">
 								<?php foreach($organizaciones as $row): ?>
-									<option>Selecciona una Organización</option>
+									<option value="0">Selecciona una Organización</option>
 									<option value="<?=$row['c_rfc'];?>"><?=$row['c_name'];?></option>
 								<?php endforeach; ?>
 							</select>
@@ -42,7 +42,7 @@
 				</div>
 				<div class="row">
 					<div class="large-10 column">
-						<div class="panel callout">
+						<div id="content-proyecto" class="panel callout">
 							<p class="text-center" style="line-height: inherit !important;"><i class="fi-annotate" style="font-size: 50px;color: #AAAAAA;"></i></p>
 							<h6 style="color: #AAAAAA;" class="text-center">Para comenzar selecciona una Organización</h6>
 						</div>

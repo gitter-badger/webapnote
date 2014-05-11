@@ -488,6 +488,10 @@ color: rgb(87, 87, 87);
 	right: 15px;
 }
 
+#content-proyecto {
+	padding-top: 15px;
+}
+
 /****************************************
 	Add Custom Media Queries
 ****************************************/
