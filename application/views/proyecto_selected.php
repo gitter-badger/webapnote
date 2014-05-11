@@ -76,10 +76,10 @@
 						<table class="large-10">
 							<thead>
 								<tr>
-									<th>RFC Compañia</th>
-									<th>Nombre</th>
+									<th>Nombre del Proyecto</th>
 									<th>Descripción</th>
-									<th>Telefono</th>
+									<th>Creado en</th>
+									<th>Iniciado en</th>
 									<th style="text-align:center;">TEAM</th>
 									<th width="80"></th>
 								</tr>
