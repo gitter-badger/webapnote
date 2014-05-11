@@ -30,21 +30,40 @@
 				</div>
 				<div class="row">
 					<div class="large-10 column">
-						<h5 class="subheader">Proyectos <a href="#" id="btn-open-pro" class="button radius tiny right" style="position: absolute; right: 15px; top: -8px;"><i></i> Añadir Nuevo Proyecto</a></h5>
+						<!-- Reservado para alerta de Actualizacion -->
+						<?php if(isset($validation['validacion'])): ?>
+							<?php echo $validation['validacion']; ?>
+						<?php elseif(isset($query['result'])): ?>
+							<div class="alert-box success radius" data-alert>
+								Datos actualizados correctamente.
+								<a href="#" class="close">&times;</a>
+							</div>
+						<?php endif; ?> 
+					</div>
+				</div>
+				<div class="row">
+					<div class="large-10 column">
+						<h5 class="subheader">Proyectos en <?=$orgpro;?> <a href="#" id="btn-open-pro" class="button radius tiny right" style="position: absolute; right: 15px; top: -8px;"><i></i> Añadir Nuevo Proyecto</a></h5>
 					</div>
 				</div>
 				<div class="row" id="panel-form-id">
 					<div class="large-10 column">
 						<div class="panel">
-							<form>
+							<?php echo form_open(base_url('proyectos').'/add/'.$orgpro); ?>
 								<div class="row">
 									<div class="large-5 columns">
 										<input type="text" name="p_name" placeholder="Nombre del Proyecto">
 										<i class="fi-database app-icon-input-edit"></i>
-										<input type="text" value="<?=$orgpro;?>" disabled>
+										<div class="row">
+											<div class="large-10 column">
+												<input type="text" value="<?=$orgpro;?>" disabled>
+												<i style="left: 22px !important;" class="fi-torso-business app-icon-input-edit"></i>
+											</div>
+										</div>
+										<input type="submit" class="button tiny large-10 radius " value="Registrar Proyecto">
 									</div>
 									<div class="large-5 columns">
-										<textarea rows="10" name="p_des" placeholder="Descripción de Proyecto"></textarea>
+										<textarea style="margin-top: 15px; padding-bottom: 20px;" rows="9" name="p_des" placeholder="Descripción de Proyecto"></textarea>
 									</div>
 								</div>
 							</form>
@@ -53,7 +72,7 @@
 				</div>
 				<div class="row">
 					<div class="large-10 column">
-						<?php if(!empty($datos)){ ?>
+						<?php if(!empty($proyectos)){ ?>
 						<table class="large-10">
 							<thead>
 								<tr>
@@ -66,14 +85,14 @@
 								</tr>
 							</thead>
 							<tbody>
-								<?php foreach($datos as $row){?>
+								<?php foreach($proyectos as $row){?>
 									<tr>
-										<td><?=$row['c_rfc'];?></td>
-										<td><?=$row['c_name'];?></td>
-										<td><?=$row['c_descri'];?></td>
-										<td><?=$row['c_phone'];?></td>
-										<td style="text-align: center;font-size: 20px;"><a href="<?=base_url('organizaciones/team');?>/<?=$row['c_rfc'];?>"><i class="fi-eye"></i></a></td>
-										<td style="text-align: center; font-size: 20px;"><a href="<?=base_url('organizaciones/delete');?>/<?=$row['c_rfc'];?>" class="btn-delete"><i class="fi-trash"></i></a> <a href="<?=base_url('organizaciones/edit');?>/<?=$row['c_rfc'];?>"><i class="fi-pencil"></i></a></td>
+										<td><?=$row['c_proy_name'];?></td>
+										<td><?=$row['c_proy_descri'];?></td>
+										<td><?=$row['c_fecha_creado'];?></td>
+										<td><?=$row['c_fecha_ini'];?></td>
+										<td style="text-align: center;font-size: 20px;"><a href=""><i class="fi-eye"></i></a></td>
+										<td style="text-align: center; font-size: 20px;"><a href="" class="btn-delete"><i class="fi-trash"></i></a> <a href=""><i class="fi-pencil"></i></a></td>
 									</tr>
 								<?php }?>
 							</tbody>
