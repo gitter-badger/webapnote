@@ -101,14 +101,13 @@ $(document).ready(function(){
 				console.log(blue);
 			}else{
 				url = 'proyectos/selected/'+blue;
-				$('#content-proyecto').removeClass('callout').removeClass('panel');
-				$('#content-proyecto').load(url);
+				location.href=url;
 			}
 		});
 	});
 
-	$('#ad-proyecto').click(function(){
-		$('#panel-form-proyecto').slideToggle('low');
+	$('#btn-open-pro').click(function(){
+		$('#panel-form-id').slideToggle('slow');
 	});
 
 });

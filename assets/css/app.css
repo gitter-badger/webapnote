@@ -492,6 +492,9 @@ color: rgb(87, 87, 87);
 	padding-top: 15px;
 }
 
+#panel-form-id{
+	/*display: none;*/
+}
 /****************************************
 	Add Custom Media Queries
 ****************************************/

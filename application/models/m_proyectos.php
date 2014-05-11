@@ -18,4 +18,9 @@ class M_Proyectos extends CI_Model {
 		}
 	}
 
+	public function loadProyectos($rfc){
+		$this->db->where('c_rfc', $rfc);
+		$query = $this->db->get('CI_PROYECTOS');
+	}
+
 }
