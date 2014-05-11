@@ -29,23 +29,42 @@
 				</div>
 				<div class="row">
 					<div class="large-10 column">
-						<h5 class="subheader">Proyectos </h5>
-						<div class="form-select large-5 options-sel">
-							<select name="org">
-								<?php foreach($organizaciones as $row): ?>
-									<option>Selecciona una Organización</option>
-									<option value="<?=$row['c_rfc'];?>"><?=$row['c_name'];?></option>
-								<?php endforeach; ?>
-							</select>
-						</div>
+						<h5 class="subheader">Proyectos en <a href="#" data-reveal-id="app-add-org" class="button radius tiny right" style="position: absolute; right: 15px; top: -8px;"><i></i> Añadir Nuevo Proyecto</a></h5>
 					</div>
 				</div>
 				<div class="row">
 					<div class="large-10 column">
+						<?php if(!empty($datos)){ ?>
+						<table class="large-10">
+							<thead>
+								<tr>
+									<th>RFC Compañia</th>
+									<th>Nombre</th>
+									<th>Descripción</th>
+									<th>Telefono</th>
+									<th style="text-align:center;">TEAM</th>
+									<th width="80"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php foreach($datos as $row){?>
+									<tr>
+										<td><?=$row['c_rfc'];?></td>
+										<td><?=$row['c_name'];?></td>
+										<td><?=$row['c_descri'];?></td>
+										<td><?=$row['c_phone'];?></td>
+										<td style="text-align: center;font-size: 20px;"><a href=""><i class="fi-eye"></i></a></td>
+										<td style="text-align: center; font-size: 20px;"><a href="" class="btn-delete"><i class="fi-trash"></i></a> <a href=""><i class="fi-pencil"></i></a></td>
+									</tr>
+								<?php }?>
+							</tbody>
+						</table>
+						<?php }else {?>
 						<div class="panel callout">
 							<p class="text-center" style="line-height: inherit !important;"><i class="fi-annotate" style="font-size: 50px;color: #AAAAAA;"></i></p>
 							<h6 style="color: #AAAAAA;" class="text-center">Para comenzar selecciona una Organización</h6>
 						</div>
+						<?php	} ?>
 					</div>
 				</div>
 			</div>

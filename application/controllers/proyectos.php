@@ -4,12 +4,21 @@ class Proyectos extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
-		//$this->load->model('');
+		$this->load->model('m_proyectos');
 	}
 
 	public function index() {
 		if($this->session->userdata('logger') == TRUE){
-			$this->load->view('proyectos');
+			$data['organizaciones'] = $this->m_proyectos->obtenerOrganizaciones();
+			$this->load->view('proyectos', $data);
+		}else{
+			redirect(base_url());
+		}
+	}
+
+	public function selected($rfc) {
+		if($this->session->userdata('logger') == TRUE){
+			$this->load->view('proyecto_select');
 		}else{
 			redirect(base_url());
 		}
