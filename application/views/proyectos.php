@@ -32,8 +32,8 @@
 						<h5 class="subheader">Proyectos </h5>
 						<div class="form-select large-5 options-sel">
 							<select id="org-options" name="org">
+								<option value="0">Selecciona una Organización</option>
 								<?php foreach($organizaciones as $row): ?>
-									<option value="0">Selecciona una Organización</option>
 									<option value="<?=$row['c_rfc'];?>"><?=$row['c_name'];?></option>
 								<?php endforeach; ?>
 							</select>
