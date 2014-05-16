@@ -19,4 +19,24 @@ class M_Mobile extends CI_Model {
 		}
 	}
 
+	public function getUsuario($email){
+		$this->db->where('u_email', $email);
+		$query = $this->db->get('CI_USERS');
+		if($query->num_rows() == 1){
+			return $query->row();
+		}else{
+			return NULL;
+		}
+	}
+
+	public function getProyectos($rfc){
+		$this->db->where('c_rfc', $rfc);
+		$query = $this->db->get('CI_PROYECTOS');
+		if($query->num_rows() > 0){
+			return $query->result_array();
+		}else{
+			return NULL;
+		}
+	}
+
 }
