@@ -99,6 +99,26 @@ class M_Organizaciones extends CI_Model {
 		return $this->db->delete('CI_COMPANY');
 	}
 
+	public function checkOrg($rfc){
+		$this->db->where('c_rfc', $rfc);
+		$query = $this->db->get('CI_DETALLE_COMPANY');
+		if($query->num_rows() == 0){
+			return true;
+		}else {
+			return false;
+		}
+	}
+
+	public function checkProjOrg($rfc){
+		$this->db->where('c_rfc', $rfc);
+		$query = $this->db->get('CI_PROYECTOS');
+		if($query->num_rows() == 0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 	public function updateInfo($rfc, $name, $phone, $des){
 		$data = array (
 			'c_name' => $name, 

@@ -498,6 +498,10 @@ color: rgb(87, 87, 87);
 #panel-form-id{
 	display: none;
 }
+
+table {
+	box-shadow: 0 9px 0 -6px #E6E6E6;
+}
 /****************************************
 	Add Custom Media Queries
 ****************************************/
