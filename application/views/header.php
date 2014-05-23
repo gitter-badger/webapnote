@@ -7,9 +7,6 @@
 		<title>Apnote | Solucionando tus problemas, Mejorando tus procesos</title>
 		<link rel="icon" type="image/png" href="<?=base_url('assets/img/favicon.png');?>" />
 		<!-- Styles for the app -->
-		<link rel="stylesheet" type="text/css" href="<?=base_url('assets/css/foundation.min.css');?>" />
-		<link rel="stylesheet" type="text/css" href="<?=base_url('assets/css/foundation-icons/foundation-icons.css');?>" />
-		<link rel="stylesheet" type="text/css" href="<?=base_url('assets/css/normalize.css');?>" />
 		<link rel="stylesheet" type="text/css" href="<?=base_url('assets/css/app.css');?>" />
 		<!-- Scripts -->
 		<script type="text/javascript" src="<?=base_url('assets/js/vendor/modernizr.js');?>"></script>

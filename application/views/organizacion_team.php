@@ -85,9 +85,10 @@
 									</div>
 								</div>
 								<div class="row">
-									<div class="large-10 columns">
+									<div class="large-7 columns">
 										<input type="submit" class="button radius small large-10" value="Registrar Usuario al Equipo de Trabajo">
 									</div>
+									<div class="large-3 columns"><input type="button" id="cancel-team" class="button radius small large-10" value="Cancelar" ></div>
 								</div>
 							</form>
 						</div>
@@ -95,7 +96,7 @@
 				</div>
 				<div class="row">
 					<div class="large-10 column">
-						<h5 class="subheader">Equipo de Trabajo <!--<a href="#" data-reveal-id="modal-reg-user-team" class="button radius tiny right" style="position: absolute; right: 15px; top: -8px;"><i></i> Añadir Usuario de Equipo de Trabajo</a>--></h5>
+						<h5 class="subheader">Equipo de Trabajo <a href="#" id="reg-user-t" class="button radius tiny right" style="position: absolute; right: 15px; top: -8px;"><i></i> Añadir Usuario de Equipo de Trabajo</a></h5>
 						<?php if(!empty($team)): ?>
 							<table class="large-10">
 								<thead>
@@ -104,6 +105,8 @@
 										<th>Nombre</th>
 										<th>Apellido Paterno</th>
 										<th>Apellido Materno</th>
+										<th>Correo Electrónico</th>
+										<th style="text-align: center;">Opciones</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -113,6 +116,8 @@
 										<td><?=$row['nombre'];?></td>
 										<td><?=$row['apep'];?></td>
 										<td><?=$row['apem'];?></td>
+										<td><?=$row['email']?></td>
+										<td style="text-align: center; font-size: 20px;"><a href="<?=base_url('organizaciones/deleteTUser');?>/<?=$row['user'];?>/<?=$this->uri->segment(3);?>" class="btn-delete"><i class="fi-trash"></i></a> <a href="<?=base_url('organizaciones/profileTeam');?>/<?=$row['user'];?>" data-reveal-id="modal-demo" data-reveal-ajax="true"><i class="fi-torso"></i></a></td>
 									</tr>
 									<?php endforeach; ?>
 								</tbody>
@@ -141,7 +146,7 @@
 									<th>Descripción</th>
 									<th>Telefono</th>
 									<th style="text-align:center;">TEAM</th>
-									<th width="80"></th>
+									<th width="80">Opciones</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -226,6 +231,9 @@
 			</div>
 		</form>
 		<a href="#" class="close-reveal-modal">&#215;</a>
+	</div>
+	<div class="reveal-modal small" id="modal-demo" data-reveal>
+		<a href="close-reveal-modal">&#215;</a>
 	</div>
 	<!-- End Modal Main body -->
 

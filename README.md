@@ -27,7 +27,6 @@ Recuerda respetar los términos de licencia de la obra que se describen al final
 
 ####Screenshots
 ![Aplicación Web](https://pbs.twimg.com/media/BlZ65Q4CUAAWk0i.png:large)
-![Dashboard](https://pbs.twimg.com/media/BmCrlczCIAAzVmp.png:large)
 
 ####Licencia
 ![Licencia](http://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png)

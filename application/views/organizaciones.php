@@ -81,7 +81,7 @@
 	</ul>
 	<!-- End Main body -->
 	<!-- Modal Main body -->
-	<div id="app-add-org" class="reveal-modal small" data-reveal>
+	<div id="app-add-org" class="reveal-modal medium" data-reveal>
 		<div class="row" id="app-error-msg-org" style="padding-top: 20px;">
 			<div class="app-error-data-org panel radius" style="margin-right: 60px;"></div>
 			<div class="row" style="margin-right: 45px;">

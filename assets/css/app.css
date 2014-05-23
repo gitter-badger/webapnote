@@ -5,6 +5,9 @@
  */
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300, 300italic, 400italic, 600italic, 700italic, 400, 700, 600, 300);
+@import url(foundation.min.css);
+@import url(normalize.css);
+@import url(foundation-icons/foundation-icons.css);
 
 /*************************************
 	Add Custom Styles for Foundation
@@ -479,16 +482,26 @@ color: rgb(87, 87, 87);
 }
 
 #add-user-te {
-	opacity: .3;
-	-webkit-transition: all .1s ease;
-	-moz-transition: all .1s ease;
-	transition: all .1s ease;
+	display: none;
 }
 
-#add-user-te:hover {
-	opacity: 1;
+.options-sel {
+	position: absolute;
+	top: -10px;
+	right: 15px;
 }
 
+#content-proyecto {
+	padding-top: 15px;
+}
+
+#panel-form-id{
+	display: none;
+}
+
+table {
+	box-shadow: 0 9px 0 -6px #E6E6E6;
+}
 /****************************************
 	Add Custom Media Queries
 ****************************************/

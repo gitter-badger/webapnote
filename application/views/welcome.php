@@ -50,6 +50,14 @@
 						<div class="phone">
 							<div class="app-slider-main">
 								<!-- Slider Here -->
+								<ul class="example-orbit" data-orbit data-options="animation_speed: 500;timer_speed: 5000; pause_on_hover: true; resume_on_mouseout: true; navigation_arrows: false; slide_number: false; bullets: false; timer: true;">
+									<li>
+										<img src="<?=base_url('assets/img/mobile/dashboard.png');?>" alt="Screenshot 2">
+									</li>
+									<li class="active">
+										<img src="<?=base_url('assets/img/mobile/login.png');?>" alt="Screenshot 1">
+									</li>
+								</ul>
 							</div>
 						</div>
 					</div>

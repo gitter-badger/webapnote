@@ -45,6 +45,7 @@
 | the active record class
 */
 
+//$active_group = 'production';
 $active_group = 'default';
 $active_record = TRUE;
 
@@ -63,6 +64,22 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
+
+$db['production']['hostname'] = 'localhost';
+$db['production']['username'] = '';
+$db['production']['password'] = '';
+$db['production']['database'] = '';
+$db['production']['dbdriver'] = 'mysql';
+$db['production']['dbprefix'] = '';
+$db['production']['pconnect'] = TRUE;
+$db['production']['db_debug'] = TRUE;
+$db['production']['cache_on'] = FALSE;
+$db['production']['cachedir'] = '';
+$db['production']['char_set'] = 'utf8';
+$db['production']['dbcollat'] = 'utf8_general_ci';
+$db['production']['swap_pre'] = '';
+$db['production']['autoinit'] = TRUE;
+$db['production']['stricton'] = FALSE;
 
 
 /* End of file database.php */

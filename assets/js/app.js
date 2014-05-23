@@ -81,4 +81,33 @@ $(document).ready(function(){
 		$('.error-title').animate({'opacity': '1', 'display': 'inherit'}, 500);
 	});
 
+	$('#reg-user-t').click(function(){
+		//$('#add-user-te').fadeIn(500);
+		$('#add-user-te').slideToggle('slow');
+	});
+
+	$('#cancel-team').click(function(){
+		//$('#add-user-te').fadeOut(500);
+		$('#add-user-te').slideToggle('slow');
+
+	});
+
+	$('#org-options').change(function(){
+		var blue = "";
+		var url = "";
+		$('#org-options option:selected').each(function(){
+			blue += $(this).val()+"";
+			if(blue == 0){
+				console.log(blue);
+			}else{
+				url = 'proyectos/selected/'+blue;
+				location.href=url;
+			}
+		});
+	});
+
+	$('#btn-open-pro').click(function(){
+		$('#panel-form-id').slideToggle('slow');
+	});
+
 });

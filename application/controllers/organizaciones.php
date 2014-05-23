@@ -42,8 +42,11 @@ class Organizaciones extends CI_Controller {
 	}
 
 	public function delete($rfc) {
-		$query = $this->m_organizaciones->deleteOrg($rfc);
-		if($query){
+		$query = $this->m_organizaciones->checkOrg($rfc);
+		$result = $this->m_organizaciones->checkProjOrg($rfc);
+		if($query && $result){
+			$query = $this->m_organizaciones->deleteOrg($rfc);
+		}else{
 			redirect(base_url('organizaciones'));
 		}
 	}
@@ -97,10 +100,30 @@ class Organizaciones extends CI_Controller {
 		}
 	}
 
+	public function profileTeam($user){
+		if($this->session->userdata('logger') == TRUE){
+			$data['prteam'] = $this->m_organizaciones->viewTeamU($user);
+			$this->load->view('organizaciones_profile_team', $data);
+		}else{
+			redirect(base_url());
+		}
+	}
+
+	public function deleteTUser($user, $segment){
+		if($this->session->userdata('logger') == TRUE){
+			$query = $this->m_organizaciones->deleteTU($user);
+			if($query){
+				redirect(base_url('organizaciones/team/'.$segment));
+			}
+		}else{
+			redirect(base_url());
+		}
+	}
+
 	public function updateUsers($rfc){
 		if($this->session->userdata('logger') == TRUE){
 			$this->form_validation->set_rules('t_email', 'Email', 'trim|required|valid_email|xss_clean|is_unique[CI_USUARIOS.u_email]');
-			$this->form_validation->set_rules('t_username', 'Nombre de Usuario', 'trim|required|xss_clean|is_unique[CI_USUARIOS.u_username]');
+			$this->form_validation->set_rules('t_username', 'Nombre de Usuario', 'trim|min_length[8]|max_length[10]|required|xss_clean|is_unique[CI_USUARIOS.u_username]');
 			$this->form_validation->set_rules('t_name', 'Nombre', 'trim|required|xss_clean');
 			$this->form_validation->set_rules('t_apep', 'Apellido Paterno', 'trim|required|xss_clean');
 			$this->form_validation->set_rules('t_apem', 'Apellido Materno', 'trim|xss_clean');
