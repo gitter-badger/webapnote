@@ -35,9 +35,8 @@ class Mobile extends CI_Controller {
 		echo $resultados;
 	}
 
-	public function seleccionar($id){
-		$data['datas'] = $id;
-		$resultado = json_encode($data);
+	public function seleccionar($id_proyecto, $username){
+		
 		echo $resultado;
 	}
 	
