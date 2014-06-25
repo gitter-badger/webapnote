@@ -74,16 +74,15 @@
 										<i class="fi-align-left app-icon-input-edit"></i>
 									</div>
 								</div>					
-								<div class="row">
-									<div class="large-5 columns">
+								<!-- <div class="row">
+									<div class="large-7 columns">
 										<input type="password" name="t_pass" placeholder="Contraseña">
 										<i class="fi-lock app-icon-input-edit"></i>
 									</div>
-									<div class="large-5 columns">
-										<input type="password" name="t_passmatch" placeholder="Repetir Contraseña">
-										<i class="fi-lock app-icon-input-edit"></i>
+									<div class="large-3 columns">
+										<input type="button" id="rpwd" class="large-10 button success tiny radius" value="Generar Contraseña">
 									</div>
-								</div>
+								</div> -->
 								<div class="row">
 									<div class="large-7 columns">
 										<input type="submit" class="button radius small large-10" value="Registrar Usuario al Equipo de Trabajo">

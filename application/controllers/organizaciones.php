@@ -120,6 +120,7 @@ class Organizaciones extends CI_Controller {
 		}
 	}
 
+	// Agregar nuevo usuario al equipo de trabajo ;
 	public function updateUsers($rfc){
 		if($this->session->userdata('logger') == TRUE){
 			$this->form_validation->set_rules('t_email', 'Email', 'trim|required|valid_email|xss_clean|is_unique[CI_USUARIOS.u_email]');
@@ -127,7 +128,7 @@ class Organizaciones extends CI_Controller {
 			$this->form_validation->set_rules('t_name', 'Nombre', 'trim|required|xss_clean');
 			$this->form_validation->set_rules('t_apep', 'Apellido Paterno', 'trim|required|xss_clean');
 			$this->form_validation->set_rules('t_apem', 'Apellido Materno', 'trim|xss_clean');
-			$this->form_validation->set_rules('t_pass', 'Contraseña', 'trim|xss_clean|required|matches[t_passmatch]');
+			//$this->form_validation->set_rules('t_pass', 'Contraseña', 'trim|xss_clean|required');
 
 			$this->form_validation->set_error_delimiters('<div class="alert-box warning radius" data-alert>', '<a href="" class="close">&times;</a></div>');
 			if($this->form_validation->run() == FALSE){
@@ -142,7 +143,7 @@ class Organizaciones extends CI_Controller {
 				$nombre = $this->input->post('t_name');
 				$apep = $this->input->post('t_apep');
 				$apem = $this->input->post('t_apem');
-				$pass = sha1($this->input->post('t_pass'));
+				$pass = sha1($this->randomKey());
 				$rol = 2;
 
 				$query = $this->m_organizaciones->iAddTeam($email, $username, $nombre, $apep, $apem, $pass, $rol, $rfc);
@@ -159,6 +160,23 @@ class Organizaciones extends CI_Controller {
 		}else{
 			redirect(base_url());
 		}
+	}
+
+	public function randomKey() {
+
+			$string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvxyz1234567890#@$%&/()=*+-";
+			$longstring = strlen($string);
+			
+			$pass = "";
+			$longitudPass = 10;
+
+			for($i=1;$i<=$longitudPass;$i++) {
+				$pos = rand(0,$longstring-1);
+				$pass .= substr($string, $pos, 1);
+			}
+
+			$data = json_encode($pass);
+			return $data;
 	}
 	
 }

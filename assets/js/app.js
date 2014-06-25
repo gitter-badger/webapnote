@@ -110,4 +110,6 @@ $(document).ready(function(){
 		$('#panel-form-id').slideToggle('slow');
 	});
 
+
+	//Changes
 });
