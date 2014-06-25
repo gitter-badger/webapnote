@@ -1,3 +1,10 @@
 RewriteEngine on
-RewriteCond $1 !^(index\.php|images|assets|robots\.txt)
+
+RewriteCond $1 !^(index\.php|assets|robots\.txt)
 RewriteRule ^(.*)$ index.php/$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} 	^.*assets.*\.(py|php|pl|cgi|bin|sh)$
+RewriteRule (.*)									[F,NS,L]
+
+RewriteCond %{REQUEST_FILENAME} 	!-f
+RewriteRule .											 [L]
