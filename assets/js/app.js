@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 	$.fn.reset = function() {
 		$(this).each(function(){ this.reset(); });
-	}
+	};
 	
 	$('#addUsuario').submit(function(e){
 		e.preventDefault();
@@ -32,8 +32,8 @@ $(document).ready(function(){
 
 	$('.close-error-msg').click(function(){
 		$('#app-error-msg').animate({'opacity': '0', 'display': 'none'}, 500).css('z-index', '0');
-		$('#addUsuario').delay(500).animate({'opacity': '1', 'display': 'inherit'}, 500)
-		$('#app-policy').animate({'opacity': '1', 'display': 'inherit'}, 500)
+		$('#addUsuario').delay(500).animate({'opacity': '1', 'display': 'inherit'}, 500);
+		$('#app-policy').animate({'opacity': '1', 'display': 'inherit'}, 500);
 	});
 
 	$('#app-signin').submit(function(e){
@@ -64,7 +64,7 @@ $(document).ready(function(){
 				if(data == 1){
 					$('#app-add-org').foundation('reveal', 'close');
 					$('#add-form-org').reset();
-					setTimeout('document.location.reload()', 2000);
+					setTimeout(document.location.reload(), 2000);
 				}else{
 					$('.app-error-data-org').html(data);
 					$('#add-form-org').animate({'opacity': '0','display': 'none'}, 500);
@@ -97,7 +97,7 @@ $(document).ready(function(){
 		var url = "";
 		$('#org-options option:selected').each(function(){
 			blue += $(this).val()+"";
-			if(blue == 0){
+			if(blue === 0){
 				console.log(blue);
 			}else{
 				url = 'proyectos/selected/'+blue;
@@ -110,6 +110,7 @@ $(document).ready(function(){
 		$('#panel-form-id').slideToggle('slow');
 	});
 
+	//Validaciones de Campos;
+	$('#phone-edit').validations('0123456789');
 
-	//Changes
 });

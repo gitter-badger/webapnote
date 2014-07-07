@@ -61,7 +61,7 @@
 								</div>
 								<div class="row">
 									<div class="large-2 columns">
-										<input type="text" value="<?=$porg['c_phone'];?>" name="ephone" />
+										<input type="text" value="<?=$porg['c_phone'];?>" name="ephone" id="phone-edit" />
 										<i class="fi-telephone app-icon-input-edit"></i>
 									</div>
 									<div class="large-8 columns">
