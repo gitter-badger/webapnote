@@ -20,12 +20,39 @@ class Organizaciones extends CI_Controller {
 	public function addO(){
 		$this->form_validation->set_rules('rfc', 'RFC de Compañía', 'trim|required|xss_clean|min_length[12]|max_length[13]|is_unique[CI_COMPANY.c_rfc]');
 		$this->form_validation->set_rules('name', 'Nombre', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('phone', 'Telefono', 'trim|required|numeric|max_length[7]|xss_clean');
+		$this->form_validation->set_rules('phone', 'Telefono', 'trim|required|numeric|exact_length[10]|xss_clean');
 		$this->form_validation->set_rules('descripcion', 'Descripcion', 'trim|xss_clean');
 
-		$this->form_validation->set_error_delimiters('<p><i class="fi-x-circle icon-error"></i>', '</p>');
+		$this->form_validation->set_message('required', 'Este campo es requerido');
+		$this->form_validation->set_message('numeric', 'Este campo solo acepta números');
+		$this->form_validation->set_message('max_length','No puede exceder de <span class="hide">%d</span>%d caracteres');
+		$this->form_validation->set_message('min_length', 'Este campo debe tener mínimo <span class="hide">%d</span>%d caracteres');
+		$this->form_validation->set_message('exact_length', 'Este campo debe tener <span class="hide">%d</span>%d caracteres');
+
+		$this->form_validation->set_error_delimiters('','');
 		if($this->form_validation->run() == FALSE) {
-			echo validation_errors();
+			$errors = array(
+					array(
+						'campo' => 'group-rfc',
+						'error' => form_error('rfc')
+						),
+					array(
+						'campo' => 'group-phone',
+						'error' => form_error('phone')
+						),
+					array(
+						'campo' => 'group-name',
+						'error' => form_error('name')
+						),
+					array(
+						'campo' => 'group-descripcion',
+						'error' => form_error('descripcion')
+						)
+				);
+
+			$result = json_encode($errors);
+			echo $result;
+
 		}else {
 			$rfc = $this->input->post('rfc');
 			$name = $this->input->post('name');
@@ -34,9 +61,14 @@ class Organizaciones extends CI_Controller {
 
 			$query = $this->m_organizaciones->insertOrg($rfc, $name, $phone, $des);
 			if($query){
-				echo 1;
-			}else{
-				echo 0;
+				$errors = array(
+					array(
+						'campo' => 'group-rfc',
+						'error' => ''
+						)
+					);
+				$result = json_encode($errors);
+				echo $result;
 			}
 		}
 	}

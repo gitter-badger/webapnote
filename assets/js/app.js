@@ -55,7 +55,39 @@ $(document).ready(function(){
 		$('.app-icon-widget').removeClass('app-icon-widget-base');
 	});	
 
+	// Form de Organizaciones ;
 	$('#add-form-org').submit(function(e){
+		e.preventDefault();
+		var errors;
+		$.ajax({
+			type: 'POST',
+			url: 'organizaciones/addO',
+			data: $(this).serialize(),
+			dataType: 'json',
+			success: function(data) {
+				errors = 0;
+				console.log(data);
+				for(var i=0;i<data.length;i++){
+					if(data[i].error === ""){
+						$('#'+data[i].campo+' .span-error').html('').removeClass('show').addClass('hide');
+					}else{
+						$('#'+data[i].campo+' .span-error').html(data[i].error).removeClass('hide').addClass('show');
+						errors = errors + 1;
+					}
+				}
+
+				console.log(errors);
+
+				if(errors === 0){
+					$('#app-add-org').foundation('reveal', 'close');
+					$('#add-form-org').reset();
+					alert('Registro Correcto');
+				}
+			}
+		});
+	});
+
+	/*$('#add-form-org').submit(function(e){
 		e.preventDefault();
 		$.post(
 			'organizaciones/addO', 
@@ -73,7 +105,7 @@ $(document).ready(function(){
 				}
 			}
 		);
-	});
+	});*/
 
 	$('.close-error-msg-org').click(function(){
 		$('#app-error-msg-org').animate({'opacity': '0', 'display': 'none'}, 500).css('z-index', '0');
@@ -112,5 +144,6 @@ $(document).ready(function(){
 
 	//Validaciones de Campos;
 	$('#phone-edit').validations('0123456789');
+	$('#phone-input').validations('0123456789');
 
 });

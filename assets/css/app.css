@@ -22,6 +22,17 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: "Open Sans", "Helvetica", sans-serif !important;
 }
 
+textarea{
+	line-height: 1.5em;
+	font-size: 13px;
+}
+
+.button {
+	text-transform: uppercase !important;
+	font-size: 11px !important;
+	font-weight: 700;
+}
+
 .row {
 	position: relative !important;
 }
@@ -30,6 +41,11 @@ h1, h2, h3, h4, h5, h6 {
 	background: url('../img/bg-appmovil.jpg') no-repeat;
 }
 
+.close-reveal-modal {
+	font-size: 2em !important;
+	top: 15px !important;
+	right: 20px !important;
+}
 
 /**************************************
 	Add Custom Styles for main app
@@ -501,6 +517,30 @@ color: rgb(87, 87, 87);
 
 table {
 	box-shadow: 0 9px 0 -6px #E6E6E6;
+}
+
+/* Form Group */
+.group {
+	position: relative;
+}
+
+.group span {
+	position: absolute;
+	top: 0;
+	right: 15px;
+	padding: 3px 5px;
+}
+
+.group label {
+	padding-bottom: 10px;
+}
+
+.hide {
+	display: none !important;
+}
+
+.show {
+	display: inline-block !important;
 }
 
 /****************************************

@@ -92,37 +92,40 @@
 		</div>
 		<div class="row">
 			<div class="large-10 column">
-				<h5 class="subheader error-title" style="padding-top: 20px;padding-bottom: 10px;">Agrega una Organización a tu cuenta.</h5>
+				<h5 class="subheader error-title" style="padding-bottom: 10px; position: relative; top: -10px; text-transform:uppercase; text-align: center; font-weight: 700; font-size: 14px;">Agrega una Organización a tu cuenta</h5>
 			</div>
 		</div>
 		<form id="add-form-org">
 			<div class="row">
-				<div class="large-4 columns">
-					<label>
-						<input type="text" name="rfc" placeholder="RFC Compañía" class="radius" />
-					</label>
+				<div class="large-6 columns group" id="group-rfc">
+					<label>RFC de la Compañía</label>
+					<input type="text" id="rfc-input" name="rfc" placeholder="RFC Compañía" class="radius" />
+					<span class="warning label alert radius span-error hide"></span>
 				</div>
-				<div class="large-6 columns">
-					<label>
-						<input type="text" name="name" placeholder="Nombre de la Compañía" class="radius" />
-					</label>
+				<div class="large-4 columns group" id="group-phone">
+					<label>Teléfono</label>
+					<input type="text" name="phone" placeholder="Telefono" id="phone-input" class="radius" />
+					<span class="warning label alert radius span-error hide"></span>
 				</div>
 			</div>
 			<div class="row">
-				<div class="large-3 columns">
-					<label>
-						<input type="text" name="phone" placeholder="Telefono" class="radius" />
-					</label>
-				</div>
-				<div class="large-7 columns">
-					<label>
-						<input type="text" name="descripcion" placeholder="Descripción" class="radius" />
-					</label>
+				<div class="large-10 columns group" id="group-name">
+					<label>Nombre de la Compañía</label>
+					<input type="text" name="name" placeholder="Nombre de la Compañía" id="name-input" class="radius" />
+					<span class="warning label alert radius span-error hide"></span>
 				</div>
 			</div>
+			<div class="row">
+				<div class="large-10 columns group" id="group-descripcion">
+					<label>Descripción de la Organización</label>
+					<textarea rows="5" name="descripcion" placeholder="Descripción" id="des-input" class="radius"></textarea>
+					<span class="label alert warning radius span-error hide"></span>
+				</div>
+			</div>
+			<br />
 			<div class="row">
 				<div class="large-10 column">
-					<input type="submit" class="button radius small large-10" value="Añadir Compañía" />
+					<input type="submit" class="button radius small large-10" id="submit-input" value="Añadir Compañía" />
 				</div>
 			</div>
 		</form>
