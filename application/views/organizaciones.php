@@ -92,7 +92,7 @@
 		</div>
 		<div class="row">
 			<div class="large-10 column">
-				<h5 class="subheader error-title" style="padding-bottom: 10px; position: relative; top: -10px; text-transform:uppercase; text-align: center; font-weight: 700; font-size: 14px;">Agrega una Organización a tu cuenta</h5>
+				<h5 class="subheader error-title" style="padding-bottom: 10px; position: relative; top: -10px; text-transform:uppercase; text-align: center; font-weight: 700; font-size: 14px;">Registro de Organizaciones</h5>
 			</div>
 		</div>
 		<form id="add-form-org">

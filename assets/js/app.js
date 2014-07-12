@@ -82,30 +82,11 @@ $(document).ready(function(){
 					$('#app-add-org').foundation('reveal', 'close');
 					$('#add-form-org').reset();
 					alert('Registro Correcto');
+					location.href = 'organizaciones';
 				}
 			}
 		});
 	});
-
-	/*$('#add-form-org').submit(function(e){
-		e.preventDefault();
-		$.post(
-			'organizaciones/addO', 
-			$(this).serialize(),
-			function(data){
-				if(data == 1){
-					$('#app-add-org').foundation('reveal', 'close');
-					$('#add-form-org').reset();
-					setTimeout(document.location.reload(), 2000);
-				}else{
-					$('.app-error-data-org').html(data);
-					$('#add-form-org').animate({'opacity': '0','display': 'none'}, 500);
-					$('.error-title').animate({'opacity': '0', 'display':'none'}, 500);
-					$('#app-error-msg-org').delay(300).animate({'opacity': '1', 'display': 'inherit', 'z-index': '9999'}, 500);
-				}
-			}
-		);
-	});*/
 
 	$('.close-error-msg-org').click(function(){
 		$('#app-error-msg-org').animate({'opacity': '0', 'display': 'none'}, 500).css('z-index', '0');

@@ -78,7 +78,6 @@ class Organizaciones extends CI_Controller {
 		$result = $this->m_organizaciones->checkProjOrg($rfc);
 		if($query && $result){
 			$query = $this->m_organizaciones->deleteOrg($rfc);
-		}else{
 			redirect(base_url('organizaciones'));
 		}
 	}
@@ -128,7 +127,7 @@ class Organizaciones extends CI_Controller {
 			$data['porg'] = $this->m_organizaciones->getOrg($rfc);
 			$this->load->view('organizacion_team', $data);
 		}else{
-			redirect(base_url());
+			redirect(base_url('organizaciones'));
 		}
 	}
 

@@ -45,7 +45,7 @@
 					<div class="large-10 columns">
 						<div class="row">
 							<div class="large-10 column">
-								<h5 class="subheader">Agregar usuario al equipo</h5>
+								<h5 class="subheader">Registro de <b>Nuevo Usuario</b> al Equipo de Trabajo</h5>
 							</div>
 						</div>
 						<div class="panel">
@@ -73,21 +73,11 @@
 										<input type="text" name="t_apem" placeholder="Apellido Paterno">
 										<i class="fi-align-left app-icon-input-edit"></i>
 									</div>
-								</div>					
-								<!-- <div class="row">
-									<div class="large-7 columns">
-										<input type="password" name="t_pass" placeholder="Contraseña">
-										<i class="fi-lock app-icon-input-edit"></i>
-									</div>
-									<div class="large-3 columns">
-										<input type="button" id="rpwd" class="large-10 button success tiny radius" value="Generar Contraseña">
-									</div>
-								</div> -->
+								</div>
 								<div class="row">
-									<div class="large-7 columns">
+									<div class="large-10 columns">
 										<input type="submit" class="button radius small large-10" value="Registrar Usuario al Equipo de Trabajo">
 									</div>
-									<div class="large-3 columns"><input type="button" id="cancel-team" class="button radius small large-10" value="Cancelar" ></div>
 								</div>
 							</form>
 						</div>

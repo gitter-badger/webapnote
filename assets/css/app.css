@@ -543,6 +543,14 @@ table {
 	display: inline-block !important;
 }
 
+#submit-input {
+	margin: 0 auto;
+}
+
+#rfc-input {
+	text-transform: uppercase;
+}
+
 /****************************************
 	Add Custom Media Queries
 ****************************************/
