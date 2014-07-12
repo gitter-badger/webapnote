@@ -36,6 +36,7 @@ $(document).ready(function(){
 		$('#app-policy').animate({'opacity': '1', 'display': 'inherit'}, 500);
 	});
 
+	// Login ;
 	$('#app-signin').submit(function(e){
 		e.preventDefault();
 		$.post(
@@ -45,7 +46,7 @@ $(document).ready(function(){
 				if(data == 1){
 					location.href='dashboard';
 				}else {
-					alert('BAD');
+					$('.bad').slideDown(500).delay(1500).slideUp(500);
 				}
 			}
 		);

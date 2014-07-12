@@ -551,6 +551,29 @@ table {
 	text-transform: uppercase;
 }
 
+#bad-msg {
+	position: fixed;
+	z-index: 2;
+	right: 30%;
+	top: -1px;
+}
+
+#bad-msg > .bad {
+	height: 48px;
+	background: #EE7C7C;
+	padding: 11px 20px;
+	color: #FFFFFF;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border: 1px solid #E55757;
+	display: none;
+}
+
+#bad-msg > .bad > p {
+	font-size: 14px;
+	text-align: center;
+}
+
 /****************************************
 	Add Custom Media Queries
 ****************************************/

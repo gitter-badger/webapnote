@@ -1,5 +1,10 @@
 <?php $this->load->view('header'); ?>
-
+		<!-- Incorrect Datas Login -->
+			<div class="large-4 large-centered columns" id="bad-msg">
+				<div class="bad">
+					<p>Email o Contraseña Incorrecta, Intenta nuevamente</p>
+				</div>
+			</div>
 		<!-- Main body -->
 		<div class="app-main-body clearfix">
 			<div class="small-4 medium-4 large-2 columns app-sidebar-main">
