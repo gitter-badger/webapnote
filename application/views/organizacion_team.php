@@ -85,7 +85,7 @@
 				</div>
 				<div class="row">
 					<div class="large-10 column">
-						<h5 class="subheader">Equipo de Trabajo <a href="#" id="reg-user-t" class="button radius tiny right" style="position: absolute; right: 15px; top: -8px;"><i></i> Añadir Usuario de Equipo de Trabajo</a></h5>
+						<h5 class="subheader">Equipo de Trabajo <a href="#" id="reg-user-t" class="button radius tiny right" style="position: absolute; right: 15px; top: -8px;"><i></i> Añadir Usuario</a></h5>
 						<?php if(!empty($team)): ?>
 							<table class="large-10">
 								<thead>
@@ -133,9 +133,10 @@
 									<th>RFC Compañia</th>
 									<th>Nombre</th>
 									<th>Descripción</th>
-									<th>Telefono</th>
-									<th style="text-align:center;">TEAM</th>
-									<th width="80">Opciones</th>
+									<th>Teléfono</th>
+									<th>Clase</th>
+									<th style="text-align:center;">E.T.</th>
+									<th width="80"></th>
 								</tr>
 							</thead>
 							<tbody>
@@ -145,6 +146,25 @@
 										<td><?=$row['c_name'];?></td>
 										<td><?=$row['c_descri'];?></td>
 										<td><?=$row['c_phone'];?></td>
+										<td><?php
+										switch ($row['id_clase']) {
+											case 1:
+												echo "A";
+												break;
+
+											case 2:
+												echo "B";
+												break;
+											
+											case 3:
+												echo "C";
+												break;
+
+											case 4: 
+												echo "D";
+												break;
+										}
+										?></td>
 										<td style="text-align: center;font-size: 20px;"><a href="<?=base_url('organizaciones/team');?>/<?=$row['c_rfc'];?>"><i class="fi-eye"></i></a></td>
 										<td style="text-align: center; font-size: 20px;"><a href="<?=base_url('organizaciones/delete');?>/<?=$row['c_rfc'];?>" class="btn-delete"><i class="fi-trash"></i></a> <a href="<?=base_url('organizaciones/edit');?>/<?=$row['c_rfc'];?>"><i class="fi-pencil"></i></a></td>
 									</tr>
@@ -173,57 +193,5 @@
 		<li class="default-li"><a href="<?=base_url('dashboard/logout');?>"><i class="fi-power" style="padding-right: 5px;"></i> Cerrar Sesión</a></li>
 	</ul>
 	<!-- End Main body -->
-	<!-- Modal Main body -->
-	<div id="app-add-org" class="reveal-modal small" data-reveal>
-		<div class="row" id="app-error-msg-org" style="padding-top: 20px;">
-			<div class="app-error-data-org panel radius" style="margin-right: 60px;"></div>
-			<div class="row" style="margin-right: 45px;">
-				<div class="large-10 column">
-					<a href="#" class="close-error-msg-org button small radius large-10">Regresar al Formulario</a>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="large-10 column">
-				<h5 class="subheader error-title" style="padding-top: 20px;padding-bottom: 10px;">Agrega una Organización a tu cuenta.</h5>
-			</div>
-		</div>
-		<form id="add-form-org">
-			<div class="row">
-				<div class="large-4 columns">
-					<label>
-						<input type="text" name="rfc" placeholder="RFC Compañía" class="radius" />
-					</label>
-				</div>
-				<div class="large-6 columns">
-					<label>
-						<input type="text" name="name" placeholder="Nombre de la Compañía" class="radius" />
-					</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="large-3 columns">
-					<label>
-						<input type="text" name="phone" placeholder="Telefono" class="radius" />
-					</label>
-				</div>
-				<div class="large-7 columns">
-					<label>
-						<input type="text" name="descripcion" placeholder="Descripción" class="radius" />
-					</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="large-10 column">
-					<input type="submit" class="button radius small large-10" value="Añadir Compañía" />
-				</div>
-			</div>
-		</form>
-		<a href="#" class="close-reveal-modal">&#215;</a>
-	</div>
-	<div class="reveal-modal small" id="modal-demo" data-reveal>
-		<a href="close-reveal-modal">&#215;</a>
-	</div>
-	<!-- End Modal Main body -->
 
 <?php $this->load->view('footer'); ?>

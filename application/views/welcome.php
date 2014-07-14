@@ -2,7 +2,7 @@
 		<!-- Incorrect Datas Login -->
 			<div class="large-4 large-centered columns" id="bad-msg">
 				<div class="bad">
-					<p>Email o Contraseña Incorrecta, Intenta nuevamente</p>
+					<p><i class="fi-x" style="font-size: 15px; padding-right: 5px;"></i> Correo Electrónico y/o Contraseña Incorrecta, Intenta nuevamente</p>
 				</div>
 			</div>
 		<!-- Main body -->
@@ -74,7 +74,7 @@
 						<br />
 						<span><a href="#" class="large-10 button radius" data-reveal-id="register-modal" data-reveal>Inscribete Gratis</a></span>
 						<br />
-						<p>Disponible en <a href="#">Android</a> e Internet. Por ahora!</p>
+						<p>Disponible en <a href="#">Android</a> y Web. Por ahora!</p>
 					</div>
 				</div>
 				<div class="row app-services-sub">

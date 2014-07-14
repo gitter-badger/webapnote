@@ -42,7 +42,8 @@
 									<th>Nombre</th>
 									<th>Descripción</th>
 									<th>Telefono</th>
-									<th style="text-align:center;">TEAM</th>
+									<th>Clase</th>
+									<th style="text-align:center;">E.T.</th>
 									<th width="80"></th>
 								</tr>
 							</thead>
@@ -53,6 +54,25 @@
 										<td><?=$row['c_name'];?></td>
 										<td><?=$row['c_descri'];?></td>
 										<td><?=$row['c_phone'];?></td>
+										<td><?php
+										switch ($row['id_clase']) {
+											case 1:
+												echo "A";
+												break;
+
+											case 2:
+												echo "B";
+												break;
+											
+											case 3:
+												echo "C";
+												break;
+
+											case 4: 
+												echo "D";
+												break;
+										}
+										?></td>
 										<td style="text-align: center;font-size: 20px;"><a href="<?=base_url('organizaciones/team');?>/<?=$row['c_rfc'];?>"><i class="fi-eye"></i></a></td>
 										<td style="text-align: center; font-size: 20px;"><a href="<?=base_url('organizaciones/delete');?>/<?=$row['c_rfc'];?>" class="btn-delete"><i class="fi-trash"></i></a> <a href="<?=base_url('organizaciones/edit');?>/<?=$row['c_rfc'];?>"><i class="fi-pencil"></i></a></td>
 									</tr>
@@ -109,9 +129,19 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="large-10 columns group" id="group-name">
+				<div class="large-6 columns group" id="group-name">
 					<label>Nombre de la Compañía</label>
 					<input type="text" name="name" placeholder="Nombre de la Compañía" id="name-input" class="radius" />
+					<span class="warning label alert radius span-error hide"></span>
+				</div>
+				<div class="large-4 columns group" id="group-clases">
+					<label>Clase</label>
+					<select name="clases">
+						<option value="">Selecciona una clase</option>
+						<?php foreach($clases as $row): ?>
+						<option value="<?=$row['id_clase'];?>"><?=$row['cla_name'];?></option>
+						<?php endforeach;?>
+					</select>
 					<span class="warning label alert radius span-error hide"></span>
 				</div>
 			</div>

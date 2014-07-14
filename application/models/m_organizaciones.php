@@ -8,6 +8,7 @@ class M_Organizaciones extends CI_Model {
 		//$this->load->database('production');
 	}
 
+	// Obtener Organizaciones ;
 	public function addOrg(){
 		$email = $this->session->userdata('u_email');
 		$this->db->where('u_email', $email);
@@ -15,6 +16,16 @@ class M_Organizaciones extends CI_Model {
 		if($query->num_rows() > 0){
 			return $query->result_array();
 		}else{ 
+			return NULL;
+		}
+	}
+
+	// Clases de las Organizaciones - Get
+	public function mdl_clases(){
+		$query = $this->db->get('CI_CLASE');
+		if($query->num_rows() > 0) {
+			return $query->result_array();
+		}else{
 			return NULL;
 		}
 	}
@@ -82,14 +93,16 @@ class M_Organizaciones extends CI_Model {
 		}
 	}
 
-	public function insertOrg($rfc, $name, $phone, $des){
+	// Agregar nueva Organización ;
+	public function insertOrg($rfc, $name, $phone, $des, $clas){
 		$email = $this->session->userdata('u_email');
 		$data = array(
 			'c_rfc' => $rfc,
 			'c_name' => $name, 
 			'c_descri' => $des, 
 			'c_phone' => $phone, 
-			'u_email' => $email
+			'u_email' => $email,
+			'id_clase' => $clas
 		);
 
 		return $this->db->insert('CI_COMPANY', $data);

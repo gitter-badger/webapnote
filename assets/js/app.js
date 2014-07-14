@@ -97,7 +97,7 @@ $(document).ready(function(){
 
 	$('#reg-user-t').click(function(){
 		//$('#add-user-te').fadeIn(500);
-		$('#add-user-te').slideToggle('slow');
+		$('#add-user-te').slideDown('slow');
 	});
 
 	$('#cancel-team').click(function(){

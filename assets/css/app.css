@@ -560,12 +560,12 @@ table {
 
 #bad-msg > .bad {
 	height: 48px;
-	background: #EE7C7C;
+	background: #302E2E;
 	padding: 11px 20px;
 	color: #FFFFFF;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
-	border: 1px solid #E55757;
+	border: 1px solid #201F1F;
 	display: none;
 }
 

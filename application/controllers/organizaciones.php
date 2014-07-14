@@ -10,6 +10,7 @@ class Organizaciones extends CI_Controller {
 
 	public function index() {
 		$data['datos'] = $this->m_organizaciones->addOrg();
+		$data['clases'] = $this->m_organizaciones->mdl_clases();
 		if($this->session->userdata('logger') == TRUE){
 			$this->load->view('organizaciones', $data);
 		}else {
@@ -17,11 +18,13 @@ class Organizaciones extends CI_Controller {
 		}
 	}
 
+	// Agregar nuevas organizacones a la DB;
 	public function addO(){
 		$this->form_validation->set_rules('rfc', 'RFC de Compañía', 'trim|required|xss_clean|min_length[12]|max_length[13]|is_unique[CI_COMPANY.c_rfc]');
 		$this->form_validation->set_rules('name', 'Nombre', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('phone', 'Telefono', 'trim|required|numeric|exact_length[10]|xss_clean');
 		$this->form_validation->set_rules('descripcion', 'Descripcion', 'trim|xss_clean');
+		$this->form_validation->set_rules('clases', 'clases', 'xss_clean|required');
 
 		$this->form_validation->set_message('required', 'Este campo es requerido');
 		$this->form_validation->set_message('numeric', 'Este campo solo acepta números');
@@ -47,6 +50,10 @@ class Organizaciones extends CI_Controller {
 					array(
 						'campo' => 'group-descripcion',
 						'error' => form_error('descripcion')
+						), 
+					array(
+						'campo' => 'group-clases', 
+						'error' => form_error('clases')
 						)
 				);
 
@@ -58,8 +65,9 @@ class Organizaciones extends CI_Controller {
 			$name = $this->input->post('name');
 			$phone = $this->input->post('phone');
 			$des = $this->input->post('descripcion');
+			$clas = $this->input->post('clases');
 
-			$query = $this->m_organizaciones->insertOrg($rfc, $name, $phone, $des);
+			$query = $this->m_organizaciones->insertOrg($rfc, $name, $phone, $des, $clas);
 			if($query){
 				$errors = array(
 					array(
@@ -92,16 +100,17 @@ class Organizaciones extends CI_Controller {
 		}	
 	}
 
+	// Actualizacion de las Organizaciones ;
 	public function update($rfc){
 		if($this->session->userdata('logger') == TRUE){
-			$this->form_validation->set_rules('ephone','Telefono', 'trim|xss_clean|numeric|max_length[7]');
+			$this->form_validation->set_rules('ephone','Telefono', 'trim|xss_clean|numeric|max_length[10]');
 			$this->form_validation->set_message('numeric', 'El Campo %s solo puede contener datos numericos.');
 			$this->form_validation->set_message('max_length','El Campo %s debe contener máximo %d caracteres.');
 			$this->form_validation->set_error_delimiters('','');
 			if($this->form_validation->run() == 	FALSE){
 				$data['datos'] = $this->m_organizaciones->addOrg();
 				$data['porg'] = $this->m_organizaciones->getOrg($rfc);
-				$data['validation'] = array( 'validacion' => validation_errors());
+				$data['validation'] = array( 'validacion' => validation_errors() );
 				$this->load->view('organizacion_edit', $data);
 			}else{
 				$name = $this->input->post('ename');
@@ -120,14 +129,16 @@ class Organizaciones extends CI_Controller {
 		}
 	}
 
+	// Ver equipo de trabajo de una Organizacion ;
 	public function team($rfc) {
 		if($this->session->userdata('logger') == TRUE){
 			$data['datos'] = $this->m_organizaciones->addOrg();
 			$data['team'] = $this->m_organizaciones->addTeam($rfc);
 			$data['porg'] = $this->m_organizaciones->getOrg($rfc);
+			$data['clases'] = $this->m_organizaciones->mdl_clases();
 			$this->load->view('organizacion_team', $data);
 		}else{
-			redirect(base_url('organizaciones'));
+			redirect(base_url());
 		}
 	}
 
