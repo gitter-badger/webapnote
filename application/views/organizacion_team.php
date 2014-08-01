@@ -52,25 +52,30 @@
 							<?php echo form_open(base_url('organizaciones').'/updateUsers/'.$porg['c_rfc']); ?>
 								<div class="row">
 									<div class="large-4 columns">
-										<input type="text" name="t_email" placeholder="Correo Electrónico">
+										<label>Correo Electrónico</label>
+										<input type="text" name="t_email" placeholder="">
 										<i class="fi-mail app-icon-input-edit"></i>
 									</div>
 									<div class="large-6 columns">
-										<input type="text" name="t_username" placeholder="Nombre de Usuario">
+										<label>Nombre de Usuario</label>
+										<input type="text" name="t_username" placeholder="">
 										<i class="fi-torso app-icon-input-edit"></i>
 									</div>
 								</div>
 								<div class="row">
 									<div class="large-4 columns">
-										<input type="text" name="t_name" placeholder="Nombre">
+										<label>Nombre</label>
+										<input type="text" name="t_name" placeholder="">
 										<i class="fi-align-left app-icon-input-edit"></i>
 									</div>
 									<div class="large-3 columns">
-										<input type="text" name="t_apep" placeholder="Apellido Materno">
+										<label>Apellido Materno</label>
+										<input type="text" name="t_apep" placeholder="">
 										<i class="fi-align-left app-icon-input-edit"></i>
 									</div>
 									<div class="large-3 columns">
-										<input type="text" name="t_apem" placeholder="Apellido Paterno">
+										<label>Apellido Paterno</label>
+										<input type="text" name="t_apem" placeholder="">
 										<i class="fi-align-left app-icon-input-edit"></i>
 									</div>
 								</div>
