@@ -8,6 +8,8 @@
 @import url(foundation.min.css);
 @import url(normalize.css);
 @import url(foundation-icons/foundation-icons.css);
+@import url(../notification/ns-default.css);
+@import url(../notification/ns-style-growl.css);
 
 /*************************************
 	Add Custom Styles for Foundation
@@ -572,6 +574,12 @@ table {
 #bad-msg > .bad > p {
 	font-size: 14px;
 	text-align: center;
+}
+
+
+/* Ns-effect-jelly */
+.ns-effect-jelly {
+	background: #E27478 !important;
 }
 
 /****************************************

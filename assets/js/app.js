@@ -46,7 +46,15 @@ $(document).ready(function(){
 				if(data == 1){
 					location.href='dashboard';
 				}else {
-					$('.bad').slideDown(500).delay(1500).slideUp(500);
+					setTimeout(function() {
+						var notification = new NotificationFx({
+							message: '<p style="font-size: 14px;">Hubo un problema! Verifica tu Correo Eletronico y/o Contraseña.</p>',
+							layout: 'growl',
+							effect: 'jelly',
+							type: 'notice'
+						});
+						notification.show();
+					}, 1200);
 				}
 			}
 		);
