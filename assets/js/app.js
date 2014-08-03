@@ -1,9 +1,11 @@
 $(document).ready(function(){
 
+	// Funcion para resetear formularios;
 	$.fn.reset = function() {
 		$(this).each(function(){ this.reset(); });
 	};
 	
+	// Nuevo registro de usuarios ;
 	$('#addUsuario').submit(function(e){
 		e.preventDefault();
 		$.post(
@@ -36,7 +38,7 @@ $(document).ready(function(){
 		$('#app-policy').animate({'opacity': '1', 'display': 'inherit'}, 500);
 	});
 
-	// Login ;
+	// Inicio de Sesion;
 	$('#app-signin').submit(function(e){
 		e.preventDefault();
 		$.post(
@@ -48,7 +50,7 @@ $(document).ready(function(){
 				}else {
 					setTimeout(function() {
 						var notification = new NotificationFx({
-							message: '<p style="font-size: 14px;">Hubo un problema! Verifica tu Correo Eletronico y/o Contraseña.</p>',
+							message: '<p style="font-size: 14px;">El Correo Eletronico y/o Contraseña son incorrectos.</p>',
 							layout: 'growl',
 							effect: 'jelly',
 							type: 'notice'
@@ -64,7 +66,7 @@ $(document).ready(function(){
 		$('.app-icon-widget').removeClass('app-icon-widget-base');
 	});	
 
-	// Form de Organizaciones ;
+	// Form de Organizaciones - Agregar organización ;
 	$('#add-form-org').submit(function(e){
 		e.preventDefault();
 		var errors;
@@ -105,7 +107,7 @@ $(document).ready(function(){
 
 	$('#reg-user-t').click(function(){
 		//$('#add-user-te').fadeIn(500);
-		$('#add-user-te').slideDown('slow');
+		$('#add-user-te').slideToggle('slow');
 	});
 
 	$('#cancel-team').click(function(){
@@ -114,6 +116,7 @@ $(document).ready(function(){
 
 	});
 
+	// Selector de Organizaciones ;
 	$('#org-options').change(function(){
 		var blue = "";
 		var url = "";
@@ -135,5 +138,74 @@ $(document).ready(function(){
 	//Validaciones de Campos;
 	$('#phone-edit').validations('0123456789');
 	$('#phone-input').validations('0123456789');
+
+	// Eliminar Organización ;
+	$('a#del').click(function(e){
+		var value = $(this).attr('value');
+		$.ajax({
+			url: 'organizaciones/delete/'+value,
+			dataType: 'text',
+			success: function(data) {
+				if(data == 1){
+					location.href="organizaciones";
+				}else{
+					setTimeout(function() {
+						var notification = new NotificationFx({
+							message: '<p style="font-size: 14px;">La organización contiene Usuarios o Proyectos registrados. No se pudo eliminar la organización.</p>',
+							layout: 'growl',
+							effect: 'slide',
+							type: 'notice'
+						});
+						notification.show();
+					}, 1200);
+				}
+			}
+		});
+		e.preventDefault();
+	});
+
+	// Nuevo usuario al equipo de trabajo ;
+	$('#add-team-user').submit(function(e){
+		e.preventDefault();
+		var objective = $(this).attr('value');
+		var errors;
+		$.ajax({
+			type: 'POST',
+			url: '/organizaciones/updateUsers/'+objective,
+			data: $(this).serialize(),
+			dataType: 'json',
+			success: function(data){
+				errors = 0;
+				console.log(data);
+				for(var i=0;i<data.length;i++){
+					if(data[i].error === ""){
+						$('#'+data[i].campo+' .span-error').html('').removeClass('show').addClass('hide');
+					}else{
+						$('#'+data[i].campo+' .span-error').html(data[i].error).removeClass('hide').addClass('show');
+						errors = errors + 1;
+					}
+				}
+
+				if(errors === 0){
+						$('#add-user-te').slideToggle('slow');
+						$('#add-team-user').reset();
+						setTimeout(function() {
+						var notification = new NotificationFx({
+							message: '<p style="font-size: 14px;">Nuevo usuario agregado al equipo de trabajo.</p>',
+							layout: 'growl',
+							effect: 'slide',
+							type: 'notice',
+							onClose: function(){
+								setTimeout(function(){
+									location.href="/organizaciones/team/"+objective;
+								}, 1000);
+							}
+						});
+						notification.show();
+						}, 1200);
+					}
+			}
+		});
+	});
 
 });

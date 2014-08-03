@@ -24,21 +24,8 @@
 						<ul class="breadcrumbs">
 							<li><a href="<?=base_url('dashboard');?>">Dashboard</a></li>
 							<li><a href="<?=base_url('organizaciones');?>">Organizaciones</a></li>
-							<li class="current"><a href="#">Equipo de Trabajo <span style="font-weight: bold;"><?=$porg['c_rfc'];?></span></a></li>
+							<li class="current"><a href="#">Equipo de Trabajo en <span style="font-weight: bold;"><?=$porg['c_rfc'];?></span></a></li>
 						</ul>
-					</div>
-				</div>
-				<div class="row">
-					<div class="large-10 column">
-						<!-- Reservado para alerta de Actualizacion -->
-						<?php if(isset($validation['validacion'])): ?>
-								<?php echo $validation['validacion']; ?>
-						<?php elseif(isset($query['result'])): ?>
-							<div class="alert-box success radius" data-alert>
-								Usuario Agregado Correctamente al equipo de trabajo.
-								<a href="#" class="close">&times;</a>
-							</div>
-						<?php endif; ?> 
 					</div>
 				</div>
 				<div class="row" id="add-user-te">
@@ -49,39 +36,44 @@
 							</div>
 						</div>
 						<div class="panel">
-							<?php echo form_open(base_url('organizaciones').'/updateUsers/'.$porg['c_rfc']); ?>
+							<form id="add-team-user" class="add-uteam" value="<?=$porg['c_rfc'];?>">
 								<div class="row">
-									<div class="large-4 columns">
+									<div class="large-4 columns group" id="group-email">
 										<label>Correo Electrónico</label>
 										<input type="text" name="t_email" placeholder="">
 										<i class="fi-mail app-icon-input-edit"></i>
+										<span class="warning label alert radius span-error hide"></span>
 									</div>
-									<div class="large-6 columns">
+									<div class="large-6 columns group" id="group-username">
 										<label>Nombre de Usuario</label>
 										<input type="text" name="t_username" placeholder="">
 										<i class="fi-torso app-icon-input-edit"></i>
+										<span class="warning label alert radius span-error hide"></span>
 									</div>
 								</div>
 								<div class="row">
-									<div class="large-4 columns">
+									<div class="large-4 columns group" id="group-name">
 										<label>Nombre</label>
 										<input type="text" name="t_name" placeholder="">
 										<i class="fi-align-left app-icon-input-edit"></i>
+										<span class="warning label alert radius span-error hide"></span>
 									</div>
-									<div class="large-3 columns">
-										<label>Apellido Materno</label>
+									<div class="large-3 columns group" id="group-apep">
+										<label>Apellido Paterno</label>
 										<input type="text" name="t_apep" placeholder="">
 										<i class="fi-align-left app-icon-input-edit"></i>
+										<span class="warning label alert radius span-error hide"></span>
 									</div>
-									<div class="large-3 columns">
-										<label>Apellido Paterno</label>
+									<div class="large-3 columns group" id="group-apem">
+										<label>Apellido Materno</label>
 										<input type="text" name="t_apem" placeholder="">
 										<i class="fi-align-left app-icon-input-edit"></i>
+										<span class="warning label alert radius span-error hide"></span>
 									</div>
 								</div>
 								<div class="row">
 									<div class="large-10 columns">
-										<input type="submit" class="button radius small large-10" value="Registrar Usuario al Equipo de Trabajo">
+										<input id="sub-team" type="submit" class="button radius small large-10" value="Registrar Usuario al Equipo de Trabajo">
 									</div>
 								</div>
 							</form>
@@ -171,7 +163,7 @@
 										}
 										?></td>
 										<td style="text-align: center;font-size: 20px;"><a href="<?=base_url('organizaciones/team');?>/<?=$row['c_rfc'];?>"><i class="fi-eye"></i></a></td>
-										<td style="text-align: center; font-size: 20px;"><a href="<?=base_url('organizaciones/delete');?>/<?=$row['c_rfc'];?>" class="btn-delete"><i class="fi-trash"></i></a> <a href="<?=base_url('organizaciones/edit');?>/<?=$row['c_rfc'];?>"><i class="fi-pencil"></i></a></td>
+										<td style="text-align: center; font-size: 20px;"><a href="#" id="del" value="<?=$row['c_rfc'];?>" class="btn-delete"><i class="fi-trash"></i></a> <a href="<?=base_url('organizaciones/edit');?>/<?=$row['c_rfc'];?>"><i class="fi-pencil"></i></a></td>
 									</tr>
 								<?php }?>
 							</tbody>
@@ -189,14 +181,6 @@
 		</div>
 	</div>
 
-	<!-- Menu Tooltips Dropdowns -->
-	<ul id="app-menu-options" style="border-radius: 5px !important; -webkit-border-radius: 5px !important; -moz-border-radius: 5px !important;" class="small f-dropdown" data-dropdown-content>
-		<li><a href="#"><img style="margin-top: -3px;" src="<?=base_url('assets/img/thumbs');?>/<?=$this->session->userdata('u_photo');?>" height="15" width="15" /> Mi Cuenta</a></li>
-		<li><a href="#"><i class="fi-torso" style="padding-right: 5px;"></i> Editar Perfil</a></li>
-		<li><a href="#"><i class="fi-widget" style="padding-right: 5px;"></i> Configuración de la Cuenta</a></li>
-		<li class="divider-li"></li>
-		<li class="default-li"><a href="<?=base_url('dashboard/logout');?>"><i class="fi-power" style="padding-right: 5px;"></i> Cerrar Sesión</a></li>
-	</ul>
-	<!-- End Main body -->
+	<?php $this->load->view('dropdown'); ?>
 
 <?php $this->load->view('footer'); ?>

@@ -367,6 +367,7 @@ color: rgb(87, 87, 87);
 #app-menu-options li {
 	margin-top: 5px;
 	margin-bottom: 7px;
+	font-weight: 700;
 }
 
 #app-menu-options li a{
@@ -375,7 +376,7 @@ color: rgb(87, 87, 87);
 }
 
 #app-menu-options li a:hover {
-	color: #F0F0F0;
+	color: #555555;
 }
 
 #app-menu-options li:hover {
@@ -383,10 +384,9 @@ color: rgb(87, 87, 87);
 }
 
 .f-dropdown li:hover, .f-dropdown li:focus {
-	background: #B84241;
-	border-top: 1px solid #750000;
-	border-bottom: 1px solid #750000;
-	box-shadow: inset 0 0 1px 0px #FFA6A6;
+	background: #F3F3F3;
+	border-top: 0px solid #FFF;
+	border-bottom: 2px solid #FFFFFF;
 }
 
 .f-dropdown.small {
@@ -531,6 +531,10 @@ table {
 	top: 0;
 	right: 15px;
 	padding: 3px 5px;
+}
+
+.add-uteam .group label {
+	padding: 0 !important;
 }
 
 .group label {
