@@ -56,7 +56,7 @@ $(document).ready(function(){
 							type: 'notice'
 						});
 						notification.show();
-					}, 1200);
+					}, 100);
 				}
 			}
 		);
@@ -199,11 +199,11 @@ $(document).ready(function(){
 							onClose: function(){
 								setTimeout(function(){
 									location.href="/organizaciones/team/"+objective;
-								}, 1000);
+								}, 700);
 							}
 						});
 						notification.show();
-						}, 1200);
+						}, 100);
 					}
 			}
 		});

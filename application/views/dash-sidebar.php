@@ -21,7 +21,6 @@
 						<li <?php evalActive('proyectos');?>><a href="<?=base_url('proyectos');?>"><i class="fi-database icon-menu-nav"></i> Proyectos</a></li>
 						<li <?php evalActive('organizaciones');?>><a href="<?=base_url('organizaciones');?>"><i class="fi-web icon-menu-nav"></i> Organizaciones</a></li>
 						<li <?php evalActive('reportes');?>><a href="<?=base_url('reportes');?>"><i class="fi-page-multiple icon-menu-nav"></i> Reportes</a></li>
-						<li <?php evalActive('inbox');?>><a href="<?=base_url('inbox');?>"><i class="fi-mail icon-menu-nav"></i> Inbox <span class="badge-icon rounded right">30</span></a></li>
 					</ul>
 				</div>
 			</div>

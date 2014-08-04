@@ -21,20 +21,7 @@
 				</div>
 				<div class="row">
 					<div class="large-10 column">
-						<!-- Reservado para alerta de Actualizacion -->
-						<?php if(isset($validation['validacion'])): ?>
-							<?php echo $validation['validacion']; ?>
-						<?php elseif(isset($query['result'])): ?>
-							<div class="alert-box success radius" data-alert>
-								Datos actualizados correctamente.
-								<a href="#" class="close">&times;</a>
-							</div>
-						<?php endif; ?> 
-					</div>
-				</div>
-				<div class="row">
-					<div class="large-10 column">
-						<h5 class="subheader">Proyectos en <?=$orgpro;?> <a href="#" id="btn-open-pro" class="button radius tiny right" style="position: absolute; right: 15px; top: -8px;"><i></i> Añadir Nuevo Proyecto</a></h5>
+						<h5 class="subheader">Proyectos en <?=$orgpro;?> <a href="#" id="btn-open-pro" class="button radius tiny right" style="position: absolute; right: 15px; top: -8px;"><i></i>Crear Nuevo Proyecto</a></h5>
 					</div>
 				</div>
 				<div class="row" id="panel-form-id">
@@ -42,19 +29,30 @@
 						<div class="panel">
 							<?php echo form_open(base_url('proyectos').'/add/'.$orgpro); ?>
 								<div class="row">
+									<div class="large-10 column">
+										<label>Nombre del Proyecto</label>
+										<input type="text" name="pname">
+									</div>
+								</div>
+								<div class="row">
+									<div class="large-10 column">
+										<label>Categoría</label>
+										<select>
+											<option>Selecciona una opción</option>
+											<?php foreach($categorias as $row): ?>
+											<option value="<?=$row['id_category']?>"><?=$row['cat_name']?></option>
+											<?php endforeach; ?>
+										</select>
+									</div>
+								</div>
+								<br />
+								<div class="row">
 									<div class="large-5 columns">
-										<input type="text" name="p_name" placeholder="Nombre del Proyecto">
-										<i class="fi-database app-icon-input-edit"></i>
-										<div class="row">
-											<div class="large-10 column">
-												<input type="text" value="<?=$orgpro;?>" disabled>
-												<i style="left: 22px !important;" class="fi-torso-business app-icon-input-edit"></i>
-											</div>
-										</div>
-										<input type="submit" class="button tiny large-10 radius " value="Registrar Proyecto">
+										<label>Tareas a Realizar</label>
 									</div>
 									<div class="large-5 columns">
-										<textarea style="margin-top: 15px; padding-bottom: 20px;" rows="9" name="p_des" placeholder="Descripción de Proyecto"></textarea>
+										<label>Descripción</label>
+										<textarea cols="10" rows="10"></textarea>
 									</div>
 								</div>
 							</form>

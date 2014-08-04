@@ -40,4 +40,13 @@ class M_Proyectos extends CI_Model {
 		return $this->db->insert('CI_PROYECTOS', $data);
 	}
 
+	public function obtenerCategorias(){
+		$query = $this->db->get('CI_CATEGORIAS');
+		if($query->num_rows() > 0){
+			return $query->result_array();
+		}else{
+			return NULL;
+		}
+	}
+
 }
