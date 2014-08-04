@@ -7,18 +7,9 @@
 
 		<div class="large-8 columns app-content-main app-content">
 			<div id="options-menu-dash-app">
-				<div class="row">
-					<div class="large-4 columns">
-						<form>
-							<input type="text" name="search" placeholder="¿Buscabas algo?" class="radius" style="padding-left: 35px;" />
-							<i class="fi-magnifying-glass app-icon-search"></i>
-						</form>
-					</div>
-					<div class="large-3 columns"></div>
-					<div class="large-3 columns">
-						<a href="#" data-options="align: left" data-dropdown="app-menu-options" class="app-icon-widget right"><i class="fi-widget"></i></a>
-					</div>
-				</div>
+				
+				<?php $this->load->view('bartop'); ?>
+
 				<div class="row" style="margin-top: 20px;">
 					<div class="large-10 column">
 						<ul class="breadcrumbs">
@@ -109,8 +100,6 @@
 		</div>
 	</div>
 
-	<!-- Modal Main body -->
-	
-	<!-- End Modal Main body -->
+	<?php $this->load->view('dropdown'); ?>
 
 <?php $this->load->view('footer'); ?>

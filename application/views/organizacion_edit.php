@@ -7,18 +7,9 @@
 
 		<div class="large-8 columns app-content-main app-content">
 			<div id="options-menu-dash-app">
-				<div class="row">
-					<div class="large-4 columns">
-						<form>																																																			
-							<input type="text" name="search" placeholder="¿Buscabas algo?" class="radius" style="padding-left: 35px;" />
-							<i class="fi-magnifying-glass app-icon-search"></i>
-						</form>
-					</div>
-					<div class="large-3 columns"></div>
-					<div class="large-3 columns">
-						<a href="#" data-options="align: left" data-dropdown="app-menu-options" class="app-icon-widget right"><i class="fi-widget"></i></a>
-					</div>
-				</div>
+				
+				<?php $this->load->view('bartop'); ?>
+
 				<div class="row" style="margin-top: 20px;">
 					<div class="large-10 column">
 						<ul class="breadcrumbs">
@@ -84,7 +75,7 @@
 				</div>
 				<div class="row">
 					<div class="large-10 column">
-						<h5 class="subheader">Mis Organizaciones <!--<a href="#" data-reveal-id="app-add-org" class="button radius tiny right" style="position: absolute; right: 15px; top: -8px;"><i></i> Añadir Organización</a>--></h5>
+						<h5 class="subheader">Mis Organizaciones </h5>
 					</div>
 				</div>
 				<div class="row">
@@ -97,8 +88,9 @@
 									<th>Nombre</th>
 									<th>Descripción</th>
 									<th>Telefono</th>
-									<th style="text-align:center;">TEAM</th>
-									<th width="80"></th>
+									<th style="text-align:center;">Clase</th>
+									<th style="text-align:centeR;">E.T.</th>
+									<th></th>
 								</tr>
 							</thead>
 							<tbody>
@@ -108,6 +100,25 @@
 										<td><?=$row['c_name'];?></td>
 										<td><?=$row['c_descri'];?></td>
 										<td><?=$row['c_phone'];?></td>
+										<td style="text-align:center;"><?php
+										switch ($row['id_clase']) {
+											case 1:
+												echo "A";
+												break;
+
+											case 2:
+												echo "B";
+												break;
+											
+											case 3:
+												echo "C";
+												break;
+
+											case 4: 
+												echo "D";
+												break;
+										}
+										?></td>
 										<td style="text-align: center;font-size: 20px;"><a href="<?=base_url('organizaciones/team');?>/<?=$row['c_rfc'];?>"><i class="fi-eye"></i></a></td>
 										<td style="text-align: center; font-size: 20px;"><a href="#" id="del" value="<?=$row['c_rfc'];?>" class="btn-delete"><i class="fi-trash"></i></a> <a href="<?=base_url('organizaciones/edit');?>/<?=$row['c_rfc'];?>"><i class="fi-pencil"></i></a></td>
 									</tr>

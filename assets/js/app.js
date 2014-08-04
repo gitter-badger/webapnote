@@ -64,6 +64,7 @@ $(document).ready(function(){
 
 	$('html').click(function(){
 		$('.app-icon-widget').removeClass('app-icon-widget-base');
+		$('.app-icon-comment').removeClass('app-icon-widget-base');
 	});	
 
 	// Form de Organizaciones - Agregar organización ;
@@ -151,7 +152,7 @@ $(document).ready(function(){
 				}else{
 					setTimeout(function() {
 						var notification = new NotificationFx({
-							message: '<p style="font-size: 14px;">La organización contiene Usuarios o Proyectos registrados. No se pudo eliminar la organización.</p>',
+							message: '<p style="font-size: 14px;">La organización contiene Usuarios o Proyectos registrados. No se puede eliminar la organización.</p>',
 							layout: 'growl',
 							effect: 'slide',
 							type: 'notice'

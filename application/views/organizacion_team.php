@@ -7,18 +7,9 @@
 
 		<div class="large-8 columns app-content-main app-content">
 			<div id="options-menu-dash-app">
-				<div class="row">
-					<div class="large-4 columns">
-						<form>																																																			
-							<input type="text" name="search" placeholder="¿Buscabas algo?" class="radius" style="padding-left: 35px;" />
-							<i class="fi-magnifying-glass app-icon-search"></i>
-						</form>
-					</div>
-					<div class="large-3 columns"></div>
-					<div class="large-3 columns">
-						<a href="#" data-options="align: left" data-dropdown="app-menu-options" class="app-icon-widget right"><i class="fi-widget"></i></a>
-					</div>
-				</div>
+				
+				<?php $this->load->view('bartop'); ?>
+
 				<div class="row" style="margin-top: 20px;">
 					<div class="large-10 column">
 						<ul class="breadcrumbs">
@@ -87,12 +78,12 @@
 							<table class="large-10">
 								<thead>
 									<tr>
-										<th>Nombre de Usuario</th>
+										<th>Usuario</th>
 										<th>Nombre</th>
 										<th>Apellido Paterno</th>
 										<th>Apellido Materno</th>
 										<th>Correo Electrónico</th>
-										<th style="text-align: center;">Opciones</th>
+										<th style="text-align: center;"></th>
 									</tr>
 								</thead>
 								<tbody>
@@ -131,7 +122,7 @@
 									<th>Nombre</th>
 									<th>Descripción</th>
 									<th>Teléfono</th>
-									<th>Clase</th>
+									<th style="text-align:center;">Clase</th>
 									<th style="text-align:center;">E.T.</th>
 									<th width="80"></th>
 								</tr>
@@ -143,7 +134,7 @@
 										<td><?=$row['c_name'];?></td>
 										<td><?=$row['c_descri'];?></td>
 										<td><?=$row['c_phone'];?></td>
-										<td><?php
+										<td style="text-align:center;"><?php
 										switch ($row['id_clase']) {
 											case 1:
 												echo "A";
@@ -182,5 +173,8 @@
 	</div>
 
 	<?php $this->load->view('dropdown'); ?>
+	<div class="reveal-modal small" id="modal-demo" data-reveal>
+		<a href="close-reveal-modal">&#215;</a>
+	</div>
 
 <?php $this->load->view('footer'); ?>
