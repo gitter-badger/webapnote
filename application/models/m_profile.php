@@ -7,4 +7,14 @@ class M_Profile extends CI_Model {
 		$this->load->database('default');
 	}
 
+	public function update($email, $nombre, $apep, $apem){
+		$data = array(
+			'u_nombre' => $nombre, 
+			'u_apep' => $apep,
+			'u_apem' => $apem
+			);
+		$this->db->where('u_email', $email);
+		return $this->db->update('CI_USUARIOS', $data);
+	}
+
 }

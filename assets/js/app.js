@@ -209,27 +209,71 @@ $(document).ready(function(){
 		});
 	});
 
-// Profile change hover profile picture;
-$('#th-profile').mouseenter(function(){
-	$('#th-profile a').fadeIn(250);
-}).mouseleave(function(){
-	$('#th-profile a').fadeOut(250);
-});
+	// Profile change hover profile picture;
+	$('#th-profile').mouseenter(function(){
+		$('#th-profile a').fadeIn(250);
+	}).mouseleave(function(){
+		$('#th-profile a').fadeOut(250);
+	});
 
-// Profile edit profile change attr;
-var n = 0;
-$('#edit-profile').click(function(){
-	if(n===0){
-		$('.group-profile-info input').removeAttr('disabled');
-		$(this).html('Cancelar');
-		$('#save-profile').fadeIn(200);
-		n++;
-	}else{
-		$('.group-profile-info input').prop('disabled', true);
-		$(this).html('Editar Perfil');
-		$('#save-profile').fadeOut(200);
-		n = 0;
-	}
-});
+	// Profile edit profile change attr;
+	var n = 0;
+	$('#edit-profile').click(function(){
+		if(n===0){
+			$('.group-profile-info input').removeAttr('disabled');
+			$(this).html('<i class="fi-x" style="position: absolute; top: 5px; left: 10px; font-size: 20px;"></i>  Cancelar');
+			$('#save-profile').fadeIn(200);
+			n++;
+		}else{
+			$('.group-profile-info input').prop('disabled', true);
+			$(this).html('<i class="fi-page-edit" style="position: absolute; top: 5px; left: 25px; font-size: 20px;"></i> Editar');
+			$('#save-profile').fadeOut(200);
+			setTimeout(function(){location.href="profile";}, 300);
+			n = 0;
+		}
+	});
+
+	//Profile edit;
+	$('#save-profile').click(function(e){
+		e.preventDefault();
+		var errors;
+		$.ajax({
+			type: 'POST',
+			url: '/profile/actualizar',
+			data: $('#sv-profile').serialize(),
+			dataType: 'json',
+			success: function(data){
+				errors = 0;
+				console.log(data);
+				for(var i=0;i<data.length;i++){
+					if(data[i].error === ""){
+						$('#'+data[i].campo+' .span-error').html('').removeClass('show').addClass('hide');
+					}else{
+						$('#'+data[i].campo+' .span-error').html(data[i].error).removeClass('hide').addClass('show');
+						errors = errors + 1;
+					}
+				}
+
+					if(errors === 0){
+						setTimeout(function() {
+						var notification = new NotificationFx({
+							message: '<p style="font-size: 14px;">Cambios realizados correctamente. Espere un momento, se volvera a cargar la pagina.</p>',
+							layout: 'growl',
+							effect: 'slide',
+							type: 'notice',
+							onClose: function(){
+								setTimeout(function(){
+									location.href="profile";
+								}, 700);
+							}
+						});
+						notification.show();
+						}, 100);
+					}
+
+			}
+		});
+	});
+
 
 });

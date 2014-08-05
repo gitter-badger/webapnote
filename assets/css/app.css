@@ -690,6 +690,12 @@ span.badge-icon-noty {
 	left: 22px !important;
 }
 
+.group-profile-info .span-error {
+	position: absolute;
+	top: 80px;
+	right: 8px;
+}
+
 /****************************************
 	Add Custom Media Queries
 ****************************************/
