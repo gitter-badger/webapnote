@@ -10,7 +10,9 @@ class Profile extends CI_Controller {
 
 	public function index() {
 		if($this->session->userdata('logger') == TRUE){
-			$this->load->view('profile');
+			$data['categorias'] = $this->m_profile->obtenerCategorias();
+			$data['micats'] = $this->m_profile->obtenerCatsxuser();
+			$this->load->view('profile', $data);
 		}else{
 			redirect(base_url());
 		}
@@ -61,6 +63,21 @@ class Profile extends CI_Controller {
 			}
 		}else{
 			redirect(base_url());
+		}
+	}
+
+	// add category to profile;
+	public function category(){
+		$email = $this->session->userdata('u_email');
+		$cat = $this->input->post('categories');
+		$query = $this->m_profile->agregarCategoriaPerfil($email, $cat);
+		if($query){
+			$cat = $this->m_profile->obtenerCategoria($cat);
+			$data = array(
+				'nombre' => $cat->cat_name
+				);
+			$result = json_encode($data);
+			echo $result;
 		}
 	}
 

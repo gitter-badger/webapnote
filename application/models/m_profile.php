@@ -17,4 +17,48 @@ class M_Profile extends CI_Model {
 		return $this->db->update('CI_USUARIOS', $data);
 	}
 
+
+	public function obtenerCategorias(){
+		$query = $this->db->get('CI_CATEGORIAS');
+		if($query->num_rows() > 0){
+			return $query->result_array();
+		}else{
+			return NULL;
+		}
+	}
+
+	public function agregarCategoriaPerfil($email, $idcat){
+		$data = array(
+			'id_category' => $idcat,
+			'u_email' => $email
+			);
+		return $this->db->insert('CI_DETALLE_USUARIO', $data);
+	}
+
+	public function obtenerCategoria($id){
+		$this->db->where('id_category', $id);
+		$query = $this->db->get('CI_CATEGORIAS');
+		if($query->num_rows == 1){
+			return $query->row();
+		}else {
+			return false;
+		}
+	}
+
+	public function obtenerCatsxuser(){
+		$email = $this->session->userdata('u_email');
+
+		$this->db->select('CI_CATEGORIAS.cat_name AS cat_name');
+		$this->db->from('CI_DETALLE_USUARIO, CI_CATEGORIAS');
+		$this->db->where('CI_DETALLE_USUARIO.id_category = CI_CATEGORIAS.id_category');
+		$this->db->where('CI_DETALLE_USUARIO.u_email', $email);
+		$this->db->limit(3);
+		$query = $this->db->get();
+		if($query->num_rows > 0){
+			return $query->result_array();
+		}else{
+			return false;
+		}
+	}
+
 }

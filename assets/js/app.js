@@ -275,5 +275,34 @@ $(document).ready(function(){
 		});
 	});
 
+//Category add to profile;
+$('#add-category').submit(function(e){
+	e.preventDefault();
+	$.ajax({
+		type: 'POST', 
+		url: '/profile/category',
+		data: $(this).serialize(),
+		dataType: 'json',
+		success: function(data){
+			$('#categ').before('<div class="large-3 columns"><a href="#" class="button round">'+data.nombre+'</a></div></div>');
+			$('#addcategory').foundation('reveal','close');
+			setTimeout(function() {
+				var notification = new NotificationFx({
+					message: '<p style="font-size: 14px;">Cambios realizados correctamente. Espere un momento, se volvera a cargar la pagina.</p>',
+					layout: 'growl',
+					effect: 'slide',
+					type: 'notice',
+					onClose: function(){
+						setTimeout(function(){
+							location.href="profile";
+						}, 700);
+					}
+				});
+				notification.show();
+			}, 100);
+		}
+	});
+});
+
 
 });
