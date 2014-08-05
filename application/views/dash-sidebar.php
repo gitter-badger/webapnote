@@ -6,7 +6,7 @@
 		<div class="large-2 columns app-sidebar-main">
 			<div class="row dash-app">
 				<div class="large-4 columns">
-					<img class="th" src="<?=base_url('assets/img/thumbs');?>/<?=$this->session->userdata('u_photo');?>" height="70" width="70" />
+					<img class="th" style="border-radius: 35px;" src="<?=base_url('assets/img/thumbs');?>/<?=$this->session->userdata('u_photo');?>" height="70" width="70" />
 				</div>
 				<div class="large-6 columns dash-app-profile">
 					<h6 style="color: #EEE; font-weight: 600; font-size: 14px;"><?=$this->session->userdata('u_nombre');?> <?=$this->session->userdata('u_apep');?></h6>
@@ -18,6 +18,7 @@
 				<div class="large-10 column">
 					<ul class="side-nav">
 						<li <?php evalActive('dashboard'); ?>><a href="<?=base_url('dashboard');?>"><i class="fi-home icon-menu-nav"></i> Dashboard</a></li>
+						<li <?php evalActive('profile');   ?>><a href="<?=base_url('profile');?>"><i class="fi-torso icon-menu-nav"></i> Mi Perfil</a></li>
 						<li <?php evalActive('proyectos');?>><a href="<?=base_url('proyectos');?>"><i class="fi-database icon-menu-nav"></i> Proyectos</a></li>
 						<li <?php evalActive('organizaciones');?>><a href="<?=base_url('organizaciones');?>"><i class="fi-web icon-menu-nav"></i> Organizaciones</a></li>
 						<li <?php evalActive('reportes');?>><a href="<?=base_url('reportes');?>"><i class="fi-page-multiple icon-menu-nav"></i> Reportes</a></li>

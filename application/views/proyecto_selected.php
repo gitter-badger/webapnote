@@ -30,13 +30,15 @@
 							<?php echo form_open(base_url('proyectos').'/add/'.$orgpro); ?>
 								<div class="row">
 									<div class="large-10 column">
-										<label>Nombre del Proyecto</label>
-										<input type="text" name="pname">
+										<label><b>Nombre del Proyecto</b></label>
+										<input type="text" name="pname" placeholder="Introduce el nombre del nuevo proyecto">
+										<i class="fi-credit-card app-icon-input-edit"></i>
 									</div>
 								</div>
 								<div class="row">
-									<div class="large-10 column">
-										<label>Categoría</label>
+									<div class="large-6 columns">
+										<label><b>Categoría</b></label>
+										<br />
 										<select>
 											<option>Selecciona una opción</option>
 											<?php foreach($categorias as $row): ?>
@@ -44,15 +46,32 @@
 											<?php endforeach; ?>
 										</select>
 									</div>
+									<div class="large-4 columns">
+										<label><b>Responsable</b></label>
+										<br />
+										<select>
+											<option>Selecciona una opción</option>
+										</select>
+									</div>
 								</div>
 								<br />
 								<div class="row">
 									<div class="large-5 columns">
-										<label>Tareas a Realizar</label>
+										<label><b>Conceptos</b></label>
+										<div class="row collapse">
+											<div class="large-7 columns">
+												<input type="text" name="todo" placeholder="Comienza escribiendo un concepto...">
+												<i class="fi-credit-card app-icon-input-edit" style="top: 27px !important; left: 14px !important;"></i>
+											</div>
+											<div class="large-3 columns">
+												<input type="button" class="button postfix" style="padding-left: 0 !important;" value="Nuevo Concepto">
+											</div>
+										</div>
 									</div>
 									<div class="large-5 columns">
-										<label>Descripción</label>
-										<textarea cols="10" rows="10"></textarea>
+										<label><b>Descripción</b></label>
+										<br />
+										<textarea cols="10" rows="13" placeholder="Describe los requerimientos o actividades al realizar en este proyecto, también puedes comentar un poco sobre el proyecto."></textarea>
 									</div>
 								</div>
 							</form>

@@ -686,6 +686,10 @@ span.badge-icon-noty {
 	font-weight: 700;
 }
 
+.group-profile-info .app-icon-input-edit {
+	left: 22px !important;
+}
+
 /****************************************
 	Add Custom Media Queries
 ****************************************/

@@ -209,4 +209,27 @@ $(document).ready(function(){
 		});
 	});
 
+// Profile change hover profile picture;
+$('#th-profile').mouseenter(function(){
+	$('#th-profile a').fadeIn(250);
+}).mouseleave(function(){
+	$('#th-profile a').fadeOut(250);
+});
+
+// Profile edit profile change attr;
+var n = 0;
+$('#edit-profile').click(function(){
+	if(n===0){
+		$('.group-profile-info input').removeAttr('disabled');
+		$(this).html('Cancelar');
+		$('#save-profile').fadeIn(200);
+		n++;
+	}else{
+		$('.group-profile-info input').prop('disabled', true);
+		$(this).html('Editar Perfil');
+		$('#save-profile').fadeOut(200);
+		n = 0;
+	}
+});
+
 });
