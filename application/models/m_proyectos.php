@@ -49,4 +49,19 @@ class M_Proyectos extends CI_Model {
 		}
 	}
 
+	public function obtenerResponsableCat($category){
+		
+		$this->db->select('CI_USUARIOS.u_email AS u_email, CI_USUARIOS.u_nombre AS u_nombre, CI_USUARIOS.u_apep AS u_apep, CI_USUARIOS.u_apem AS u_apem');
+		$this->db->from('CI_DETALLE_USUARIO, CI_USUARIOS');
+		$this->db->where('CI_DETALLE_USUARIO.id_category', $category);
+		$this->db->where('CI_DETALLE_USUARIO.u_email = CI_USUARIOS.u_email');
+
+		$query = $this->db->get();
+		if($query->num_rows() > 0){
+			return $query->result_array();
+		}else{
+			return null;
+		}
+	}
+
 }

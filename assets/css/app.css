@@ -77,9 +77,8 @@ a:hover {
 }
 
 .app-content-main {
-	float: right;
-	background: url('../img/bg-appmovil.png') no-repeat;
-	background-position-x: right;
+	background: url(../img/bg-app.jpg) -570px 0px no-repeat;
+	background-clip: border-box
 }
 
 .app-icon-input {
@@ -694,6 +693,13 @@ span.badge-icon-noty {
 	position: absolute;
 	top: 80px;
 	right: 8px;
+}
+
+#userfile {
+	position: absolute !important;
+	visibility: hidden !important;
+	width: 0 !important;
+	z-index: -9999 !important;
 }
 
 /****************************************

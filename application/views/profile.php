@@ -24,9 +24,13 @@
 						<br />
 						<div class="large-2 columns">
 							<div id="th-profile" class="th" style="position: relative;">
-								<a href="#" class="button" style="display: none; position: absolute; font-size: 9px !important; text-align: left;padding-left: 38px; bottom:-20px; background: rgba(0,0,0,0.4);"><i class="fi-camera" style="position: absolute;top: 14px; left: 12px; font-size: 24px;"></i> Update Profile Picture</a>
-								<img class="" src="<?=base_url('assets/img/thumbs');?>/<?=$this->session->userdata('u_photo');?>" height="175" width="175" />
+								<a href="#" class="button" id="uploadfile" style="display: none; position: absolute; font-size: 9px !important; text-align: left;padding-left: 38px; bottom:-20px; background: rgba(0,0,0,0.4);"><i class="fi-camera" style="position: absolute;top: 14px; left: 12px; font-size: 24px;"></i> Update Profile Picture</a>
+								<img class="" id="preview" src="<?=base_url('assets/img/thumbs');?>/<?=$this->session->userdata('u_photo');?>" height="175" width="175" />
 							</div>
+							<form id="formfile">
+								<input type="file" name="userfile" id="userfile" />
+								<input id="save-pp" style="position:absolute; padding: 10px; bottom: -40px; left:19px;display: none;z-inde: 9999;" type="submit" class="button radius small large-8" value="Guardar">
+							</form>
 						</div>
 							<div class="large-8 columns">
 								<div class="row">
@@ -74,6 +78,7 @@
 							</div>
 					</div>
 				</div>
+				<br />
 				<div class="row">
 					<div class="large-10 column">
 						<h5 class="subheader">Proyectos Asignados</b></h5>

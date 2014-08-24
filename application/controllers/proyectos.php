@@ -27,7 +27,8 @@ class Proyectos extends CI_Controller {
 			redirect(base_url());
 		}
 	}
-
+	
+	// No disponible por el momento ;
 	public function add($rfc){
 		if($this->session->userdata('logger') == TRUE){
 			$this->form_validation->set_rules('p_name', 'Nombre', 'trim|required|xss_clean|alpha');
@@ -54,4 +55,16 @@ class Proyectos extends CI_Controller {
 		}
 	}
 
+	// Obtener responsables para seleccionar ;
+	public function obtenerResponsables($category){
+		if($this->session->userdata('logger') == TRUE){
+			$datos = $this->m_proyectos->obtenerResponsableCat($category);
+			if($datos){
+				$result = json_encode($datos);
+				echo $result;
+			}			
+		}else{
+			redirect(base_url());
+		}
+	}
 }

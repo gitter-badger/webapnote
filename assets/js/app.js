@@ -275,34 +275,72 @@ $(document).ready(function(){
 		});
 	});
 
-//Category add to profile;
-$('#add-category').submit(function(e){
-	e.preventDefault();
-	$.ajax({
-		type: 'POST', 
-		url: '/profile/category',
-		data: $(this).serialize(),
-		dataType: 'json',
-		success: function(data){
-			$('#categ').before('<div class="large-3 columns"><a href="#" class="button round">'+data.nombre+'</a></div></div>');
-			$('#addcategory').foundation('reveal','close');
-			setTimeout(function() {
-				var notification = new NotificationFx({
-					message: '<p style="font-size: 14px;">Cambios realizados correctamente. Espere un momento, se volvera a cargar la pagina.</p>',
-					layout: 'growl',
-					effect: 'slide',
-					type: 'notice',
-					onClose: function(){
-						setTimeout(function(){
-							location.href="profile";
-						}, 700);
-					}
-				});
-				notification.show();
-			}, 100);
-		}
+	//Category add to profile;
+	$('#add-category').submit(function(e){
+		e.preventDefault();
+		$.ajax({
+			type: 'POST', 
+			url: '/profile/category',
+			data: $(this).serialize(),
+			dataType: 'json',
+			success: function(data){
+				$('#categ').before('<div class="large-3 columns"><a href="#" class="button round">'+data.nombre+'</a></div></div>');
+				$('#addcategory').foundation('reveal','close');
+				setTimeout(function() {
+					var notification = new NotificationFx({
+						message: '<p style="font-size: 14px;">Cambios realizados correctamente. Espere un momento, se volvera a cargar la pagina.</p>',
+						layout: 'growl',
+						effect: 'slide',
+						type: 'notice',
+						onClose: function(){
+							setTimeout(function(){
+								location.href="profile";
+							}, 700);
+						}
+					});
+					notification.show();
+				}, 100);
+			}
+		});
 	});
-});
 
+	//Upload file to profile picture;
+	$('#uploadfile').on('click',function(e){
+		e.preventDefault();
+		$('#userfile').click();
+	});
+
+	$('input[type=file]').change(function(){
+		var file = (this.files[0].name).toString();
+		var reader = new FileReader();
+
+		reader.onload = function(e){
+			$('#preview').attr('src', e.target.result);
+		};
+
+		reader.readAsDataURL(this.files[0]);
+		$('#save-pp').fadeIn();
+
+	});
+
+	// Obtiene responsables dependiendo la categoría 
+	// seleccionada.
+	$('#cat').change(function(){
+		var category = "";
+		$('#new .newop').remove();
+		$('#cat option:selected').each(function(){
+			category = $(this).val();
+			$.ajax({
+				url: '/proyectos/obtenerResponsables/'+category,
+				dataType: 'json',
+				success: function(data){
+					console.log(data);
+					for(var i = 0; i < data.length ; i++){
+						$('#new').append('<option class="newop" value="'+data[i].u_email+'">'+data[i].u_nombre+' '+data[i].u_apep+' '+data[i].u_apem+'</option>');
+					}
+				}
+			});
+		});
+	});
 
 });

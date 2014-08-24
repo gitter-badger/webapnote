@@ -39,7 +39,7 @@
 									<div class="large-6 columns">
 										<label><b>Categoría</b></label>
 										<br />
-										<select>
+										<select name="category" id="cat">
 											<option>Selecciona una opción</option>
 											<?php foreach($categorias as $row): ?>
 											<option value="<?=$row['id_category']?>"><?=$row['cat_name']?></option>
@@ -49,7 +49,7 @@
 									<div class="large-4 columns">
 										<label><b>Responsable</b></label>
 										<br />
-										<select>
+										<select name="responsable" id="new">
 											<option>Selecciona una opción</option>
 										</select>
 									</div>
