@@ -7,37 +7,10 @@ class Mobile extends CI_Controller {
 		$this->load->model('m_mobile');
 	}
 
-	public function login() {
-		$user = $this->input->get('usuario');
-		$pass = sha1($this->input->get('password'));
+	public function APILogin(){
+		$user = $this->input->post('email');
+		$password = $this->input->post('passwd');
 
-		$datos = $this->m_mobile->getUsuario($user);
-		$request = array(
-			'validacion' => $this->m_mobile->autenticacion($user, $pass), 
-			'email' => $user, 
-			'username' => $datos->u_username, 
-			'nombre' => $datos->u_nombre,
-			'apep' => $datos->u_apep, 
-			'apem' => $datos->u_apem,
-			'org' => $datos->c_rfc
-		);
-
-		//if()
-		$resultados = json_encode($request);
-		echo $_GET['jsoncallback'] . '(' . $resultados . ');';
 	}
 
-	public function obtenerProyectos($org){
-		$request = array();
-		$request = $this->m_mobile->getProyectos($org);
-
-		$resultados = json_encode($request);
-		echo $resultados;
-	}
-
-	public function seleccionar($id_proyecto, $username){
-		
-		echo $resultado;
-	}
-	
 }
