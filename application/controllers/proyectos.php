@@ -29,25 +29,53 @@ class Proyectos extends CI_Controller {
 	}
 	
 	// No disponible por el momento ;
-	public function add($rfc){
+	public function agregarProyecto($rfc){
 		if($this->session->userdata('logger') == TRUE){
-			$this->form_validation->set_rules('p_name', 'Nombre', 'trim|required|xss_clean|alpha');
-			$this->form_validation->set_rules('p_des', 'Descripción', 'trim|required|xss_clean');
-			$this->form_validation->set_error_delimiters('<div class="alert-box warning radius" data-alert>','<a href="#" class="close">&times;</a></div>');
-			if($this->form_validation->run() == FALSE) {
-				$datos['proyectos'] = $this->m_proyectos->loadProyectos($rfc);
-				$datos['orgpro'] = $rfc;
-				$datos['validation'] = array( 'validacion' => validation_errors());
-				$this->load->view('proyecto_selected', $datos);
-			}else {
-				$nombre = $this->input->post('p_name');
-				$des = $this->input->post('p_des');
-				$query = $this->m_proyectos->agregarProyecto($rfc, $nombre, $des);
-				if($query) {
-					$datos['proyectos'] = $this->m_proyectos->loadProyectos($rfc);
-					$datos['orgpro'] = $rfc;
-					$datos['query'] = array( 'result' => 1);
-					$this->load->view('proyecto_selected', $datos);
+			$this->form_validation->set_rules('pname', 'Nombre de Proyecto','trim|xss_clean|required');
+			$this->form_validation->set_rules('category', 'Categoria', 'trim|xss_clean|required');
+			$this->form_validation->set_rules('responsable', 'Responsable', 'trim|xss_clean|required');
+			$this->form_validation->set_rules('descripcion', 'Descripcion', 'trim|xss_clean|required');
+			$this->form_validation->set_message('required', 'Este campo es requerido');
+			$this->form_validation->set_error_delimiters('','');
+			if($this->form_validation->run() == FALSE){
+				$errors = array(
+						array(
+							'campo' => 'nombre-cmp',
+							'error' => form_error('pname')
+							),
+						array(
+							'campo' => 'category-cmp',
+							'error' => form_error('category')
+							),
+						array(
+							'campo' => 'responsable-cmp',
+							'error' => form_error('responsable')
+							),
+						array(
+							'campo' => 'descripcion-cmp',
+							'error' => form_error('descripcion')
+							)					
+					);
+
+				$result = json_encode($errors);
+				echo $result;
+			}else{
+				$nombrep 	= $this->input->post('pname');
+				$category = $this->input->post('category');
+				$respo 		= $this->input->post('responsable');
+				$descri 	= $this->input->post('descripcion');
+				$email 		= $this->session->userdata('u_email');
+				$proyecto = $this->m_proyectos->agregarProyecto($rfc, $nombrep, $descri, $category);
+				if($proyecto != 0){
+					$asignar = $this->m_proyectos->asignarProyecto($email, $proyecto);
+					$errors = array(
+					array(
+						'campo' => 'group-rfc',
+						'error' => ''
+						)
+					);
+					$result = json_encode($errors);
+					echo $result;
 				}
 			}
 		}else{

@@ -29,15 +29,28 @@ class M_Proyectos extends CI_Model {
 		}
 	}
 
-	public function agregarProyecto($rfc, $name, $des) {
+	public function agregarProyecto($rfc, $name, $des, $cat) {
 		$data = array(
 			'c_proy_name' => $name, 
 			'c_proy_descri' => $des, 
 			'c_proy_bandera' => 1,
-			'c_rfc' => $rfc
+			'c_rfc' => $rfc, 
+			'id_category' => $cat
+			);
+		$this->db->trans_start();
+		$this->db->insert('CI_PROYECTOS', $data);
+		$insert_id = $this->db->insert_id();
+		$this->db->trans_complete();
+		return $insert_id;
+	}
+
+	public function asignarProyecto($email, $id){
+		$data = array(
+			'c_proy_id' => $id, 
+			'u_email' => $email
 			);
 
-		return $this->db->insert('CI_PROYECTOS', $data);
+		return $this->db->insert('CI_DETALLE_PROYASIGN', $data);
 	}
 
 	public function obtenerCategorias(){

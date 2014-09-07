@@ -126,7 +126,7 @@ $(document).ready(function(){
 			if(blue === 0){
 				console.log(blue);
 			}else{
-				url = 'proyectos/selected/'+blue;
+				url = '/proyectos/selected/'+blue;
 				location.href=url;
 			}
 		});
@@ -340,6 +340,50 @@ $(document).ready(function(){
 					}
 				}
 			});
+		});
+	});
+
+	// Registro de nuevo proyecto ;
+	$('#agregarProy').submit(function(e){
+		var id = document.getElementById('agregarProy');
+		var com = id.getAttribute('data-company');
+		var errors;
+		e.preventDefault();
+		$.ajax({
+			type: 'POST',
+			url: '/proyectos/agregarProyecto/'+com,
+			data: $(this).serialize(),
+			dataType: 'json',
+			success: function(data){
+				errors = 0;
+				console.log(data);
+				for(var i=0;i<data.length;i++){
+					if(data[i].error === ""){
+						$('#'+data[i].campo+' .span-error').html('').removeClass('show').addClass('hide');
+					}else{
+						$('#'+data[i].campo+' .span-error').html(data[i].error).removeClass('hide').addClass('show');
+						errors = errors + 1;
+					}
+				}
+
+					if(errors === 0){
+						setTimeout(function() {
+						var notification = new NotificationFx({
+							message: '<p style="font-size: 14px;">Cambios realizados correctamente. Espere un momento, se volvera a cargar la pagina.</p>',
+							layout: 'growl',
+							effect: 'slide',
+							type: 'notice',
+							onClose: function(){
+								setTimeout(function(){
+									location.href="/proyectos/selected/"+com;
+								}, 700);
+							}
+						});
+						notification.show();
+						}, 100);
+					}
+
+			}
 		});
 	});
 

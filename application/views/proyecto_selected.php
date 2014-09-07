@@ -27,51 +27,45 @@
 				<div class="row" id="panel-form-id">
 					<div class="large-10 column">
 						<div class="panel">
-							<?php echo form_open(base_url('proyectos').'/add/'.$orgpro); ?>
+							<form id="agregarProy" data-company="<?=$orgpro;?>">
 								<div class="row">
-									<div class="large-10 column">
-										<label><b>Nombre del Proyecto</b></label>
+									<div class="large-10 column group" id="nombre-cmp">
+										<label style="padding: 0 !important;"><b>Nombre del Proyecto</b></label>
 										<input type="text" name="pname" placeholder="Introduce el nombre del nuevo proyecto">
-										<i class="fi-credit-card app-icon-input-edit"></i>
+										<span class="warning label alert radius span-error hide"></span>
 									</div>
 								</div>
 								<div class="row">
-									<div class="large-6 columns">
+									<div class="large-6 columns group" id="category-cmp">
 										<label><b>Categoría</b></label>
-										<br />
 										<select name="category" id="cat">
-											<option>Selecciona una opción</option>
+											<option value="">Selecciona una opción</option>
 											<?php foreach($categorias as $row): ?>
 											<option value="<?=$row['id_category']?>"><?=$row['cat_name']?></option>
 											<?php endforeach; ?>
 										</select>
+										<span class="warning label alert radius span-error hide"></span>
 									</div>
-									<div class="large-4 columns">
+									<div class="large-4 columns group" id="responsable-cmp">
 										<label><b>Responsable</b></label>
-										<br />
 										<select name="responsable" id="new">
-											<option>Selecciona una opción</option>
+											<option value="">Selecciona una opción</option>
 										</select>
+										<span class="warning label alert radius span-error hide"></span>
 									</div>
 								</div>
 								<br />
 								<div class="row">
-									<div class="large-5 columns">
-										<label><b>Conceptos</b></label>
-										<div class="row collapse">
-											<div class="large-7 columns">
-												<input type="text" name="todo" placeholder="Comienza escribiendo un concepto...">
-												<i class="fi-credit-card app-icon-input-edit" style="top: 27px !important; left: 14px !important;"></i>
-											</div>
-											<div class="large-3 columns">
-												<input type="button" class="button postfix" style="padding-left: 0 !important;" value="Nuevo Concepto">
-											</div>
-										</div>
-									</div>
-									<div class="large-5 columns">
+									<div class="large-10 column group" id="descripcion-cmp">
 										<label><b>Descripción</b></label>
-										<br />
-										<textarea cols="10" rows="13" placeholder="Describe los requerimientos o actividades al realizar en este proyecto, también puedes comentar un poco sobre el proyecto."></textarea>
+										<textarea name="descripcion" cols="10" rows="13" placeholder="Describe los requerimientos o actividades al realizar en este proyecto, también puedes comentar un poco sobre el proyecto."></textarea>
+										<span class="warning label alert radius span-error hide"></span>
+									</div>
+								</div>
+								<br />
+								<div class="row">
+									<div class="large-10 column">
+										<input type="submit" class="button large-10" value="Registrar Proyecto" />
 									</div>
 								</div>
 							</form>
