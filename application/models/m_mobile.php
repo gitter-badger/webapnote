@@ -22,7 +22,7 @@ class M_Mobile extends CI_Model {
 
 	public function getUsuario($email){
 		$this->db->where('u_email', $email);
-		$query = $this->db->get('CI_USERS');
+		$query = $this->db->get('CI_USUARIOS');
 		if($query->num_rows() == 1){
 			return $query->row();
 		}else{
@@ -30,10 +30,30 @@ class M_Mobile extends CI_Model {
 		}
 	}
 
-	public function getProyectos($rfc){
-		$this->db->where('c_rfc', $rfc);
-		$query = $this->db->get('CI_PROYECTOS');
-		if($query->num_rows() > 0){
+	public function proyectosCursos($email){
+		$this->db->select('CI_PROYECTOS.c_proy_name AS p_nombre, CI_PROYECTOS.c_proy_descri AS p_descri, CI_PROYECTOS.c_fecha_creado AS p_fecha, CI_CATEGORIAS.cat_name AS p_cat');
+		$this->db->from('CI_DETALLE_PROYASIGN, CI_PROYECTOS, CI_CATEGORIAS');		
+		$this->db->where('CI_DETALLE_PROYASIGN.u_email', $email);
+		$this->db->where('CI_CATEGORIAS.id_category = CI_PROYECTOS.id_category');
+		$this->db->where('CI_DETALLE_PROYASIGN.c_proy_id = CI_PROYECTOS.c_proy_id');
+		$this->db->where('CI_PROYECTOS.c_fecha_ini =  "0000-00-00 00:00:00"');
+		$query = $this->db->get();
+		if($query->num_rows() > 0) {
+			return $query->result_array();
+		}else{
+			return NULL;
+		}
+	}
+
+	public function proyectosIniciados($email){
+		$this->db->select('CI_PROYECTOS.c_proy_name AS p_nombre, CI_PROYECTOS.c_proy_descri AS p_descri, CI_PROYECTOS.c_fecha_creado AS p_fecha, CI_CATEGORIAS.cat_name AS p_cat');
+		$this->db->from('CI_DETALLE_PROYASIGN, CI_PROYECTOS, CI_CATEGORIAS');		
+		$this->db->where('CI_DETALLE_PROYASIGN.u_email', $email);
+		$this->db->where('CI_CATEGORIAS.id_category = CI_PROYECTOS.id_category');
+		$this->db->where('CI_DETALLE_PROYASIGN.c_proy_id = CI_PROYECTOS.c_proy_id');
+		$this->db->where('CI_PROYECTOS.c_fecha_ini <>  "0000-00-00 00:00:00"');
+		$query = $this->db->get();
+		if($query->num_rows() > 0) {
 			return $query->result_array();
 		}else{
 			return NULL;

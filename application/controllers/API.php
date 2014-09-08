@@ -11,14 +11,22 @@ class API extends CI_Controller {
 		$this->load->view('v_mobile');
 	}
 
+	// API para inicio de sesión ;
 	public function APILogin(){
 		$user = $this->input->get('email');
 		$password = sha1($this->input->get('passwd'));
 		$result = $this->m_mobile->autenticacion($user, $password);
 		if($result){
+			$user = $this->m_mobile->getUsuario($user);
 			$data = array(
-				'success' => 1, 
-				'message' => "Inicio de Sesión Correcto"
+				'success' 	=> 1, 
+				'message' 	=> "Inicio de Sesión Correcto",
+				'email' 		=> $user->u_email,
+				'username' 	=> $user->u_username,
+				'nombre' 		=> $user->u_nombre,
+				'apem'		=> $user->u_apem,
+				'apep'		=> $user->u_apep,
+				'date'		=> $user->u_date
 				);
 
 			$result = json_encode($data);
@@ -32,6 +40,24 @@ class API extends CI_Controller {
 			$result = json_encode($data);
 			echo $_GET['jsoncallback'] .'('.$result.')';
 		}
+	}
+
+	// API Obtencion de Proyectos sin iniciar ;
+	public function proyectosCurso(){
+		$email = $this->input->get('email');
+		$query = array();
+		$query= $this->m_mobile->proyectosCursos($email);
+		$result = json_encode($query);
+		echo $_GET['jsoncallback'] .'('.$result.')';
+	}
+
+	// API Obtencion de proyectos iniciados ;
+	public function proyectosIniciados(){
+		$email = $this->input->get('email');
+		$query = array();
+		$query = $this->m_mobile->proyectosIniciados($email);
+		$result = json_encode($query);
+		echo $_GET['jsoncallback'] .'('.$result.')';
 	}
 
 

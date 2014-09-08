@@ -67,7 +67,7 @@ class Proyectos extends CI_Controller {
 				$email 		= $this->session->userdata('u_email');
 				$proyecto = $this->m_proyectos->agregarProyecto($rfc, $nombrep, $descri, $category);
 				if($proyecto != 0){
-					$asignar = $this->m_proyectos->asignarProyecto($email, $proyecto);
+					$asignar = $this->m_proyectos->asignarProyecto($respo, $proyecto);
 					$errors = array(
 					array(
 						'campo' => 'group-rfc',
