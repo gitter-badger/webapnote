@@ -31,7 +31,7 @@ class M_Mobile extends CI_Model {
 	}
 
 	public function proyectosCursos($email){
-		$this->db->select('CI_PROYECTOS.c_proy_name AS p_nombre, CI_PROYECTOS.c_proy_descri AS p_descri, CI_PROYECTOS.c_fecha_creado AS p_fecha, CI_CATEGORIAS.cat_name AS p_cat');
+		$this->db->select('CI_PROYECTOS.c_proy_name AS p_nombre, CI_PROYECTOS.c_proy_descri AS p_descri, CI_PROYECTOS.c_fecha_creado AS p_fecha, CI_CATEGORIAS.cat_name AS p_cat, CI_PROYECTOS.c_proy_id AS id_proyecto');
 		$this->db->from('CI_DETALLE_PROYASIGN, CI_PROYECTOS, CI_CATEGORIAS');		
 		$this->db->where('CI_DETALLE_PROYASIGN.u_email', $email);
 		$this->db->where('CI_CATEGORIAS.id_category = CI_PROYECTOS.id_category');
@@ -46,7 +46,7 @@ class M_Mobile extends CI_Model {
 	}
 
 	public function proyectosIniciados($email){
-		$this->db->select('CI_PROYECTOS.c_proy_name AS p_nombre, CI_PROYECTOS.c_proy_descri AS p_descri, CI_PROYECTOS.c_fecha_creado AS p_fecha, CI_CATEGORIAS.cat_name AS p_cat');
+		$this->db->select('CI_PROYECTOS.c_proy_name AS p_nombre, CI_PROYECTOS.c_proy_descri AS p_descri, CI_PROYECTOS.c_fecha_creado AS p_fecha, CI_CATEGORIAS.cat_name AS p_cat, CI_PROYECTOS.c_proy_id AS id_proyectos');
 		$this->db->from('CI_DETALLE_PROYASIGN, CI_PROYECTOS, CI_CATEGORIAS');		
 		$this->db->where('CI_DETALLE_PROYASIGN.u_email', $email);
 		$this->db->where('CI_CATEGORIAS.id_category = CI_PROYECTOS.id_category');
