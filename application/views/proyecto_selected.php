@@ -72,31 +72,36 @@
 						</div>
 					</div>
 				</div>
+				<!-- table to projects -->
 				<div class="row">
 					<div class="large-10 column">
 						<?php if(!empty($proyectos)){ ?>
-						<table class="large-10">
+						<table>
 							<thead>
 								<tr>
-									<th>Nombre del Proyecto</th>
-									<th>Descripción</th>
-									<th>Creado en</th>
-									<th>Iniciado en</th>
-									<th style="text-align:center;">TEAM</th>
-									<th width="80"></th>
+									<th width="900">Información Básica</th>
+									<th width="100">Estado</th>
+									<th></th>
 								</tr>
 							</thead>
 							<tbody>
-								<?php foreach($proyectos as $row){?>
-									<tr>
-										<td><?=$row['c_proy_name'];?></td>
-										<td><?=$row['c_proy_descri'];?></td>
-										<td><?=$row['c_fecha_creado'];?></td>
-										<td><?=$row['c_fecha_ini'];?></td>
-										<td style="text-align: center;font-size: 20px;"><a href=""><i class="fi-eye"></i></a></td>
-										<td style="text-align: center; font-size: 20px;"><a href="" class="btn-delete"><i class="fi-trash"></i></a> <a href=""><i class="fi-pencil"></i></a></td>
-									</tr>
-								<?php }?>
+								<?php foreach($proyectos as $row):?>
+								<tr>
+									<td>
+										<p style="font-size: .875rem !important; margin-bottom: 0 !important;"><?=$row['c_proy_name'];?></p>
+									</td>
+									<td>
+										<?php 
+											if($row['c_fecha_ini'] == '0000-00-00 00:00:00'){
+												echo "En Espera";
+											}else{
+												echo "En Curso";
+											}
+										 ?>
+									</td>
+									<td><a href="<?=base_url('proyectos/obtenerProyecto/');?>/<?=$row['c_proy_id'];?>" data-reveal-id="modal-project" data-reveal-ajax="true" style="margin-bottom: 0 !important;" class="button success tiny radius">Información</a></td>
+								</tr>
+								<?php endforeach; ?>
 							</tbody>
 						</table>
 						<?php }else {?>
@@ -112,5 +117,10 @@
 	</div>
 
 	<?php $this->load->view('dropdown'); ?>
+
+	<!-- Modal Information Proyecto -->
+	<div id="modal-project" class="reveal-modal medium" data-reveal>
+		
+	</div>
 
 <?php $this->load->view('footer'); ?>

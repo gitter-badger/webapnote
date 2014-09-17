@@ -702,6 +702,27 @@ span.badge-icon-noty {
 	z-index: -9999 !important;
 }
 
+/**** Mods to Nav Side ****/
+
+ul.nav-side{
+	list-style: none;
+	margin-left: 0px;
+}
+
+ul.nav-side li {
+	padding-bottom: 5px;
+}
+
+ul.nav-side li > span{
+	font-size: 0.875rem;
+	text-align: left;	
+	padding: 10px;
+}
+
+ul.nav-side li > span a{
+	float: right;
+}
+
 /****************************************
 	Add Custom Media Queries
 ****************************************/

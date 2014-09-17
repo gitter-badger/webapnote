@@ -174,7 +174,7 @@
 
 	<?php $this->load->view('dropdown'); ?>
 	<div class="reveal-modal small" id="modal-demo" data-reveal>
-		<a href="close-reveal-modal">&#215;</a>
+		<a href="#" class="close-reveal-modal">&#215;</a>
 	</div>
 
 <?php $this->load->view('footer'); ?>

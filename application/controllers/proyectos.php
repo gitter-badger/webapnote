@@ -28,7 +28,7 @@ class Proyectos extends CI_Controller {
 		}
 	}
 	
-	// No disponible por el momento ;
+	// Agregar un nuevo proyecto a Organización ;
 	public function agregarProyecto($rfc){
 		if($this->session->userdata('logger') == TRUE){
 			$this->form_validation->set_rules('pname', 'Nombre de Proyecto','trim|xss_clean|required');
@@ -91,6 +91,15 @@ class Proyectos extends CI_Controller {
 				$result = json_encode($datos);
 				echo $result;
 			}			
+		}else{
+			redirect(base_url());
+		}
+	}
+
+	public function obtenerProyecto($id){
+		if($this->session->userdata('logger') == TRUE){
+			$data['infoProyecto'] = $this->m_proyectos->viewProyecto($id);
+			$this->load->view('proyecto', $data);
 		}else{
 			redirect(base_url());
 		}

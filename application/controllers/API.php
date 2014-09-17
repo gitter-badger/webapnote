@@ -60,5 +60,23 @@ class API extends CI_Controller {
 		echo $_GET['jsoncallback'] .'('.$result.')';
 	}
 
+	// API Proyecto Definido ;
+	public function verProyecto($id){
+		$query = $this->m_mobile->viewProyecto($id);
+		if($query['estado'] == '0000-00-00 00:00:00'){
+			$estado = "En Espera";
+		}else{
+			$estado = "En Curso";
+		}
+		$data = array(
+			'proyname' 	 		=> $query['proy_name'],
+			'proydescri'  		=> $query['proy_descri'],
+			'fechacreado' 		=> $query['fecha_creado'], 
+			'fechaini' 	 		=> $estado,
+			'resnombre' 	 		=> $query['res_name'].' '.$query['res_apep'].' '.$query['res_apem'],
+			'proycategoria'	=> $query['proy_categoria']);
+		$result = json_encode($data);
+		echo $_GET['jsoncallback'].'('.$result.')';
+	}
 
 }
