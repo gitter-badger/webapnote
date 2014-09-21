@@ -723,6 +723,13 @@ ul.nav-side li > span a{
 	float: right;
 }
 
+
+/**************/
+
+#procat{
+	margin-right: 10px;
+}
+
 /****************************************
 	Add Custom Media Queries
 ****************************************/

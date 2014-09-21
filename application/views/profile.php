@@ -94,25 +94,21 @@
 						<h5 class="subheader">Especialidades</b> <small>Solo puede seleccionar 3 como máximo.</small></h5>
 							<div class="row" id="categ">
 							<br />
+								<div class="large-10 column">
 								<?php 
 								$i = 0;
 								if(!empty($micats)):
 								foreach($micats as $row): ?>
 									<?php if($i == 1): ?>
-										<div class="large-4 columns">
-											<a href="#" class="button round large-10"><?=$row['cat_name'];?></a>
-										</div>
+											<button class="button radius small disabled" id="procat"><?=$row['cat_name'];?></button>
 									<?php else: ?>
-										<div class="large-3 columns">
-											<a href="#" class="button round large-10"><?=$row['cat_name'];?></a>
-										</div>
+											<button class="button radius small disabled" id="procat"><?=$row['cat_name'];?></button>
 									<?php endif; $i++; ?>
-								<?php endforeach; endif;?>							
+								<?php endforeach; endif;?>	
 								<?php if($i <= 2 || empty($micats)):?>
-								<div class="large-3 columns">
-									<a href="#" data-reveal-id="addcategory" class="button round secondary" style="padding-left: 50px;"><i class="fi-plus" style="font-size: 19px; position: absolute; left: 30px; top: 12px;"></i> Agregar una nueva</a>
-								</div>
+									<button data-reveal-id="addcategory" class="button radius small secondary" style="padding-left: 50px;"><i class="fi-plus" style="font-size: 19px; position: absolute; left: 30px; top: 12px;"></i> Agregar una nueva</button>
 								<?php endif;?>
+								</div>						
 							</div>
 					</div>
 				</div>					

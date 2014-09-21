@@ -104,4 +104,16 @@ class Proyectos extends CI_Controller {
 			redirect(base_url());
 		}
 	}
+
+
+	/*********** Categorias Index  ***************/
+	
+	public function categorias(){
+		if($this->session->userdata('logger') == TRUE){
+			$this->load->view('categorias');
+		}else{
+			redirect(base_url());
+		}
+	}
+
 }
