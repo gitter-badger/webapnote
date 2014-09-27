@@ -84,9 +84,9 @@ class Proyectos extends CI_Controller {
 	}
 
 	// Obtener responsables para seleccionar ;
-	public function obtenerResponsables($category){
+	public function obtenerResponsables($category, $rfc){
 		if($this->session->userdata('logger') == TRUE){
-			$datos = $this->m_proyectos->obtenerResponsableCat($category);
+			$datos = $this->m_proyectos->obtenerResponsableCat($category, $rfc);
 			if($datos){
 				$result = json_encode($datos);
 				echo $result;

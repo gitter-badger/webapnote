@@ -284,7 +284,7 @@ $(document).ready(function(){
 			data: $(this).serialize(),
 			dataType: 'json',
 			success: function(data){
-				$('#categ').before('<div class="large-3 columns"><a href="#" class="button round">'+data.nombre+'</a></div></div>');
+				$('#dynitem').before('<button class="button radius small disabled" id="procat">'+data.nombre+'</button>');
 				$('#addcategory').foundation('reveal','close');
 				setTimeout(function() {
 					var notification = new NotificationFx({
@@ -326,12 +326,14 @@ $(document).ready(function(){
 	// Obtiene responsables dependiendo la categoría 
 	// seleccionada.
 	$('#cat').change(function(){
+		var id = document.getElementById('agregarProy');
+		var com = id.getAttribute('data-company');
 		var category = "";
 		$('#new .newop').remove();
 		$('#cat option:selected').each(function(){
 			category = $(this).val();
 			$.ajax({
-				url: '/proyectos/obtenerResponsables/'+category,
+				url: '/proyectos/obtenerResponsables/'+category+'/'+com,
 				dataType: 'json',
 				success: function(data){
 					console.log(data);

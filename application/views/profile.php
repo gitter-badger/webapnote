@@ -92,9 +92,9 @@
 				<div class="row">
 					<div class="large-10 column">
 						<h5 class="subheader">Especialidades</b> <small>Solo puede seleccionar 3 como máximo.</small></h5>
-							<div class="row" id="categ">
+							<div class="row">
 							<br />
-								<div class="large-10 column">
+								<div class="large-10 column" id="categ">
 								<?php 
 								$i = 0;
 								if(!empty($micats)):
@@ -106,7 +106,8 @@
 									<?php endif; $i++; ?>
 								<?php endforeach; endif;?>	
 								<?php if($i <= 2 || empty($micats)):?>
-									<button data-reveal-id="addcategory" class="button radius small secondary" style="padding-left: 50px;"><i class="fi-plus" style="font-size: 19px; position: absolute; left: 30px; top: 12px;"></i> Agregar una nueva</button>
+									<button id="dynitem" style="display: none;"></button>
+									<button data-reveal-id="addcategory" class="button radius small secondary" style="padding-left: 50px;"><i class="fi-plus" style="font-size: 19px; position: absolute; left: 27px; top: 10px;"></i> Agregar una nueva</button>
 								<?php endif;?>
 								</div>						
 							</div>
