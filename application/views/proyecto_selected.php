@@ -15,13 +15,13 @@
 						<ul class="breadcrumbs">
 							<li><a href="<?=base_url('dashboard');?>">Dashboard</a></li>
 							<li><a href="<?=base_url('proyectos');?>">Proyectos</a></li>
-							<li class="current"><a href="<?=base_url();?>">Proyectos en <strong><?php echo $orgpro; ?></strong></a></li>
+							<li class="current"><a href="<?=base_url();?>">Proyectos en <strong><?php echo $orgpro['c_name']; ?></strong></a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="row">
 					<div class="large-10 column">
-						<h5 class="subheader">Proyectos en <?=$orgpro;?> <a href="#" id="btn-open-pro" class="button radius tiny right" style="position: absolute; right: 15px; top: -8px;"><i></i>Crear Nuevo Proyecto</a></h5>
+						<h5 class="subheader">Proyectos en <?=$orgpro['c_name'];?> <a href="#" id="btn-open-pro" class="button radius tiny right" style="position: absolute; right: 15px; top: -8px;"><i></i>Crear Nuevo Proyecto</a></h5>
 					</div>
 				</div>
 				<div class="row" id="panel-form-id">

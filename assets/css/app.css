@@ -729,6 +729,11 @@ ul.nav-side li > span a{
 	margin-right: 10px;
 }
 
+#counter {
+	position:absolute;
+	top: 37px;
+	right: 25px;
+}
 /****************************************
 	Add Custom Media Queries
 ****************************************/

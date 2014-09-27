@@ -21,7 +21,7 @@ class Proyectos extends CI_Controller {
 		if($this->session->userdata('logger') == TRUE){
 			$datos['proyectos'] = $this->m_proyectos->loadProyectos($rfc);
 			$datos['categorias'] = $this->m_proyectos->obtenerCategorias();
-			$datos['orgpro'] = $rfc;
+			$datos['orgpro'] = $this->m_proyectos->obtenerOrganizacion($rfc);
 			$this->load->view('proyecto_selected', $datos);
 		}else{
 			redirect(base_url());

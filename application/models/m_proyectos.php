@@ -19,6 +19,16 @@ class M_Proyectos extends CI_Model {
 		}
 	}
 
+	public function obtenerOrganizacion($rfc){
+		$this->db->where('c_rfc', $rfc);
+		$query = $this->db->get('CI_COMPANY');
+		if($query->num_rows() > 0){
+			return $query->first_row('array');
+		}else{
+			return null;
+		}
+	}
+
 	public function loadProyectos($rfc){
 		$this->db->where('c_rfc', $rfc);
 		$query = $this->db->get('CI_PROYECTOS');

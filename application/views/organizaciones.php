@@ -104,6 +104,7 @@
 				<div class="large-6 columns group" id="group-rfc">
 					<label>RFC de la Compañía</label>
 					<input type="text" id="rfc-input" name="rfc" placeholder="RFC Compañía" class="radius" />
+					<span style="top: 41px !important" class="label success radius" id="counter"></span>
 					<span class="warning label alert radius span-error hide"></span>
 				</div>
 				<div class="large-4 columns group" id="group-phone">

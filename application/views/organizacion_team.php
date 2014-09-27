@@ -15,7 +15,7 @@
 						<ul class="breadcrumbs">
 							<li><a href="<?=base_url('dashboard');?>">Dashboard</a></li>
 							<li><a href="<?=base_url('organizaciones');?>">Organizaciones</a></li>
-							<li class="current"><a href="#">Equipo de Trabajo en <span style="font-weight: bold;"><?=$porg['c_rfc'];?></span></a></li>
+							<li class="current"><a href="#">Equipo de Trabajo en <span style="font-weight: bold;"><?=$porg['c_name'];?></span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -37,7 +37,8 @@
 									</div>
 									<div class="large-6 columns group" id="group-username">
 										<label>Nombre de Usuario</label>
-										<input type="text" name="t_username" placeholder="">
+										<input type="text" id="user-inputname" name="t_username" placeholder="">
+										<span class="label success radius" id="counter"></span>
 										<i class="fi-torso app-icon-input-edit"></i>
 										<span class="warning label alert radius span-error hide"></span>
 									</div>

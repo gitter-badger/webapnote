@@ -4,6 +4,10 @@ $(document).ready(function(){
 	$.fn.reset = function() {
 		$(this).each(function(){ this.reset(); });
 	};
+
+	//limit for inputs
+	$('#rfc-input').limitar({limite: 13, id_counter: "counter", clase_alert: "alert"});
+	$('#user-inputname').limitar({limite: 10, id_counter: "counter", clase_alert: "alert"});
 	
 	// Nuevo registro de usuarios ;
 	$('#addUsuario').submit(function(e){
@@ -369,6 +373,7 @@ $(document).ready(function(){
 				}
 
 					if(errors === 0){
+						$('#panel-form-id').slideToggle('slow');
 						setTimeout(function() {
 						var notification = new NotificationFx({
 							message: '<p style="font-size: 14px;">Cambios realizados correctamente. Espere un momento, se volvera a cargar la pagina.</p>',
