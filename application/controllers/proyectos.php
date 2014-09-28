@@ -6,6 +6,7 @@ class Proyectos extends CI_Controller {
 		parent::__construct();
 		$this->load->model('m_proyectos');
 		$this->load->library('form_validation');
+		$this->load->library('pagination');
 	}
 
 	public function index() {
@@ -108,9 +109,60 @@ class Proyectos extends CI_Controller {
 
 	/*********** Categorias Index  ***************/
 	
-	public function categorias(){
+	public function categorias($start=0){
 		if($this->session->userdata('logger') == TRUE){
-			$this->load->view('categorias');
+			$datos['categorias'] = $this->m_proyectos->obtenerCategoriaslimit(11, $start);
+			$config['base_url'] = base_url().'proyectos/categorias/';
+			$config['total_rows'] = $this->m_proyectos->get_categories_count();
+			$config['per_page'] = 11;
+
+			$config['num_tag_open'] = '<li>';
+			$config['num_tag_close'] = '</li>';
+
+			$config['next_link'] = '&raquo;';
+			$config['prev_link'] = '&laquo;';
+
+			$config['next_tag_open'] = '<li class="arrow">';
+			$config['next_tag_close'] = '</li>';
+
+			$config['prev_tag_open'] = '<li class="arrow">';
+			$config['prev_tag_close'] = '</li>';
+
+			$config['cur_tag_open'] = '<li class="current"><a href="#">';
+			$config['cur_tag_close'] = '</a></li>';
+
+			$this->pagination->initialize($config);
+			$datos['pages'] = $this->pagination->create_links();
+			$this->load->view('categorias', $datos);
+		}else{
+			redirect(base_url());
+		}
+	}
+
+	public function agregarCategoria(){
+		if($this->session->userdata('logger') == TRUE){
+			$this->form_validation->set_rules('categoria', 'Categoria', 'trim|required|xss_clean');
+			$this->form_validation->set_message('required', 'Este campo es requerido');
+			$this->form_validation->set_error_delimiters('','');
+			if($this->form_validation->run() == FALSE){
+				$datos = array(
+						'error' => 1,
+						'campo' => 'category-group',
+						'msg' => form_error('categoria')
+					);
+				$result = json_encode($datos);
+				echo $result;
+			}else{
+				$nombre = $this->input->post('categoria');
+				$return = $this->m_proyectos->nuevaCategoria($nombre);
+				$datos = array(
+						'error' => 0, 
+						'campo' => 'category-group',
+						'msg' => 'No se pudo agregar la Categoria'
+					);
+				$result = json_encode($datos);
+				echo $result;
+			}
 		}else{
 			redirect(base_url());
 		}

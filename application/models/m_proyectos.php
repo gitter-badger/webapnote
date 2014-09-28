@@ -71,6 +71,28 @@ class M_Proyectos extends CI_Model {
 		}
 	}
 
+	public function obtenerCategoriaslimit($number, $start=0){
+		$this->db->limit($number,$start);
+		$query = $this->db->get('CI_CATEGORIAS');
+		if($query->num_rows() > 0){
+			return $query->result_array();
+		}else{
+			return NULL;
+		}
+	}
+
+	public function nuevaCategoria($nombre) {
+		$data = array(
+			'cat_name' => $nombre
+			);
+		return $this->db->insert('CI_CATEGORIAS', $data);
+	}
+
+	public function get_categories_count(){
+		$query = $this->db->get('CI_CATEGORIAS');
+		return $query->num_rows();
+	}
+
 	public function obtenerResponsableCat($category, $rfc){
 		$this->db->select('CI_USUARIOS.u_email AS u_email, CI_USUARIOS.u_nombre AS u_nombre, CI_USUARIOS.u_apep AS u_apep, CI_USUARIOS.u_apem AS u_apem');
 		$this->db->from('CI_DETALLE_USUARIO, CI_USUARIOS, CI_DETALLE_COMPANY');

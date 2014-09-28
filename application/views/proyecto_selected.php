@@ -27,7 +27,7 @@
 				<div class="row" id="panel-form-id">
 					<div class="large-10 column">
 						<div class="panel">
-							<form id="agregarProy" data-company="<?=$orgpro;?>">
+							<form id="agregarProy" data-company="<?=$orgpro['c_rfc'];?>">
 								<div class="row">
 									<div class="large-10 column group" id="nombre-cmp">
 										<label style="padding: 0 !important;"><b>Nombre del Proyecto</b></label>

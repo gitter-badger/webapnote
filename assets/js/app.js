@@ -54,7 +54,7 @@ $(document).ready(function(){
 				}else {
 					setTimeout(function() {
 						var notification = new NotificationFx({
-							message: '<p style="font-size: 14px;">El Correo Eletronico y/o Contraseña son incorrectos.</p>',
+							message: '<p style="font-size: 14px;">El Correo eletronico y/o Contraseña son incorrectos.</p>',
 							layout: 'growl',
 							effect: 'jelly',
 							type: 'notice'
@@ -162,7 +162,7 @@ $(document).ready(function(){
 							type: 'notice'
 						});
 						notification.show();
-					}, 1200);
+					}, 100);
 				}
 			}
 		});
@@ -203,7 +203,7 @@ $(document).ready(function(){
 							onClose: function(){
 								setTimeout(function(){
 									location.href="/organizaciones/team/"+objective;
-								}, 700);
+								}, 200);
 							}
 						});
 						notification.show();
@@ -232,7 +232,7 @@ $(document).ready(function(){
 			$('.group-profile-info input').prop('disabled', true);
 			$(this).html('<i class="fi-page-edit" style="position: absolute; top: 5px; left: 25px; font-size: 20px;"></i> Editar');
 			$('#save-profile').fadeOut(200);
-			setTimeout(function(){location.href="profile";}, 300);
+			setTimeout(function(){location.href="profile";}, 200);
 			n = 0;
 		}
 	});
@@ -268,7 +268,7 @@ $(document).ready(function(){
 							onClose: function(){
 								setTimeout(function(){
 									location.href="profile";
-								}, 700);
+								}, 200);
 							}
 						});
 						notification.show();
@@ -299,7 +299,7 @@ $(document).ready(function(){
 						onClose: function(){
 							setTimeout(function(){
 								location.href="profile";
-							}, 700);
+							}, 200);
 						}
 					});
 					notification.show();
@@ -329,7 +329,8 @@ $(document).ready(function(){
 
 	// Obtiene responsables dependiendo la categoría 
 	// seleccionada.
-	$('#cat').change(function(){
+	$('#cat').change(function(e){
+		e.preventDefault();
 		var id = document.getElementById('agregarProy');
 		var com = id.getAttribute('data-company');
 		var category = "";
@@ -383,13 +384,47 @@ $(document).ready(function(){
 							onClose: function(){
 								setTimeout(function(){
 									location.href="/proyectos/selected/"+com;
-								}, 700);
+								}, 200);
 							}
 						});
 						notification.show();
 						}, 100);
 					}
 
+			}
+		});
+	});
+
+	// Agregar Nueva Categoria
+	$('#new-category').submit(function(e){
+		e.preventDefault();
+		$.ajax({
+			type: 'POST',
+			url: '/proyectos/agregarCategoria',
+			data: $(this).serialize(),
+			dataType: 'json',
+			success: function(data){
+				console.log(data);
+				if(data.error == '1'){
+					$('#'+data.campo+' .span-error').html(data.msg).addClass('show').removeClass('hide');
+				}else{
+					$('#'+data.campo+' span').addClass('hide').removeClass('show');
+					$('#add-user-te').slideToggle('slow');
+					setTimeout(function() {
+						var notification = new NotificationFx({
+							message: '<p style="font-size: 14px;">Categoria agregada correctamente. Espere un momento.</p>',
+							layout: 'growl',
+							effect: 'slide',
+							type: 'notice',
+							onClose: function(){
+								setTimeout(function(){
+									location.href="/proyectos/categorias/";
+								}, 200);
+							}
+						});
+						notification.show();
+						}, 100);
+				}
 			}
 		});
 	});

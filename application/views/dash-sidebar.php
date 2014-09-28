@@ -6,12 +6,12 @@
 		<div class="large-2 columns app-sidebar-main">
 			<div class="row dash-app">
 				<div class="large-4 columns">
-					<img class="th" style="border-radius: 35px;" src="<?=base_url('assets/img/thumbs');?>/<?=$this->session->userdata('u_photo');?>" height="70" width="70" />
+					<img class="th radius" src="<?=base_url('assets/img/thumbs');?>/<?=$this->session->userdata('u_photo');?>" height="70" width="70" />
 				</div>
 				<div class="large-6 columns dash-app-profile">
 					<h6 style="color: #EEE; font-weight: 600; font-size: 14px;"><?=$this->session->userdata('u_nombre');?> <?=$this->session->userdata('u_apep');?></h6>
 					<h6 class="subheader" style="font-size: 12px;"><?=$this->session->userdata('u_username');?></h6>
-					<h6 class="subheader" style="font-size: 12px;"><span style="color: #ADADAD;"><i style="color: #F48584;padding-right: 5px;text-shadow: 0 0 4px #FFBFBE;" class="fi-record"></i> Conectado</span></h6>
+					<h6 class="subheader" style="font-size: 13px;"><span style="color: #ADADAD;"><i style="color: #F48584;padding-right: 5px;" class="fi-comment"></i> Conectado</span></h6>
 				</div>
 			</div>
 			<div class="row">
