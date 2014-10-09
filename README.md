@@ -1,4 +1,5 @@
 ## Apnote - Aplicación Web | Proyecto de Titulación 
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/coderdiaz/webapnote?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ![Licencia CC BY-NC-ND](http://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png)
 
 ####Colaboradores
